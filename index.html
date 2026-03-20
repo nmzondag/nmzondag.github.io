@@ -31,6 +31,7 @@
       background: #020617;
       position: sticky;
       top: 0;
+      z-index: 5;
     }
 
     nav a { color: #e2e8f0; text-decoration: none; }
@@ -65,6 +66,9 @@
 
     .about-container img {
       border-radius: 50%;
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
     }
 
     .education-grid, .projects-grid {
@@ -152,46 +156,45 @@
 
 <header>
   <h1 data-en="Nathan Zondag" data-fr="Nathan Zondag" data-de="Nathan Zondag">Nathan Zondag</h1>
-  <p data-en="Mechanical Engineering Student | FSAE Aerodynamics Lead"
-     data-fr="Étudiant en génie mécanique | Chef aérodynamique FSAE"
-     data-de="Maschinenbaustudent | FSAE Aerodynamik Leiter">
-     Mechanical Engineering Student | FSAE Aerodynamics Lead
+  <p data-en="Mechanical Engineering Student | FSAE Aerodynamics Lead | Manufacturing & Design"
+     data-fr="Étudiant en génie mécanique | Responsable aérodynamique FSAE | Conception et fabrication"
+     data-de="Maschinenbaustudent | FSAE Aerodynamik Leiter | Konstruktion und Fertigung">
+     Mechanical Engineering Student | FSAE Aerodynamics Lead | Manufacturing & Design
   </p>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#education">Education</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#awards">Awards</a>
-  <a href="#resume">Resume</a>
-  <a href="#contact">Contact</a>
+  <a href="#about" data-en="About" data-fr="À propos" data-de="Über mich">About</a>
+  <a href="#projects" data-en="Projects" data-fr="Projets" data-de="Projekte">Projects</a>
+  <a href="#skills" data-en="Skills" data-fr="Compétences" data-de="Fähigkeiten">Skills</a>
+  <a href="#awards" data-en="Awards" data-fr="Récompenses" data-de="Auszeichnungen">Awards</a>
+  <a href="#resume" data-en="Resume" data-fr="CV" data-de="Lebenslauf">Resume</a>
+  <a href="#contact" data-en="Contact" data-fr="Contact" data-de="Kontakt">Contact</a>
 </nav>
 
 <div class="container">
 
 <section id="about">
-  <h2 data-en="About Me" data-fr="À propos" data-de="Über mich">About Me</h2>
+  <h2 data-en="About Me" data-fr="À propos de moi" data-de="Über mich">About Me</h2>
   <div class="about-container">
-    <img src="soccer photo.jpg" width="250" height="250">
+    <img src="soccer photo.jpg" alt="Profile">
     <p data-en="Mechanical Engineering student at Lakehead University graduating May 2026 with strong experience in design, simulation, and manufacturing."
-       data-fr="Étudiant en génie mécanique à Lakehead, diplômé en 2026, avec expérience en conception et fabrication."
-       data-de="Maschinenbaustudent an der Lakehead University mit Abschluss 2026 und Erfahrung in Design und Fertigung.">
+       data-fr="Étudiant en génie mécanique à Lakehead, diplômé en 2026, avec expérience en conception, simulation et fabrication."
+       data-de="Maschinenbaustudent an der Lakehead University mit Abschluss 2026 und Erfahrung in Design, Simulation und Fertigung.">
        Mechanical Engineering student at Lakehead University graduating May 2026 with strong experience in design, simulation, and manufacturing.
     </p>
   </div>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
+  <h2 data-en="Projects" data-fr="Projets" data-de="Projekte">Projects</h2>
   <div class="projects-grid">
 
     <div class="card" onclick="openProject('fsae')">
       <img src="fsae mountain photo.jpg">
       <div class="card-content">
         <h3>FSAE</h3>
-        <p>Click to view full breakdown</p>
+        <p data-en="Click to view full breakdown" data-fr="Cliquez pour voir les détails" data-de="Klicken für Details">Click to view full breakdown</p>
       </div>
     </div>
 
@@ -199,26 +202,36 @@
       <img src="https://via.placeholder.com/400x200">
       <div class="card-content">
         <h3>Mold Design</h3>
-        <p>Click to view full breakdown</p>
+        <p data-en="Click to view full breakdown" data-fr="Cliquez pour voir les détails" data-de="Klicken für Details">Click to view full breakdown</p>
       </div>
     </div>
 
   </div>
 </section>
 
+<section id="skills">
+  <h2 data-en="Skills" data-fr="Compétences" data-de="Fähigkeiten">Skills</h2>
+  <div class="skills">
+    <p>Software: SolidWorks, ANSYS Fluent, AutoCAD</p>
+    <p>Manufacturing: Machining, Lathe, Welding</p>
+    <p>Engineering: GD&T, CMM Analysis, Simulation</p>
+    <p>General: Project Management, Leadership</p>
+  </div>
+</section>
+
 <section id="awards">
-  <h2>Awards</h2>
+  <h2 data-en="Awards" data-fr="Récompenses" data-de="Auszeichnungen">Awards</h2>
   <p>OCAA All Academic Award</p>
   <p>Confederation College Honour Roll</p>
 </section>
 
 <section id="resume">
-  <h2>Resume</h2>
+  <h2 data-en="Resume" data-fr="CV" data-de="Lebenslauf">Resume</h2>
   <a class="btn" href="Nathan_Zondag_Resume.pdf">Download</a>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
+  <h2 data-en="Contact" data-fr="Contact" data-de="Kontakt">Contact</h2>
   <p>Email: nmzondag@gmail.com</p>
 </section>
 
@@ -230,7 +243,10 @@
   <span class="close-btn" onclick="closeProject()">✕</span>
   <div class="project-content">
     <h1>FSAE Project</h1>
-    <p>Full breakdown here.</p>
+    <p>Overview: Led aerodynamic and system design.</p>
+    <p>Problem: Improve performance.</p>
+    <p>Approach: CFD + design iteration.</p>
+    <p>Result: Improved efficiency.</p>
   </div>
 </div>
 
@@ -238,17 +254,22 @@
   <span class="close-btn" onclick="closeProject()">✕</span>
   <div class="project-content">
     <h1>Mold Design</h1>
-    <p>Full breakdown here.</p>
+    <p>Overview: Injection mold optimization.</p>
+    <p>Problem: Reduce failure.</p>
+    <p>Approach: CMM analysis.</p>
+    <p>Result: Improved reliability.</p>
   </div>
 </div>
 
 <script>
 function openProject(id) {
   document.getElementById(id).style.display = 'block';
+  document.body.style.overflow = 'hidden';
 }
 
 function closeProject() {
   document.querySelectorAll('.project-page').forEach(p => p.style.display = 'none');
+  document.body.style.overflow = 'auto';
 }
 
 function setLang(lang) {
@@ -264,4 +285,3 @@ function setLang(lang) {
 
 </body>
 </html>
-
