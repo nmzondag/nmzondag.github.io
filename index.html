@@ -2,31 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nathan Zondag | Mechanical Engineering Portfolio</title>
-  
-
+ 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: 'Inter', sans-serif;
       background: #0f172a;
       color: #e2e8f0;
       line-height: 1.6;
     }
-
     header {
       text-align: center;
       padding: 4rem 2rem;
       background: linear-gradient(135deg, #4D4D4D, #D1D1D1);
     }
-
     header h1 { font-size: 2.5rem; }
     header p { color: #94a3b8; }
-
     nav {
       display: flex;
       justify-content: center;
@@ -35,58 +29,49 @@
       background: #020617;
       position: sticky;
       top: 0;
+      z-index: 100;
     }
-
     nav a { color: #e2e8f0; text-decoration: none; }
     nav a:hover { color: #38bdf8; }
-
     .container {
       max-width: 1100px;
       margin: auto;
       padding: 2rem;
     }
-
     section { margin-bottom: 4rem; }
-
     h2 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       border-bottom: 2px solid #A1A1A1;
       padding-bottom: 0.5rem;
     }
-    
+   
     .education-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
     }
-
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
     }
-
     .card {
       background: #1e293b;
       border-radius: 12px;
       overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
-
     .card img {
       width: 100%;
       height: 150px;
       object-fit: cover;
     }
-
     .card-content { padding: 1rem; }
     .card-content p { color: #94a3b8; font-size: 0.9rem; }
-
     .btn {
       display: inline-block;
       margin-top: 10px;
@@ -96,23 +81,51 @@
       text-decoration: none;
       border-radius: 6px;
     }
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
+    .skills, .awards-list, .contact-info {
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+    .skills p, .awards-list p, .contact-info p {
+      margin: 0.6rem 0;
+      font-size: 1.05rem;
+    }
+    .full-width-card {
+      grid-column: 1 / -1;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #64748b;
+    /* About section - photo left of text */
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .about-container .left {
+      flex: 3;
+      min-width: 300px;
+    }
+    .about-container .right img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-container .right img {
+        margin: 1rem auto;
+      }
     }
   </style>
 </head>
-
 <body>
-
 <header>
   <h1>Nathan Zondag</h1>
   <p>Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Manufacturing & Design</p>
@@ -131,75 +144,62 @@
 <div class="container">
 
   <section id="about">
-  <h2>About Me</h2>
-  
-  <div class="about-container">
-    <div class="left">
-      <p>
-        Mechanical Engineering student at Lakehead University graduating May 2026 
-        with strong experience in design, simulation, and manufacturing. 
-        Experienced in leading engineering teams, developing optimized systems, 
-        and working hands-on with machining, welding, and composite materials.
-      </p>
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="left">
+        <p>
+          Mechanical Engineering student at Lakehead University graduating May 2026
+          with strong experience in design, simulation, and manufacturing.
+          Experienced in leading engineering teams, developing optimized systems,
+          and working hands-on with machining, welding, and composite materials.
+        </p>
+      </div>
+      <div class="right">
+        <img src="soccer photo.jpg" alt="Confederation Soccer / Thunderhawks">
+      </div>
     </div>
-    
-    <div class="right">
-      <img 
-        src="soccer photo.jpg"
-        width="250" 
-        height="250" 
-        alt="Confederation Soccer / Thunderhawks"
-      >
-    </div>
-  </div>
-</section>
-  
+  </section>
+
   <section id="education">
     <h2>Education</h2>
-
     <div class="education-grid">
-
-      <div class="card">
-        <img src="https://oappa.ca/wp-content/uploads/2016/02/Lakehead-rgb-01.jpg" alt="Lakehead U">
+      <div class="card full-width-card">
+        <img src="https://oappa.ca/wp-content/uploads/2016/02/Lakehead-rgb-01.jpg" alt="Lakehead University">
         <div class="card-content">
           <h3>Lakehead University</h3>
-          <p>Bachelor of Mechanical Engineering (2026)</p>
+          <p>Bachelor of Mechanical Engineering (Expected May 2026)</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="confed logo.jpg" width="250" height="250" alt="Confed College">
+        <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-content">
           <h3>Confederation College</h3>
           <p>Mechanical Engineering Technologist (2023)</p>
         </div>
       </div>
       
-    <div class="card">
-        <img src="confed logo.jpg" width="250" height="250" alt="Confed College">
+      <div class="card">
+        <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-content">
           <h3>Confederation College</h3>
           <p>Mechanical Engineering Technician (2022)</p>
         </div>
       </div>
       
-    <div class="card">
-        <img src="confed logo.jpg" width="250" height="250" alt="Confed College">
+      <div class="card">
+        <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-content">
           <h3>Confederation College</h3>
           <p>Mechanical Engineering Techniques (2021)</p>
         </div>
       </div>
-
     </div>
-
   </section>
-  
+
   <section id="projects">
     <h2>Projects & Experience</h2>
-
     <div class="projects-grid">
-
       <div class="card">
         <img src="fsae mountain photo.jpg" alt="FSAE">
         <div class="card-content">
@@ -207,7 +207,6 @@
           <p>Led aerodynamic, steering, and shifting system design. Optimized performance using simulation and built carbon fiber and aluminum components.</p>
         </div>
       </div>
-
       <div class="card">
         <img src="https://via.placeholder.com/400x200" alt="Mold Design">
         <div class="card-content">
@@ -215,7 +214,6 @@
           <p>Developed engineering drawings and repair plans using CMM data analysis for injection molding systems.</p>
         </div>
       </div>
-
       <div class="card">
         <img src="https://via.placeholder.com/400x200" alt="Auto Body">
         <div class="card-content">
@@ -223,51 +221,42 @@
           <p>Performed repair, estimation, and maintenance while managing operations in a fast-paced shop environment.</p>
         </div>
       </div>
-
     </div>
-
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
- <div class="skills">
-  <p><strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD</p>
-  <p><strong>Manufacturing:</strong> Machining, Lathe, Welding</p>
-  <p><strong>Engineering:</strong> R&D, GD&T, CMM Analysis, Simulation</p>
-  <p><strong>General:</strong> Project Management, Team Leadership, Organization, Attention to Details, Financial Focus</p>
-</div>
+    <div class="skills">
+      <p><strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD</p>
+      <p><strong>Manufacturing:</strong> Machining, Lathe, Welding</p>
+      <p><strong>Engineering:</strong> R&D, GD&T, CMM Analysis, Simulation</p>
+      <p><strong>General:</strong> Project Management, Team Leadership, Organization, Attention to Detail, Financial Focus</p>
+    </div>
+  </section>
 
-    </div>
-  
-  </section>
-<section id="awards">
+  <section id="awards">
     <h2>Awards</h2>
-  <div class="awards">
-    <p>2022-2023 OCAA All Academic Award</p>
-    <p>2022-2023 Confederation College Honour Roll </p>
-    <p>2021-2022 OCAA All Academic Award</p>
-    <p>2021-2022 Confederation College Honour Roll </p>
-    <p>2020-2021 Confederation College Honour Roll </p>
+    <div class="awards-list">
+      <p>2022–2023 OCAA All Academic Award</p>
+      <p>2022–2023 Confederation College Honour Roll</p>
+      <p>2021–2022 OCAA All Academic Award</p>
+      <p>2021–2022 Confederation College Honour Roll</p>
+      <p>2020–2021 Confederation College Honour Roll</p>
     </div>
-  
-      </div>
-  
   </section>
-  
+
   <section id="resume">
-   <div class="resume">
     <h2>Official Resume</h2>
-    <a class="btn" href="Nathan_Zondag_Resume.pdf" download>Download Resume</a>
-     </div>
+    <div class="resume">
+      <a class="btn" href="Nathan_Zondag_Resume.pdf" download>Download Resume</a>
     </div>
   </section>
 
   <section id="contact">
-    <div class="contact">
     <h2>Contact Information</h2>
-    <p>Email: nmzondag@gmail.com</p>
-    <p>Phone: 519-955-1942</p>
-      </div>
+    <div class="contact-info">
+      <p><strong>Email:</strong> nmzondag@gmail.com</p>
+      <p><strong>Phone:</strong> 519-955-1942</p>
     </div>
   </section>
 
@@ -276,5 +265,6 @@
 <footer>
   <p>© 2026 Nathan Zondag | Canada</p>
 </footer>
-  <p>© 2026 Nathan Zondag | Canada</p>
-</footer>
+
+</body>
+</html>
