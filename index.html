@@ -14,7 +14,7 @@
     body {
       font-family: 'Inter', sans-serif;
       background: #0f172a;
-      color: #e2e8f0;
+      color: #616161;
       line-height: 1.6;
     }
 
@@ -32,13 +32,18 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem;
-      background: #707070;
+      background: #172F8F;
       position: sticky;
       top: 0;
     }
-
     nav a { color: #e2e8f0; text-decoration: none; }
     nav a:hover { color: #38bdf8; }
+
+    .lang-switch {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
 
     .container {
       max-width: 1100px;
@@ -96,13 +101,49 @@
       text-decoration: none;
       border-radius: 6px;
     }
+      .project-page {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0f172a;
+      padding: 2rem;
+      overflow-y: auto;
+      z-index: 10;
+      display: none;
+    }
+      .project-content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #38bdf8;
+    }
 
     .skills {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
     }
-
+      .awards {
+      display: list;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .contact {
+      display: list;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .resume {
+      text-align: center;
+      gap: 1rem;
+    }
     footer {
       text-align: center;
       padding: 2rem;
@@ -112,50 +153,47 @@
 </head>
 
 <body>
+  
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('fr')">FR</button>
+  <button onclick="setLang('de')">DE</button>
+</div>
 
 <header>
-  <h1>Nathan Zondag</h1>
-  <p>Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Manufacturing & Design</p>
+  <h1 data-en="Nathan Zondag" data-fr="Nathan Zondag" data-de="Nathan Zondag">Nathan Zondag</h1>
+  <p data-en="Mechanical Engineering Student | FSAE Aerodynamics Lead | Manufacturing & Design"
+     data-fr="Étudiant en génie mécanique | Responsable aérodynamique FSAE | Conception et fabrication"
+     data-de="Maschinenbaustudent | FSAE Aerodynamik Leiter | Konstruktion und Fertigung">
+     Mechanical Engineering Student | FSAE Aerodynamics Lead | Manufacturing & Design
+  </p>
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#education">Education</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#awards">Awards</a>
-  <a href="#resume">Resume</a>
-  <a href="#contact">Contact</a>
+  <a href="#about" data-en="About" data-fr="À propos" data-de="Über mich">About</a>
+  <a href="#projects" data-en="Projects" data-fr="Projets" data-de="Projekte">Projects</a>
+  <a href="#skills" data-en="Skills" data-fr="Compétences" data-de="Fähigkeiten">Skills</a>
+  <a href="#awards" data-en="Awards" data-fr="Récompenses" data-de="Auszeichnungen">Awards</a>
+  <a href="#resume" data-en="Resume" data-fr="CV" data-de="Lebenslauf">Resume</a>
+  <a href="#contact" data-en="Contact" data-fr="Contact" data-de="Kontakt">Contact</a>
 </nav>
 
 <div class="container">
 
   <section id="about">
-  <h2>About Me</h2>
-  
+  <h2 data-en="About Me" data-fr="À Propos de Moi" data-de="Über Mich">About Me</h2>
   <div class="about-container">
-    <div class="left">
-      <p>
-        Mechanical Engineering student at Lakehead University graduating May 2026 
-        with strong experience in design, simulation, and manufacturing. 
-        Experienced in leading engineering teams, developing optimized systems, 
-        and working hands-on with machining, welding, and composite materials.
-      </p>
-    </div>
-    
-    <div class="right">
-      <img 
-        src="soccer photo.jpg"
-        width="250" 
-        height="250" 
-        alt="Confederation Soccer / Thunderhawks"
-      >
-    </div>
+    <img src="soccer photo.jpg" align="left">
+    <p data-en="Mechanical Engineering student at Lakehead University graduating May 2026 with strong experience in design, simulation, and manufacturing."
+       data-fr="Étudiant en génie mécanique à Lakehead, diplômé en 2026, avec expérience en conception, simulation et fabrication."
+       data-de="Maschinenbaustudent an der Lakehead University mit Abschluss 2026 und Erfahrung in Design, Simulation und Fertigung.">
+       Mechanical Engineering student at Lakehead University graduating May 2026 with strong experience in design, simulation, and manufacturing.
+    </p>
   </div>
 </section>
   
   <section id="education">
-    <h2>Education</h2>
+  <h2 data-en="Education" data-fr="Éducation" data-de="Ausbildung">Skills</h2>
 
     <div class="education-grid">
 
@@ -196,17 +234,17 @@
   </section>
   
   <section id="projects">
-    <h2>Projects & Experience</h2>
+ <section id="projects">
+  <h2 data-en="Projects & Experience" data-fr="Projets et Expérience" data-de="Projekte und Erfahrungen">Projects</h2>
+  <div class="projects-grid">
 
-    <div class="projects-grid">
-
-      <div class="card">
-        <img src="fsae mountain photo.jpg" alt="FSAE">
-        <div class="card-content">
-          <h3>FSAE Aerodynamics & Systems Lead</h3>
-          <p>Led aerodynamic, steering, and shifting system design. Optimized performance using simulation and built carbon fiber and aluminum components.</p>
-        </div>
+    <div class="card" onclick="openProject('fsae')">
+      <img src="fsae mountain photo.jpg">
+      <div class="card-content">
+        <h3>FSAE</h3>
+        <p data-en="Click to view full breakdown" data-fr="Cliquez pour voir les détails" data-de="Klicken für Details">Click to view full breakdown</p>
       </div>
+    </div>
 
       <div class="card">
         <img src="https://via.placeholder.com/400x200" alt="Mold Design">
