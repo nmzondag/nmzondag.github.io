@@ -17,7 +17,7 @@
     header {
       text-align: center;
       padding: clamp(2.5rem, 8vw, 4rem) 1rem 1.5rem;
-      background: linear-gradient(135deg, #D1D1D1, #4D4D4D);
+      background: #B8B8B8;
     }
     header h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
     header p { color: #FFFFFF; font-size: clamp(1rem, 4vw, 1.2rem); }
@@ -105,7 +105,7 @@
       overflow: hidden;
       transition: max-height 0.5s ease, padding 0.4s ease;
     }
-    .expandable.open { max-height: 3000px; padding: 0 1rem 1rem; }
+    .expandable.open { max-height: 4000px; padding: 0 1rem 1rem; }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -146,9 +146,7 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
+    .contact-info a:hover { text-decoration: underline; }
     .about-container {
       display: flex;
       flex-direction: column;
@@ -169,7 +167,6 @@
       color: #64748b;
       font-size: 0.9rem;
     }
-    /* Marquee for affiliations */
     .marquee {
       overflow: hidden;
       white-space: nowrap;
@@ -177,7 +174,7 @@
     }
     .marquee-content {
       display: inline-block;
-      animation: scroll-left 20s linear infinite;
+      animation: scroll-left 25s linear infinite;
     }
     .marquee-content img {
       height: 100px;
@@ -191,7 +188,6 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-    /* Breakpoints */
     @media (min-width: 480px) {
       .about-container { flex-direction: row; text-align: left; }
       .about-container .left { flex: 3; }
@@ -244,6 +240,7 @@
 </nav>
 
 <div class="container">
+
   <section id="about">
     <h2 data-i18n="sections.about">About Me</h2>
     <div class="about-container">
@@ -264,8 +261,6 @@
   <section id="education">
     <h2 data-i18n="sections.education">Education</h2>
     <div class="education-grid">
-
-      <!-- Lakehead - now structured like the others -->
       <div class="card">
         <img src="lakehead logo.jpg" alt="Lakehead University">
         <div class="card-header">
@@ -275,7 +270,6 @@
           <p data-i18n="education.lakehead.degree">Bachelor of Mechanical Engineering (Expected May 2026)</p>
         </div>
       </div>
-
       <div class="card">
         <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-content">
@@ -283,7 +277,6 @@
           <p data-i18n="education.confed.technologist">Mechanical Engineering Technologist (2023)</p>
         </div>
       </div>
-
       <div class="card">
         <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-content">
@@ -291,7 +284,6 @@
           <p data-i18n="education.confed.technician">Mechanical Engineering Technician (2022)</p>
         </div>
       </div>
-
       <div class="card">
         <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-content">
@@ -299,15 +291,13 @@
           <p data-i18n="education.confed.techniques">Mechanical Engineering Techniques (2021)</p>
         </div>
       </div>
-
     </div>
   </section>
-
-  <!-- The rest remains unchanged -->
 
   <section id="projects">
     <h2 data-i18n="sections.projects">Projects & Experience</h2>
     <div class="projects-grid">
+
       <div class="card" onclick="toggleExpand(this)">
         <img src="fsae mountain photo.jpg" alt="FSAE">
         <div class="card-header">
@@ -317,15 +307,52 @@
           <div class="card-content">
             <p data-i18n="projects.fsae.desc">Led aerodynamic, steering, and shifting system design. Optimized performance using simulation and built carbon fiber and aluminum components.</p>
             <div class="gallery">
-              <img src="https://via.placeholder.com/300x200/333/fff?text=FSAE+1" alt="">
-              <img src="https://via.placeholder.com/300x200/444/fff?text=FSAE+2" alt="">
-              <!-- ... rest of gallery ... -->
+              <img src="https://via.placeholder.com/300x200/333/fff?text=FSAE+1" alt="FSAE Image 1">
+              <img src="https://via.placeholder.com/300x200/444/fff?text=FSAE+2" alt="FSAE Image 2">
+              <img src="https://via.placeholder.com/300x200/555/fff?text=FSAE+3" alt="FSAE Image 3">
+              <!-- Replace with your real images when ready -->
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+            <p>Additional details, photos, CAD screenshots, CFD results, etc. can go here.</p>
           </div>
         </div>
       </div>
-      <!-- other project cards remain unchanged -->
+
+      <div class="card" onclick="toggleExpand(this)">
+        <img src="https://via.placeholder.com/400x200/2c3e50/ecf0f1?text=Mold+Design" alt="Mold Design">
+        <div class="card-header">
+          <h3 data-i18n="projects.mold.title">Mold Design Engineering</h3>
+        </div>
+        <div class="expandable">
+          <div class="card-content">
+            <p data-i18n="projects.mold.desc">Developed engineering drawings and repair plans using CMM data analysis for injection molding systems.</p>
+            <div class="gallery">
+              <img src="https://via.placeholder.com/300x200/333/fff?text=Mold+1" alt="Mold Image 1">
+              <img src="https://via.placeholder.com/300x200/444/fff?text=Mold+2" alt="Mold Image 2">
+              <!-- Replace with real images -->
+            </div>
+            <p>More information about tolerances, repairs, or process improvements.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="toggleExpand(this)">
+        <img src="https://via.placeholder.com/400x200/34495e/ecf0f1?text=Auto+Body" alt="Auto Body">
+        <div class="card-header">
+          <h3 data-i18n="projects.auto.title">Automotive Engineering Experience</h3>
+        </div>
+        <div class="expandable">
+          <div class="card-content">
+            <p data-i18n="projects.auto.desc">Performed repair, estimation, and maintenance while managing operations in a fast-paced shop environment.</p>
+            <div class="gallery">
+              <img src="https://via.placeholder.com/300x200/333/fff?text=Auto+1" alt="Auto Image 1">
+              <img src="https://via.placeholder.com/300x200/444/fff?text=Auto+2" alt="Auto Image 2">
+              <!-- Replace with real images -->
+            </div>
+            <p>Experience with bodywork, panel beating, paint prep, customer interaction, etc.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -373,10 +400,22 @@
         <div class="marquee-content">
           <img src="nz photo.png" alt="Affiliation 1">
           <img src="lufsae logo.png" alt="Affiliation 2">
+          <img src="jokey logo.png" alt="Affiliation 3">
+          <img src="https://via.placeholder.com/180x100/1e293b/ffffff?text=Affiliation+4" alt="Affiliation 4">
+          <img src="https://via.placeholder.com/180x100/1e293b/ffffff?text=Affiliation+5" alt="Affiliation 5">
+          <img src="https://via.placeholder.com/180x100/1e293b/ffffff?text=Affiliation+6" alt="Affiliation 6">
+          <!-- Duplicate set for seamless loop -->
+          <img src="nz photo.png" alt="Affiliation 1">
+          <img src="lufsae logo.png" alt="Affiliation 2">
+          <img src="jokey logo.png" alt="Affiliation 3">
+          <img src="https://via.placeholder.com/180x100/1e293b/ffffff?text=Affiliation+4" alt="Affiliation 4">
+          <img src="https://via.placeholder.com/180x100/1e293b/ffffff?text=Affiliation+5" alt="Affiliation 5">
+          <img src="https://via.placeholder.com/180x100/1e293b/ffffff?text=Affiliation+6" alt="Affiliation 6">
         </div>
       </div>
     </div>
   </section>
+
 </div>
 
 <footer>
@@ -384,15 +423,162 @@
 </footer>
 
 <script>
-  // Your existing language and toggle script remains unchanged
-  const translations = { /* ... your translations object ... */ };
-  function setLanguage(lang) { /* ... */ }
-  function toggleExpand(card) { /* ... */ }
+  const translations = {
+    en: {
+      name: "Nathan Zondag",
+      title: "Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Manufacturing & Design",
+      nav: {
+        about: "About",
+        education: "Education",
+        projects: "Projects",
+        skills: "Skills",
+        awards: "Awards",
+        resume: "Resume",
+        contact: "Contact",
+        affiliations: "Affiliations"
+      },
+      sections: {
+        about: "About Me",
+        education: "Education",
+        projects: "Projects & Experience",
+        skills: "Skills",
+        awards: "Awards",
+        resume: "Official Resume",
+        contact: "Contact Information",
+        affiliations: "Affiliations"
+      },
+      about: {
+        text: "Mechanical Engineering student at Lakehead University graduating May 2026 with strong experience in design, simulation, and manufacturing. Experienced in leading engineering teams, developing optimized systems, and working hands-on with machining, welding, and composite materials."
+      },
+      education: {
+        lakehead: { name: "Lakehead University", degree: "Bachelor of Mechanical Engineering (Expected May 2026)" },
+        confed: {
+          name: "Confederation College",
+          technologist: "Mechanical Engineering Technologist (2023)",
+          technician: "Mechanical Engineering Technician (2022)",
+          techniques: "Mechanical Engineering Techniques (2021)"
+        }
+      },
+      projects: {
+        fsae: {
+          title: "FSAE Aerodynamics & Systems Lead",
+          desc: "Led aerodynamic, steering, and shifting system design. Optimized performance using simulation and built carbon fiber and aluminum components."
+        },
+        mold: {
+          title: "Mold Design Engineering",
+          desc: "Developed engineering drawings and repair plans using CMM data analysis for injection molding systems."
+        },
+        auto: {
+          title: "Automotive Engineering Experience",
+          desc: "Performed repair, estimation, and maintenance while managing operations in a fast-paced shop environment."
+        }
+      },
+      skills: {
+        software: "<strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD",
+        manufacturing: "<strong>Manufacturing:</strong> Machining, Lathe, Welding",
+        engineering: "<strong>Engineering:</strong> R&D, GD&T, CMM Analysis, Simulation",
+        general: "<strong>General:</strong> Project Management, Team Leadership, Organization, Attention to Detail, Financial Focus"
+      },
+      awards: {
+        "2023_ocaa": "2022–2023 OCAA All Academic Award",
+        "2023_confed": "2022–2023 Confederation College Honour Roll",
+        "2022_ocaa": "2021–2022 OCAA All Academic Award",
+        "2022_confed": "2021–2022 Confederation College Honour Roll",
+        "2021_confed": "2020–2021 Confederation College Honour Roll"
+      },
+      resume: { button: "Download Resume" },
+      contact: { email_label: "Email", phone_label: "Phone" },
+      footer: "© 2026 Nathan Zondag | Canada"
+    },
+    fr: {
+      name: "Nathan Zondag",
+      title: "Baccalauréat en génie mécanique | Responsable aérodynamique FSAE | Fabrication et conception",
+      nav: { about: "À propos", education: "Éducation", projects: "Projets", skills: "Compétences", awards: "Prix", resume: "CV", contact: "Contact", affiliations: "Affiliations" },
+      sections: { about: "À propos de moi", education: "Éducation", projects: "Projets et expérience", skills: "Compétences", awards: "Prix", resume: "CV officiel", contact: "Coordonnées", affiliations: "Affiliations" },
+      about: { text: "Étudiant en génie mécanique à l'Université Lakehead, obtention du diplôme prévue en mai 2026. Forte expérience en conception, simulation et fabrication. Expérience dans le leadership d'équipes d'ingénierie, le développement de systèmes optimisés et le travail manuel avec usinage, soudage et matériaux composites." },
+      education: {
+        lakehead: { name: "Université Lakehead", degree: "Baccalauréat en génie mécanique (Prévu mai 2026)" },
+        confed: {
+          name: "Collège Confederation",
+          technologist: "Technologue en génie mécanique (2023)",
+          technician: "Technicien en génie mécanique (2022)",
+          techniques: "Techniques en génie mécanique (2021)"
+        }
+      },
+      projects: {
+        fsae: { title: "Responsable Aérodynamique et Systèmes FSAE", desc: "Direction de la conception des systèmes aérodynamiques, de direction et de changement de vitesse. Optimisation des performances par simulation et fabrication de composants en fibre de carbone et aluminium." },
+        mold: { title: "Ingénierie de conception de moules", desc: "Élaboration de dessins techniques et plans de réparation à partir de l'analyse de données CMM pour systèmes de moulage par injection." },
+        auto: { title: "Expérience en ingénierie automobile", desc: "Réalisation de réparations, estimations et maintenance dans un environnement d'atelier à rythme soutenu." }
+      },
+      skills: {
+        software: "<strong>Logiciels :</strong> SolidWorks, ANSYS Fluent, AutoCAD",
+        manufacturing: "<strong>Fabrication :</strong> Usinage, Tour, Soudage",
+        engineering: "<strong>Ingénierie :</strong> R&D, GD&T, Analyse CMM, Simulation",
+        general: "<strong>Général :</strong> Gestion de projet, Leadership d'équipe, Organisation, Attention aux détails, Orientation financière"
+      },
+      awards: {
+        "2023_ocaa": "Prix académique OCAA 2022–2023",
+        "2023_confed": "Tableau d'honneur du Collège Confederation 2022–2023",
+        "2022_ocaa": "Prix académique OCAA 2021–2022",
+        "2022_confed": "Tableau d'honneur du Collège Confederation 2021–2022",
+        "2021_confed": "Tableau d'honneur du Collège Confederation 2020–2021"
+      },
+      resume: { button: "Télécharger le CV" },
+      contact: { email_label: "Courriel", phone_label: "Téléphone" },
+      footer: "© 2026 Nathan Zondag | Canada"
+    },
+    // Add Spanish and German translations similarly (shortened here for brevity)
+    es: {
+      name: "Nathan Zondag",
+      title: "Licenciatura en Ingeniería Mecánica | Líder de Aerodinámica FSAE | Fabricación y Diseño",
+      nav: { about: "Acerca de", education: "Educación", projects: "Proyectos", skills: "Habilidades", awards: "Premios", resume: "Currículum", contact: "Contacto", affiliations: "Afiliaciones" },
+      sections: { about: "Sobre mí", education: "Educación", projects: "Proyectos y Experiencia", skills: "Habilidades", awards: "Premios", resume: "Currículum Oficial", contact: "Información de Contacto", affiliations: "Afiliaciones" },
+      about: { text: "Estudiante de Ingeniería Mecánica en Lakehead University, graduación prevista mayo 2026. Amplia experiencia en diseño, simulación y fabricación. Experiencia liderando equipos de ingeniería, desarrollando sistemas optimizados y trabajo manual con mecanizado, soldadura y materiales compuestos." },
+      // ... complete the rest similarly
+      footer: "© 2026 Nathan Zondag | Canadá"
+    },
+    de: {
+      name: "Nathan Zondag",
+      title: "Bachelor of Mechanical Engineering | FSAE Aerodynamik-Lead | Fertigung & Design",
+      nav: { about: "Über mich", education: "Ausbildung", projects: "Projekte", skills: "Fähigkeiten", awards: "Auszeichnungen", resume: "Lebenslauf", contact: "Kontakt", affiliations: "Zugehörigkeiten" },
+      sections: { about: "Über mich", education: "Ausbildung", projects: "Projekte & Erfahrung", skills: "Fähigkeiten", awards: "Auszeichnungen", resume: "Offizieller Lebenslauf", contact: "Kontaktinformationen", affiliations: "Zugehörigkeiten" },
+      // ... complete similarly
+      footer: "© 2026 Nathan Zondag | Kanada"
+    }
+  };
+
+  function setLanguage(lang) {
+    if (!translations[lang]) lang = 'en';
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const keys = el.getAttribute('data-i18n').split('.');
+      let val = translations[lang];
+      keys.forEach(k => { val = val?.[k]; });
+      if (val !== undefined) {
+        el.innerHTML = val;
+      }
+    });
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    localStorage.setItem('preferredLang', lang);
+    document.documentElement.lang = lang;
+  }
+
+  function toggleExpand(card) {
+    const expandable = card.querySelector('.expandable');
+    if (expandable) {
+      expandable.classList.toggle('open');
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('preferredLang') || 'en';
-    setLanguage(saved);
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    setLanguage(savedLang);
+
     document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+      btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+      });
     });
   });
 </script>
