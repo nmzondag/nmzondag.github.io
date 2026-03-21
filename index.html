@@ -163,6 +163,339 @@
       object-fit: cover;
       border-radius: 12px;
     }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    /* Marquee for affiliations */
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+    }
+    .marquee-content {
+      display: inline-block;
+      animation: scroll-left 20s linear infinite;
+    }
+    .marquee-content img {
+      height: 100px;
+      margin: 0 1.5rem;
+      vertical-align: middle;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      background: #111827;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    /* Breakpoints */
+    @media (min-width: 480px) {
+      .about-container { flex-direction: row; text-align: left; }
+      .about-container .left { flex: 3; }
+      .about-container .right img { width: 250px; height: 250px; }
+      nav { gap: 1.8rem; }
+    }
+    @media (min-width: 768px) {
+      .education-grid, .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      }
+      .lang-switcher { gap: 1.2rem; }
+      .gallery { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+      .gallery img { height: 120px; }
+    }
+    @media (min-width: 1024px) {
+      header { padding-top: 5rem; }
+      .container { padding: 2.5rem; }
+      nav { gap: 2.5rem; }
+      .lang-switcher {
+        position: absolute;
+        top: 2rem;
+        right: 3rem;
+        margin: 0;
+      }
+      .about-container .right img { width: 280px; height: 280px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1 data-i18n="name">Nathan Zondag</h1>
+  <p data-i18n="title">Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Manufacturing & Design</p>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="EN"> English</button>
+    <button class="lang-btn" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> Français</button>
+    <button class="lang-btn" data-lang="es"><img src="https://flagcdn.com/w20/es.png" alt="ES"> Español</button>
+    <button class="lang-btn" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE"> Deutsch</button>
+  </div>
+</header>
+
+<nav>
+  <a href="#about" data-i18n="nav.about">About</a>
+  <a href="#education" data-i18n="nav.education">Education</a>
+  <a href="#projects" data-i18n="nav.projects">Projects</a>
+  <a href="#skills" data-i18n="nav.skills">Skills</a>
+  <a href="#awards" data-i18n="nav.awards">Awards</a>
+  <a href="#resume" data-i18n="nav.resume">Resume</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+  <a href="#affiliations" data-i18n="nav.affiliations">Affiliations</a>
+</nav>
+
+<div class="container">
+  <section id="about">
+    <h2 data-i18n="sections.about">About Me</h2>
+    <div class="about-container">
+      <div class="left">
+        <p data-i18n="about.text">
+          Mechanical Engineering student at Lakehead University graduating May 2026
+          with strong experience in design, simulation, and manufacturing.
+          Experienced in leading engineering teams, developing optimized systems,
+          and working hands-on with machining, welding, and composite materials.
+        </p>
+      </div>
+      <div class="right">
+        <img src="soccer photo.jpg" alt="Confederation Soccer / Thunderhawks">
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2 data-i18n="sections.education">Education</h2>
+    <div class="education-grid">
+
+      <!-- Lakehead - now structured like the others -->
+      <div class="card">
+        <img src="lakehead logo.jpg" alt="Lakehead University">
+        <div class="card-header">
+          <h3 data-i18n="education.lakehead.name">Lakehead University</h3>
+        </div>
+        <div class="card-content">
+          <p data-i18n="education.lakehead.degree">Bachelor of Mechanical Engineering (Expected May 2026)</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="confed logo.jpg" alt="Confederation College">
+        <div class="card-content">
+          <h3 data-i18n="education.confed.name">Confederation College</h3>
+          <p data-i18n="education.confed.technologist">Mechanical Engineering Technologist (2023)</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="confed logo.jpg" alt="Confederation College">
+        <div class="card-content">
+          <h3 data-i18n="education.confed.name">Confederation College</h3>
+          <p data-i18n="education.confed.technician">Mechanical Engineering Technician (2022)</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="confed logo.jpg" alt="Confederation College">
+        <div class="card-content">
+          <h3 data-i18n="education.confed.name">Confederation College</h3>
+          <p data-i18n="education.confed.techniques">Mechanical Engineering Techniques (2021)</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- The rest remains unchanged -->
+
+  <section id="projects">
+    <h2 data-i18n="sections.projects">Projects & Experience</h2>
+    <div class="projects-grid">
+      <div class="card" onclick="toggleExpand(this)">
+        <img src="fsae mountain photo.jpg" alt="FSAE">
+        <div class="card-header">
+          <h3 data-i18n="projects.fsae.title">FSAE Aerodynamics & Systems Lead</h3>
+        </div>
+        <div class="expandable">
+          <div class="card-content">
+            <p data-i18n="projects.fsae.desc">Led aerodynamic, steering, and shifting system design. Optimized performance using simulation and built carbon fiber and aluminum components.</p>
+            <div class="gallery">
+              <img src="https://via.placeholder.com/300x200/333/fff?text=FSAE+1" alt="">
+              <img src="https://via.placeholder.com/300x200/444/fff?text=FSAE+2" alt="">
+              <!-- ... rest of gallery ... -->
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+          </div>
+        </div>
+      </div>
+      <!-- other project cards remain unchanged -->
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 data-i18n="sections.skills">Skills</h2>
+    <div class="skills">
+      <p data-i18n="skills.software"><strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD</p>
+      <p data-i18n="skills.manufacturing"><strong>Manufacturing:</strong> Machining, Lathe, Welding</p>
+      <p data-i18n="skills.engineering"><strong>Engineering:</strong> R&D, GD&T, CMM Analysis, Simulation</p>
+      <p data-i18n="skills.general"><strong>General:</strong> Project Management, Team Leadership, Organization, Attention to Detail, Financial Focus</p>
+    </div>
+  </section>
+
+  <section id="awards">
+    <h2 data-i18n="sections.awards">Awards</h2>
+    <div class="awards-list">
+      <p data-i18n="awards.2023_ocaa">2022–2023 OCAA All Academic Award</p>
+      <p data-i18n="awards.2023_confed">2022–2023 Confederation College Honour Roll</p>
+      <p data-i18n="awards.2022_ocaa">2021–2022 OCAA All Academic Award</p>
+      <p data-i18n="awards.2022_confed">2021–2022 Confederation College Honour Roll</p>
+      <p data-i18n="awards.2021_confed">2020–2021 Confederation College Honour Roll</p>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2 data-i18n="sections.resume">Official Resume</h2>
+    <div class="resume">
+      <a class="btn" href="Nathan_Zondag_Resume.pdf" download data-i18n="resume.button">Download Resume</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 data-i18n="sections.contact">Contact Information</h2>
+    <div class="contact-info">
+      <p><strong data-i18n="contact.email_label">Email:</strong> nmzondag@gmail.com</p>
+      <p><strong data-i18n="contact.phone_label">Phone:</strong> 519-955-1942</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nathanzondag/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nathanzondag</a></p>
+    </div>
+  </section>
+
+  <section id="affiliations">
+    <h2 data-i18n="sections.affiliations">Affiliations</h2>
+    <div class="affiliations">
+      <div class="marquee">
+        <div class="marquee-content">
+          <img src="https://via.placeholder.com/180x100/1e293b/ffffff?text=Affiliation+1" alt="Affiliation 1">
+          <!-- ... rest of marquee images ... -->
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p data-i18n="footer">© 2026 Nathan Zondag | Canada</p>
+</footer>
+
+<script>
+  // Your existing language and toggle script remains unchanged
+  const translations = { /* ... your translations object ... */ };
+  function setLanguage(lang) { /* ... */ }
+  function toggleExpand(card) { /* ... */ }
+  document.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('preferredLang') || 'en';
+    setLanguage(saved);
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+  });
+</script>
+</body>
+</html>    }
+    .lang-btn img { width: 18px; height: auto; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 4vw, 2rem);
+    }
+    section { margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+    h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #A1A1A1;
+      padding-bottom: 0.5rem;
+    }
+    .education-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+    .card img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .card-header { padding: 1.2rem 1rem 0.5rem; }
+    .card-content { padding: 0 1rem 1.2rem; }
+    .card-content p { color: #94a3b8; font-size: 0.95rem; }
+    .expandable {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.4s ease;
+    }
+    .expandable.open { max-height: 3000px; padding: 0 1rem 1rem; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.8rem;
+      margin: 1.2rem 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .btn {
+      display: inline-block;
+      margin: 0.8rem 0;
+      padding: 0.8rem 1.4rem;
+      background: #38bdf8;
+      color: #020617;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      min-width: 140px;
+      text-align: center;
+    }
+    .skills, .awards-list, .contact-info, .resume, .affiliations {
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+    .skills p, .awards-list p, .contact-info p {
+      margin: 0.8rem 0;
+      font-size: clamp(0.95rem, 3.2vw, 1.05rem);
+    }
+    .contact-info a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .about-container .left { max-width: 90%; }
+    .about-container .right img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
     .full-width-card { grid-column: 1 / -1; }
     footer {
       text-align: center;
