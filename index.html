@@ -78,7 +78,14 @@
       border-bottom: 2px solid #A1A1A1;
       padding-bottom: 0.5rem;
     }
-    .education-grid, .projects-grid {
+    h2 a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    h2 a:hover {
+      text-decoration: underline;
+    }
+    .education-grid, .projects-grid, .detailed-projects-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.5rem;
@@ -227,7 +234,6 @@
     <button class="lang-btn" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE"> Deutsch</button>
   </div>
 </header>
-
 <nav>
   <a href="#about" data-i18n="nav.about">About</a>
   <a href="#education" data-i18n="nav.education">Education</a>
@@ -238,9 +244,7 @@
   <a href="#contact" data-i18n="nav.contact">Contact</a>
   <a href="#affiliations" data-i18n="nav.affiliations">Affiliations</a>
 </nav>
-
 <div class="container">
-
   <section id="about">
     <h2 data-i18n="sections.about">About Me</h2>
     <div class="about-container">
@@ -257,7 +261,6 @@
       </div>
     </div>
   </section>
-
   <section id="education">
     <h2 data-i18n="sections.education">Education</h2>
     <div class="education-grid">
@@ -293,11 +296,9 @@
       </div>
     </div>
   </section>
-
   <section id="projects">
-    <h2 data-i18n="sections.projects">Projects & Experience</h2>
+    <h2 data-i18n="sections.projects"><a href="#detailed-projects">Projects & Experience</a></h2>
     <div class="projects-grid">
-
       <div class="card" onclick="toggleExpand(this)">
         <img src="fsae mountain photo.jpg" alt="FSAE">
         <div class="card-header">
@@ -310,13 +311,11 @@
               <img src="https://via.placeholder.com/300x200/333/fff?text=FSAE+1" alt="FSAE Image 1">
               <img src="https://via.placeholder.com/300x200/444/fff?text=FSAE+2" alt="FSAE Image 2">
               <img src="https://via.placeholder.com/300x200/555/fff?text=FSAE+3" alt="FSAE Image 3">
-              <!-- Replace with your real images when ready -->
             </div>
             <p>Additional details, photos, CAD screenshots, CFD results, etc. can go here.</p>
           </div>
         </div>
       </div>
-
       <div class="card" onclick="toggleExpand(this)">
         <img src="https://via.placeholder.com/400x200/2c3e50/ecf0f1?text=Mold+Design" alt="Mold Design">
         <div class="card-header">
@@ -328,13 +327,11 @@
             <div class="gallery">
               <img src="https://via.placeholder.com/300x200/333/fff?text=Mold+1" alt="Mold Image 1">
               <img src="https://via.placeholder.com/300x200/444/fff?text=Mold+2" alt="Mold Image 2">
-              <!-- Replace with real images -->
             </div>
             <p>More information about tolerances, repairs, or process improvements.</p>
           </div>
         </div>
       </div>
-
       <div class="card" onclick="toggleExpand(this)">
         <img src="https://via.placeholder.com/400x200/34495e/ecf0f1?text=Auto+Body" alt="Auto Body">
         <div class="card-header">
@@ -346,13 +343,99 @@
             <div class="gallery">
               <img src="https://via.placeholder.com/300x200/333/fff?text=Auto+1" alt="Auto Image 1">
               <img src="https://via.placeholder.com/300x200/444/fff?text=Auto+2" alt="Auto Image 2">
-              <!-- Replace with real images -->
             </div>
             <p>Experience with bodywork, panel beating, paint prep, customer interaction, etc.</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- New detailed projects section (1-column, 9 items) -->
+  <section id="detailed-projects">
+    <h2 data-i18n="sections.detailed_projects">Detailed Projects (9 Entries)</h2>
+    <div class="detailed-projects-grid">
+      <div class="card">
+        <div class="card-header">
+          <h3>Project 1 – Title (e.g. FSAE Front Wing Optimization)</h3>
+        </div>
+        <div class="card-content">
+          <p>Placeholder: Brief description, goals, your role, key outcomes, tools used (SolidWorks, ANSYS, etc.).</p>
+          <img src="https://via.placeholder.com/600x400/333/fff?text=Project+1" alt="Project 1">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Project 2 – Title</h3>
+        </div>
+        <div class="card-content">
+          <p>Placeholder: Description...</p>
+          <img src="https://via.placeholder.com/600x400/444/fff?text=Project+2" alt="Project 2">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Project 3 – Title</h3>
+        </div>
+        <div class="card-content">
+          <p>Placeholder...</p>
+          <img src="https://via.placeholder.com/600x400/555/fff?text=Project+3" alt="Project 3">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Project 4 – Title</h3>
+        </div>
+        <div class="card-content">
+          <p>Placeholder...</p>
+          <img src="https://via.placeholder.com/600x400/666/fff?text=Project+4" alt="Project 4">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Project 5 – Title</h3>
+        </div>
+        <div class="card-content">
+          <p>Placeholder...</p>
+          <img src="https://via.placeholder.com/600x400/777/fff?text=Project+5" alt="Project 5">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Project 6 – Title</h3>
+        </div>
+        <div class="card-content">
+          <p>Placeholder...</p>
+          <img src="https://via.placeholder.com/600x400/888/fff?text=Project+6" alt="Project 6">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Project 7 – Title</h3>
+        </div>
+        <div class="card-content">
+          <p>Placeholder...</p>
+          <img src="https://via.placeholder.com/600x400/999/fff?text=Project+7" alt="Project 7">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Project 8 – Title</h3>
+        </div>
+        <div class="card-content">
+          <p>Placeholder...</p>
+          <img src="https://via.placeholder.com/600x400/aaa/fff?text=Project+8" alt="Project 8">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Project 9 – Title</h3>
+        </div>
+        <div class="card-content">
+          <p>Placeholder...</p>
+          <img src="https://via.placeholder.com/600x400/bbb/fff?text=Project+9" alt="Project 9">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -365,7 +448,6 @@
       <p data-i18n="skills.general"><strong>General:</strong> Project Management, Team Leadership, Organization, Attention to Detail, Financial Focus</p>
     </div>
   </section>
-
   <section id="awards">
     <h2 data-i18n="sections.awards">Awards</h2>
     <div class="awards-list">
@@ -376,14 +458,12 @@
       <p data-i18n="awards.2021_confed">2020–2021 Confederation College Honour Roll</p>
     </div>
   </section>
-
   <section id="resume">
     <h2 data-i18n="sections.resume">Official Resume</h2>
     <div class="resume">
       <a class="btn" href="Nathan_Zondag_Resume.pdf" download data-i18n="resume.button">Download Resume</a>
     </div>
   </section>
-
   <section id="contact">
     <h2 data-i18n="sections.contact">Contact Information</h2>
     <div class="contact-info">
@@ -392,7 +472,6 @@
       <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nathanzondag/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nathanzondag</a></p>
     </div>
   </section>
-
   <section id="affiliations">
     <h2 data-i18n="sections.affiliations">Affiliations</h2>
     <div class="affiliations">
@@ -415,9 +494,7 @@
       </div>
     </div>
   </section>
-
 </div>
-
 <footer>
   <p data-i18n="footer">© 2026 Nathan Zondag | Canada</p>
 </footer>
@@ -441,6 +518,7 @@
         about: "About Me",
         education: "Education",
         projects: "Projects & Experience",
+        detailed_projects: "Detailed Projects (9 Entries)",
         skills: "Skills",
         awards: "Awards",
         resume: "Official Resume",
@@ -494,7 +572,7 @@
       name: "Nathan Zondag",
       title: "Baccalauréat en génie mécanique | Responsable aérodynamique FSAE | Fabrication et conception",
       nav: { about: "À propos", education: "Éducation", projects: "Projets", skills: "Compétences", awards: "Prix", resume: "CV", contact: "Contact", affiliations: "Affiliations" },
-      sections: { about: "À propos de moi", education: "Éducation", projects: "Projets et expérience", skills: "Compétences", awards: "Prix", resume: "CV officiel", contact: "Coordonnées", affiliations: "Affiliations" },
+      sections: { about: "À propos de moi", education: "Éducation", projects: "Projets et expérience", detailed_projects: "Projets détaillés (9 entrées)", skills: "Compétences", awards: "Prix", resume: "CV officiel", contact: "Coordonnées", affiliations: "Affiliations" },
       about: { text: "Étudiant en génie mécanique à l'Université Lakehead, obtention du diplôme prévue en mai 2026. Forte expérience en conception, simulation et fabrication. Expérience dans le leadership d'équipes d'ingénierie, le développement de systèmes optimisés et le travail manuel avec usinage, soudage et matériaux composites." },
       education: {
         lakehead: { name: "Université Lakehead", degree: "Baccalauréat en génie mécanique (Prévu mai 2026)" },
@@ -527,22 +605,78 @@
       contact: { email_label: "Courriel", phone_label: "Téléphone" },
       footer: "© 2026 Nathan Zondag | Canada"
     },
-    // Add Spanish and German translations similarly (shortened here for brevity)
     es: {
       name: "Nathan Zondag",
       title: "Licenciatura en Ingeniería Mecánica | Líder de Aerodinámica FSAE | Fabricación y Diseño",
       nav: { about: "Acerca de", education: "Educación", projects: "Proyectos", skills: "Habilidades", awards: "Premios", resume: "Currículum", contact: "Contacto", affiliations: "Afiliaciones" },
-      sections: { about: "Sobre mí", education: "Educación", projects: "Proyectos y Experiencia", skills: "Habilidades", awards: "Premios", resume: "Currículum Oficial", contact: "Información de Contacto", affiliations: "Afiliaciones" },
-      about: { text: "Estudiante de Ingeniería Mecánica en Lakehead University, graduación prevista mayo 2026. Amplia experiencia en diseño, simulación y fabricación. Experiencia liderando equipos de ingeniería, desarrollando sistemas optimizados y trabajo manual con mecanizado, soldadura y materiales compuestos." },
-      // ... complete the rest similarly
+      sections: { about: "Sobre mí", education: "Educación", projects: "Proyectos y Experiencia", detailed_projects: "Proyectos Detallados (9 Entradas)", skills: "Habilidades", awards: "Premios", resume: "Currículum Oficial", contact: "Información de Contacto", affiliations: "Afiliaciones" },
+      about: { text: "Estudiante de Ingeniería Mecánica en Lakehead University, graduación prevista en mayo de 2026 con amplia experiencia en diseño, simulación y fabricación. Experiencia liderando equipos de ingeniería, desarrollando sistemas optimizados y trabajo práctico con mecanizado, soldadura y materiales compuestos." },
+      education: {
+        lakehead: { name: "Universidad Lakehead", degree: "Licenciatura en Ingeniería Mecánica (2026)" },
+        confed: {
+          name: "Colegio Confederation",
+          technologist: "Tecnólogo en Ingeniería Mecánica (2023)",
+          technician: "Técnico en Ingeniería Mecánica (2022)",
+          techniques: "Técnicas en Ingeniería Mecánica (2021)"
+        }
+      },
+      projects: {
+        fsae: { title: "Líder de Aerodinámica y Sistemas FSAE", desc: "Dirigí el diseño de sistemas aerodinámicos, de dirección y de cambio de marchas. Optimización del rendimiento mediante simulación y fabricación de componentes de fibra de carbono y aluminio." },
+        mold: { title: "Ingeniería de Diseño de Moldes", desc: "Desarrollé planos de ingeniería y planes de reparación utilizando análisis de datos CMM para sistemas de moldeo por inyección." },
+        auto: { title: "Experiencia en Ingeniería Automotriz", desc: "Realicé reparaciones, estimaciones y mantenimiento mientras gestionaba operaciones en un entorno de taller de ritmo rápido." }
+      },
+      skills: {
+        software: "<strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD",
+        manufacturing: "<strong>Fabricación:</strong> Mecanizado, Torno, Soldadura",
+        engineering: "<strong>Ingeniería:</strong> I+D, GD&T, Análisis CMM, Simulación",
+        general: "<strong>General:</strong> Gestión de Proyectos, Liderazgo de Equipos, Organización, Atención al Detalle, Enfoque Financiero"
+      },
+      awards: {
+        "2023_ocaa": "Premio Académico OCAA 2022–2023",
+        "2023_confed": "Cuadro de Honor del Colegio Confederation 2022–2023",
+        "2022_ocaa": "Premio Académico OCAA 2021–2022",
+        "2022_confed": "Cuadro de Honor del Colegio Confederation 2021–2022",
+        "2021_confed": "Cuadro de Honor del Colegio Confederation 2020–2021"
+      },
+      resume: { button: "Descargar Currículum" },
+      contact: { email_label: "Correo", phone_label: "Teléfono" },
       footer: "© 2026 Nathan Zondag | Canadá"
     },
     de: {
       name: "Nathan Zondag",
       title: "Bachelor of Mechanical Engineering | FSAE Aerodynamik-Lead | Fertigung & Design",
       nav: { about: "Über mich", education: "Ausbildung", projects: "Projekte", skills: "Fähigkeiten", awards: "Auszeichnungen", resume: "Lebenslauf", contact: "Kontakt", affiliations: "Zugehörigkeiten" },
-      sections: { about: "Über mich", education: "Ausbildung", projects: "Projekte & Erfahrung", skills: "Fähigkeiten", awards: "Auszeichnungen", resume: "Offizieller Lebenslauf", contact: "Kontaktinformationen", affiliations: "Zugehörigkeiten" },
-      // ... complete similarly
+      sections: { about: "Über mich", education: "Ausbildung", projects: "Projekte & Erfahrung", detailed_projects: "Detaillierte Projekte (9 Einträge)", skills: "Fähigkeiten", awards: "Auszeichnungen", resume: "Offizieller Lebenslauf", contact: "Kontaktinformationen", affiliations: "Zugehörigkeiten" },
+      about: { text: "Student des Maschinenbaus an der Lakehead University, Abschluss geplant im Mai 2026 mit umfangreicher Erfahrung in Konstruktion, Simulation und Fertigung. Erfahrung in der Leitung von Ingenieurteams, Entwicklung optimierter Systeme sowie praktische Arbeit mit spanender Bearbeitung, Schweißen und Verbundwerkstoffen." },
+      education: {
+        lakehead: { name: "Lakehead University", degree: "Bachelor of Mechanical Engineering (2026)" },
+        confed: {
+          name: "Confederation College",
+          technologist: "Maschinenbau-Technologe (2023)",
+          technician: "Maschinenbau-Techniker (2022)",
+          techniques: "Maschinenbau-Techniken (2021)"
+        }
+      },
+      projects: {
+        fsae: { title: "FSAE Aerodynamik- und Systemleiter", desc: "Leitung des Designs von aerodynamischen Systemen, Lenkung und Schaltsystem. Leistungsoptimierung durch Simulation sowie Herstellung von Carbonfaser- und Aluminium-Komponenten." },
+        mold: { title: "Formenbau-Engineering", desc: "Erstellung von technischen Zeichnungen und Reparaturplänen auf Basis von CMM-Datenanalyse für Spritzgießsysteme." },
+        auto: { title: "Erfahrung im Automobil-Engineering", desc: "Durchführung von Reparaturen, Kostenvoranschlägen und Wartung sowie Betriebsmanagement in einem schnelllebigen Werkstattumfeld." }
+      },
+      skills: {
+        software: "<strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD",
+        manufacturing: "<strong>Fertigung:</strong> Spanende Bearbeitung, Drehen, Schweißen",
+        engineering: "<strong>Ingenieurwesen:</strong> F&E, GD&T, CMM-Analyse, Simulation",
+        general: "<strong>Allgemein:</strong> Projektmanagement, Teamführung, Organisation, Detailgenauigkeit, Kostenbewusstsein"
+      },
+      awards: {
+        "2023_ocaa": "OCAA All Academic Award 2022–2023",
+        "2023_confed": "Ehrenliste Confederation College 2022–2023",
+        "2022_ocaa": "OCAA All Academic Award 2021–2022",
+        "2022_confed": "Ehrenliste Confederation College 2021–2022",
+        "2021_confed": "Ehrenliste Confederation College 2020–2021"
+      },
+      resume: { button: "Lebenslauf herunterladen" },
+      contact: { email_label: "E-Mail", phone_label: "Telefon" },
       footer: "© 2026 Nathan Zondag | Kanada"
     }
   };
@@ -574,7 +708,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'en';
     setLanguage(savedLang);
-
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         setLanguage(btn.dataset.lang);
