@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nathan Zondag | Mechanical Engineering Portfolio</title>
- 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,8 +20,7 @@
       background: linear-gradient(135deg, #D1D1D1, #4D4D4D);
     }
     header h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
-    header p  { color: #FFFFFF; font-size: clamp(1rem, 4vw, 1.2rem); }
-
+    header p { color: #FFFFFF; font-size: clamp(1rem, 4vw, 1.2rem); }
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -43,7 +41,6 @@
       transition: background 0.2s;
     }
     nav a:hover { background: rgba(56,189,248,0.15); }
-
     .lang-switcher {
       display: flex;
       flex-wrap: wrap;
@@ -69,7 +66,6 @@
       background: rgba(56,189,248,0.12);
     }
     .lang-btn img { width: 18px; height: auto; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
-
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -82,7 +78,6 @@
       border-bottom: 2px solid #A1A1A1;
       padding-bottom: 0.5rem;
     }
-
     .education-grid, .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -105,7 +100,6 @@
     .card-header { padding: 1.2rem 1rem 0.5rem; }
     .card-content { padding: 0 1rem 1.2rem; }
     .card-content p { color: #94a3b8; font-size: 0.95rem; }
-
     .expandable {
       max-height: 0;
       overflow: hidden;
@@ -125,7 +119,6 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     }
-
     .btn {
       display: inline-block;
       margin: 0.8rem 0;
@@ -138,7 +131,6 @@
       min-width: 140px;
       text-align: center;
     }
-
     .skills, .awards-list, .contact-info, .resume {
       background: #1e293b;
       padding: 1.5rem;
@@ -149,7 +141,6 @@
       margin: 0.8rem 0;
       font-size: clamp(0.95rem, 3.2vw, 1.05rem);
     }
-
     .about-container {
       display: flex;
       flex-direction: column;
@@ -157,34 +148,28 @@
       gap: 1.5rem;
       text-align: center;
     }
-    .about-container .left  { max-width: 90%; }
+    .about-container .left { max-width: 90%; }
     .about-container .right img {
       width: 220px;
       height: 220px;
       object-fit: cover;
       border-radius: 12px;
     }
-
-    .full-width-card { grid-column: 1 / -1; }
-
     footer {
       text-align: center;
       padding: 2rem 1rem;
       color: #64748b;
       font-size: 0.9rem;
     }
-
     /* ──────────────────────────────────────
        Breakpoints (mobile-first)
     ────────────────────────────────────── */
-
     @media (min-width: 480px) {
       .about-container { flex-direction: row; text-align: left; }
       .about-container .left { flex: 3; }
       .about-container .right img { width: 250px; height: 250px; }
       nav { gap: 1.8rem; }
     }
-
     @media (min-width: 768px) {
       .education-grid, .projects-grid {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -193,27 +178,24 @@
       .gallery { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
       .gallery img { height: 120px; }
     }
-
     @media (min-width: 1024px) {
       header { padding-top: 5rem; }
       .container { padding: 2.5rem; }
       nav { gap: 2.5rem; }
-      .lang-switcher { 
-        position: absolute; 
-        top: 2rem; 
-        right: 3rem; 
-        margin: 0; 
+      .lang-switcher {
+        position: absolute;
+        top: 2rem;
+        right: 3rem;
+        margin: 0;
       }
       .about-container .right img { width: 280px; height: 280px; }
     }
   </style>
 </head>
 <body>
-
 <header>
   <h1 data-i18n="name">Nathan Zondag</h1>
   <p data-i18n="title">Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Manufacturing & Design</p>
-
   <div class="lang-switcher">
     <button class="lang-btn active" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="EN"> English</button>
     <button class="lang-btn" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> Français</button>
@@ -221,19 +203,16 @@
     <button class="lang-btn" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE"> Deutsch</button>
   </div>
 </header>
-
 <nav>
-  <a href="#about"    data-i18n="nav.about">About</a>
+  <a href="#about" data-i18n="nav.about">About</a>
   <a href="#education" data-i18n="nav.education">Education</a>
-  <a href="#projects"  data-i18n="nav.projects">Projects</a>
-  <a href="#skills"    data-i18n="nav.skills">Skills</a>
-  <a href="#awards"    data-i18n="nav.awards">Awards</a>
-  <a href="#resume"    data-i18n="nav.resume">Resume</a>
-  <a href="#contact"   data-i18n="nav.contact">Contact</a>
+  <a href="#projects" data-i18n="nav.projects">Projects</a>
+  <a href="#skills" data-i18n="nav.skills">Skills</a>
+  <a href="#awards" data-i18n="nav.awards">Awards</a>
+  <a href="#resume" data-i18n="nav.resume">Resume</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
 </nav>
-
 <div class="container">
-
   <section id="about">
     <h2 data-i18n="sections.about">About Me</h2>
     <div class="about-container">
@@ -250,18 +229,16 @@
       </div>
     </div>
   </section>
-
   <section id="education">
     <h2 data-i18n="sections.education">Education</h2>
     <div class="education-grid">
-      <div class="card full-width-card">
+      <div class="card">
         <img src="lakehead logo.jpg" alt="Lakehead University">
         <div class="card-content">
           <h3 data-i18n="education.lakehead.name">Lakehead University</h3>
           <p data-i18n="education.lakehead.degree">Bachelor of Mechanical Engineering (Expected May 2026)</p>
         </div>
       </div>
-
       <div class="card">
         <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-content">
@@ -269,7 +246,6 @@
           <p data-i18n="education.confed.technologist">Mechanical Engineering Technologist (2023)</p>
         </div>
       </div>
-
       <div class="card">
         <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-content">
@@ -277,7 +253,6 @@
           <p data-i18n="education.confed.technician">Mechanical Engineering Technician (2022)</p>
         </div>
       </div>
-
       <div class="card">
         <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-content">
@@ -287,11 +262,9 @@
       </div>
     </div>
   </section>
-
   <section id="projects">
     <h2 data-i18n="sections.projects">Projects & Experience</h2>
     <div class="projects-grid">
-
       <div class="card" onclick="toggleExpand(this)">
         <img src="fsae mountain photo.jpg" alt="FSAE">
         <div class="card-header">
@@ -316,7 +289,6 @@
           </div>
         </div>
       </div>
-
       <div class="card" onclick="toggleExpand(this)">
         <img src="https://via.placeholder.com/400x200/2c3e50/ecf0f1?text=Mold+Design" alt="Mold Design">
         <div class="card-header">
@@ -341,7 +313,6 @@
           </div>
         </div>
       </div>
-
       <div class="card" onclick="toggleExpand(this)">
         <img src="https://via.placeholder.com/400x200/34495e/ecf0f1?text=Auto+Body" alt="Auto Body">
         <div class="card-header">
@@ -366,10 +337,8 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
-
   <section id="skills">
     <h2 data-i18n="sections.skills">Skills</h2>
     <div class="skills">
@@ -379,7 +348,6 @@
       <p data-i18n="skills.general"><strong>General:</strong> Project Management, Team Leadership, Organization, Attention to Detail, Financial Focus</p>
     </div>
   </section>
-
   <section id="awards">
     <h2 data-i18n="sections.awards">Awards</h2>
     <div class="awards-list">
@@ -390,28 +358,24 @@
       <p data-i18n="awards.2021_confed">2020–2021 Confederation College Honour Roll</p>
     </div>
   </section>
-
   <section id="resume">
     <h2 data-i18n="sections.resume">Official Resume</h2>
     <div class="resume">
       <a class="btn" href="Nathan_Zondag_Resume.pdf" download data-i18n="resume.button">Download Resume</a>
     </div>
   </section>
-
   <section id="contact">
     <h2 data-i18n="sections.contact">Contact Information</h2>
     <div class="contact-info">
       <p><strong data-i18n="contact.email_label">Email:</strong> nmzondag@gmail.com</p>
       <p><strong data-i18n="contact.phone_label">Phone:</strong> 519-955-1942</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nathanzondag/" target="_blank" style="color: #38bdf8; text-decoration: none;">linkedin.com/in/nathanzondag</a></p>
     </div>
   </section>
-
 </div>
-
 <footer>
   <p data-i18n="footer">© 2026 Nathan Zondag | Canada</p>
 </footer>
-
 <script>
   const translations = {
     en: {
@@ -543,7 +507,6 @@
       footer: "© 2026 Nathan Zondag | Kanada"
     }
   };
-
   function setLanguage(lang) {
     if (!translations[lang]) lang = 'en';
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -556,11 +519,9 @@
     localStorage.setItem('preferredLang', lang);
     document.documentElement.lang = lang;
   }
-
   function toggleExpand(card) {
     card.querySelector('.expandable').classList.toggle('open');
   }
-
   document.addEventListener('DOMContentLoaded', () => {
     const saved = localStorage.getItem('preferredLang') || 'en';
     setLanguage(saved);
@@ -569,6 +530,5 @@
     });
   });
 </script>
-
 </body>
 </html>
