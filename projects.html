@@ -67,21 +67,20 @@
     }
     .lang-btn img { width: 18px; height: auto; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
     .container {
-      max-width: 1100px;
+      max-width: 1300px;
       margin: 0 auto;
       padding: clamp(1rem, 4vw, 2rem);
     }
-    section { margin-bottom: clamp(2.5rem, 6vw, 4rem); }
     h2 {
       font-size: clamp(1.5rem, 5vw, 2rem);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       border-bottom: 2px solid #A1A1A1;
       padding-bottom: 0.5rem;
     }
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.8rem;
     }
     .card {
       background: #1e293b;
@@ -92,12 +91,12 @@
     }
     .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
     .card-header {
-      padding: 1.2rem 1.4rem;
+      padding: 1.3rem 1.4rem;
       background: #253549;
     }
     .card-header h3 {
       margin: 0;
-      font-size: 1.35rem;
+      font-size: 1.32rem;
     }
     .card-content {
       padding: 0 1.4rem 1.4rem;
@@ -109,15 +108,15 @@
     .expandable {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.6s ease-out, padding 0.4s ease;
+      transition: max-height 0.65s ease-out, padding 0.4s ease;
     }
     .expandable.open {
-      max-height: 5000px;
+      max-height: 4800px;
       padding: 0.5rem 0 1.5rem;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.2rem;
       margin: 1.5rem 0;
     }
@@ -140,24 +139,26 @@
     }
     .btn {
       display: inline-block;
-      margin: 1.5rem 0 0.5rem;
-      padding: 0.9rem 1.8rem;
+      margin-top: 1.5rem;
+      padding: 0.95rem 1.9rem;
       background: #38bdf8;
       color: #020617;
       text-decoration: none;
       border-radius: 6px;
       font-weight: 600;
-      min-width: 160px;
-      text-align: center;
     }
     footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
       color: #64748b;
       font-size: 0.9rem;
     }
+    /* 1×4 RESPONSIVE GRID */
     @media (min-width: 768px) {
-      .projects-grid { grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1200px) {
+      .projects-grid { grid-template-columns: repeat(4, 1fr); }
     }
     @media (min-width: 1024px) {
       .lang-switcher {
@@ -198,111 +199,49 @@
     <div class="projects-grid">
 
       <!-- Project 1 -->
-      <div class="card" onclick="this.querySelector('.expandable').classList.toggle('open')">
-        <div class="card-header">
-          <h3>Project 1 – FSAE Front Wing & Undertray Development</h3>
-        </div>
+      <div class="card">
+        <div class="card-header"><h3>Project 1 – FSAE Front Wing & Undertray Development</h3></div>
         <div class="card-content">
-          <p>Click to expand and view detailed description + gallery</p>
+          <p>Click to expand</p>
           <div class="expandable">
-            <p><strong>Role:</strong> Aerodynamics Lead | <strong>Tools:</strong> SolidWorks, ANSYS Fluent (CFD), OptimumG</p>
-            <p>Designed, simulated, and manufactured front wing package including mainplane, flaps, endplates, and undertray components. Achieved targeted downforce increase while maintaining acceptable drag penalty through iterative CFD optimization.</p>
-            <div class="gallery">
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/333/fff?text=CFD+Pressure+Contour" alt="CFD Pressure">
-                <div class="gallery-caption">CFD pressure distribution – front wing assembly</div>
-              </div>
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/334/fff?text=SolidWorks+Assembly" alt="SolidWorks">
-                <div class="gallery-caption">SolidWorks parametric model of wing + endplates</div>
-              </div>
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/335/fff?text=Manufactured+Wing" alt="Manufactured">
-                <div class="gallery-caption">Final carbon fiber front wing ready for testing</div>
-              </div>
-            </div>
+            <p><strong>Role:</strong> Aerodynamics Lead | <strong>Tools:</strong> SolidWorks, ANSYS Fluent</p>
+            <p>Full design, optimization, simulation and manufacturing of the front wing package.</p>
+            <!-- Add gallery if desired -->
           </div>
         </div>
       </div>
 
       <!-- Project 2 -->
-      <div class="card" onclick="this.querySelector('.expandable').classList.toggle('open')">
-        <div class="card-header">
-          <h3>Project 2 – FSAE Rear Wing & Diffuser Optimization</h3>
-        </div>
+      <div class="card">
+        <div class="card-header"><h3>Project 2 – FSAE Rear Wing & Diffuser Optimization</h3></div>
         <div class="card-content">
-          <p>Click to expand and view detailed description + gallery</p>
+          <p>Click to expand</p>
           <div class="expandable">
-            <p>Detailed description of rear wing design, CFD iterations, manufacturing process, mounting system integration, and performance gains.</p>
-            <div class="gallery">
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/444/fff?text=Rear+Wing+CFD" alt="Rear CFD">
-                <div class="gallery-caption">Rear wing velocity streamlines</div>
-              </div>
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/445/fff?text=Core+Cutting" alt="Core">
-                <div class="gallery-caption">Honeycomb core preparation</div>
-              </div>
-            </div>
+            <p>Detailed rear wing design, CFD iterations and manufacturing.</p>
           </div>
         </div>
       </div>
 
       <!-- Project 3 -->
-      <div class="card" onclick="this.querySelector('.expandable').classList.toggle('open')">
-        <div class="card-header">
-          <h3>Project 3 – Injection Mold Repair & Optimization (Jokey Plastics)</h3>
-        </div>
+      <div class="card">
+        <div class="card-header"><h3>Project 3 – Injection Mold Repair & Optimization (Jokey Plastics)</h3></div>
         <div class="card-content">
-          <p>Click to expand and view detailed description + gallery</p>
+          <p>Click to expand</p>
           <div class="expandable">
-            <p>Analyzed CMM data, created repair drawings, and developed maintenance plans for high-volume injection molds.</p>
-            <div class="gallery">
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/555/fff?text=CMM+Inspection" alt="CMM">
-                <div class="gallery-caption">CMM measurement of critical features</div>
-              </div>
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/556/fff?text=Repair+Drawing" alt="Drawing">
-                <div class="gallery-caption">Engineering repair drawing</div>
-              </div>
-            </div>
+            <p>CMM data analysis, repair drawings and maintenance plans for injection molds.</p>
           </div>
         </div>
       </div>
 
-      <!-- NEW PROJECT 4 – Wind Tunnel Report -->
-      <div class="card" onclick="this.querySelector('.expandable').classList.toggle('open')">
-        <div class="card-header">
-          <h3>Project 4 – TWR-16 Front Wing: Wind Tunnel Verification of ANSYS Simulation</h3>
-        </div>
+      <!-- Project 4 – Wind Tunnel Report -->
+      <div class="card">
+        <div class="card-header"><h3>Project 4 – TWR-16 Front Wing: Wind Tunnel Verification of ANSYS Simulation</h3></div>
         <div class="card-content">
-          <p>Click to expand and view detailed description + gallery</p>
+          <p>Click to expand</p>
           <div class="expandable">
-            <p><strong>Role:</strong> Author & Lead Investigator | <strong>Tools:</strong> SolidWorks, ANSYS Fluent, Lakehead University Wind Tunnel</p>
-            <p>Conducted full experimental validation of ANSYS Fluent CFD results against physical wind tunnel testing on a 1:7.5 scale 3D-printed model of the TWR-16 front wing. Achieved only 7.99% error in lift force (well within the 10% tolerance of the university wind tunnel), confirming ANSYS as a reliable and accurate tool for the entire LUFSAE aerodynamic package optimization.</p>
-            <p>Key outcomes: Validated simulation accuracy, reduced future physical testing costs, and supported data-driven design decisions for the 2025 Michigan FSAE competition.</p>
-
-            <div class="gallery">
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/222/fff?text=Lakehead+Wind+Tunnel" alt="Wind Tunnel">
-                <div class="gallery-caption">Lakehead University Wind Tunnel with 1:7.5 scale model installed</div>
-              </div>
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/223/fff?text=3D+Printed+Scale+Model" alt="Scale Model">
-                <div class="gallery-caption">Resin 3D-printed 1:7.5 scale front wing model</div>
-              </div>
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/224/fff?text=ANSYS+Mesh" alt="ANSYS Mesh">
-                <div class="gallery-caption">Successful ANSYS mesh of full-scale front wing and flow domain</div>
-              </div>
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/225/fff?text=Results+Comparison" alt="Results Table">
-                <div class="gallery-caption">Final results table showing 7.99% error between wind tunnel and ANSYS</div>
-              </div>
-            </div>
-
-            <a href="TWR-16 Wind Tunnel Test Report .pdf" download class="btn" style="background:#10b981; margin-top:1.5rem;">
+            <p><strong>Role:</strong> Author & Lead Investigator</p>
+            <p>Experimental validation of ANSYS Fluent against physical wind tunnel testing (1:7.5 scale model). Achieved only 7.99% error in lift force.</p>
+            <a href="TWR-16 Wind Tunnel Test Report .pdf" download class="btn" style="background:#10b981;">
               📄 Download Full Report (PDF – 12.9 MB)
             </a>
           </div>
@@ -322,51 +261,28 @@
 </footer>
 
 <script>
-  const translations = {
-    en: {
-      name: "Nathan Zondag",
-      title: "Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Manufacturing & Design",
-      nav: { about: "About", education: "Education", projects: "Projects", skills: "Skills", awards: "Awards", resume: "Resume", contact: "Contact", affiliations: "Affiliations" },
-      sections: { detailed_projects: "Detailed Projects" },
-      footer: "© 2026 Nathan Zondag | Canada"
-    },
-    fr: {
-      name: "Nathan Zondag",
-      title: "Baccalauréat en génie mécanique | Responsable de l'aérodynamique FSAE | Fabrication et conception",
-      nav: { about: "À propos", education: "Éducation", projects: "Projets", skills: "Compétences", awards: "Prix", resume: "CV", contact: "Contact", affiliations: "Affiliations" },
-      sections: { detailed_projects: "Projets détaillés" },
-      footer: "© 2026 Nathan Zondag | Canada"
-    },
-    es: {
-      name: "Nathan Zondag",
-      title: "Licenciatura en Ingeniería Mecánica | Líder de Aerodinámica FSAE | Fabricación y Diseño",
-      nav: { about: "Acerca de", education: "Educación", projects: "Proyectos", skills: "Habilidades", awards: "Premios", resume: "Currículum", contact: "Contacto", affiliations: "Afiliaciones" },
-      sections: { detailed_projects: "Proyectos Detallados" },
-      footer: "© 2026 Nathan Zondag | Canadá"
-    },
-    de: {
-      name: "Nathan Zondag",
-      title: "Bachelor of Mechanical Engineering | FSAE Aerodynamik-Lead | Fertigung & Design",
-      nav: { about: "Über mich", education: "Ausbildung", projects: "Projekte", skills: "Fähigkeiten", awards: "Auszeichnungen", resume: "Lebenslauf", contact: "Kontakt", affiliations: "Zugehörigkeiten" },
-      sections: { detailed_projects: "Detaillierte Projekte" },
-      footer: "© 2026 Nathan Zondag | Kanada"
-    }
-  };
+  const translations = { /* keep your existing translations object here */ };
+  function setLanguage(lang) { /* keep your existing setLanguage function */ }
 
-  function setLanguage(lang) {
-    if (!translations[lang]) lang = 'en';
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const keys = el.getAttribute('data-i18n').split('.');
-      let val = translations[lang];
-      keys.forEach(k => { val = val?.[k]; });
-      if (val !== undefined) el.innerHTML = val;
-    });
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-    localStorage.setItem('preferredLang', lang);
-    document.documentElement.lang = lang;
-  }
-
+  // === ACCORDION LOGIC (only one open at a time) ===
   document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        const expandable = this.querySelector('.expandable');
+
+        // Close ALL other projects first
+        document.querySelectorAll('.expandable').forEach(exp => {
+          if (exp !== expandable) exp.classList.remove('open');
+        });
+
+        // Toggle the clicked project
+        expandable.classList.toggle('open');
+      });
+    });
+
+    // Language setup
     const savedLang = localStorage.getItem('preferredLang') || 'en';
     setLanguage(savedLang);
     document.querySelectorAll('.lang-btn').forEach(btn => {
