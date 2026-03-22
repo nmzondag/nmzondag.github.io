@@ -112,7 +112,7 @@
       transition: max-height 0.6s ease-out, padding 0.4s ease;
     }
     .expandable.open {
-      max-height: 5000px; /* large enough for content */
+      max-height: 5000px;
       padding: 0.5rem 0 1.5rem;
     }
     .gallery {
@@ -140,7 +140,7 @@
     }
     .btn {
       display: inline-block;
-      margin: 2rem 0 1rem;
+      margin: 1.5rem 0 0.5rem;
       padding: 0.9rem 1.8rem;
       background: #38bdf8;
       color: #020617;
@@ -206,9 +206,7 @@
           <p>Click to expand and view detailed description + gallery</p>
           <div class="expandable">
             <p><strong>Role:</strong> Aerodynamics Lead | <strong>Tools:</strong> SolidWorks, ANSYS Fluent (CFD), OptimumG</p>
-            <p>Designed, simulated, and manufactured front wing package including mainplane, flaps, endplates, and undertray components. Achieved targeted downforce increase of X% while maintaining acceptable drag penalty through iterative CFD optimization.</p>
-            <p>Key challenges: Balancing on-track performance with manufacturability using carbon fiber and aluminum honeycomb sandwich panels.</p>
-
+            <p>Designed, simulated, and manufactured front wing package including mainplane, flaps, endplates, and undertray components. Achieved targeted downforce increase while maintaining acceptable drag penalty through iterative CFD optimization.</p>
             <div class="gallery">
               <div class="gallery-item">
                 <img src="https://via.placeholder.com/800x450/333/fff?text=CFD+Pressure+Contour" alt="CFD Pressure">
@@ -221,10 +219,6 @@
               <div class="gallery-item">
                 <img src="https://via.placeholder.com/800x450/335/fff?text=Manufactured+Wing" alt="Manufactured">
                 <div class="gallery-caption">Final carbon fiber front wing ready for testing</div>
-              </div>
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/336/fff?text=Wind+Tunnel+Validation" alt="Wind Tunnel">
-                <div class="gallery-caption">Wind tunnel correlation results</div>
               </div>
             </div>
           </div>
@@ -249,17 +243,12 @@
                 <img src="https://via.placeholder.com/800x450/445/fff?text=Core+Cutting" alt="Core">
                 <div class="gallery-caption">Honeycomb core preparation</div>
               </div>
-              <div class="gallery-item">
-                <img src="https://via.placeholder.com/800x450/446/fff?text=Layup+Process" alt="Layup">
-                <div class="gallery-caption">Carbon fiber layup in progress</div>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Add more projects following the same pattern -->
-      <!-- Example for Project 3 -->
+      <!-- Project 3 -->
       <div class="card" onclick="this.querySelector('.expandable').classList.toggle('open')">
         <div class="card-header">
           <h3>Project 3 – Injection Mold Repair & Optimization (Jokey Plastics)</h3>
@@ -282,7 +271,43 @@
         </div>
       </div>
 
-      <!-- You can continue adding more cards here... -->
+      <!-- NEW PROJECT 4 – Wind Tunnel Report -->
+      <div class="card" onclick="this.querySelector('.expandable').classList.toggle('open')">
+        <div class="card-header">
+          <h3>Project 4 – TWR-16 Front Wing: Wind Tunnel Verification of ANSYS Simulation</h3>
+        </div>
+        <div class="card-content">
+          <p>Click to expand and view detailed description + gallery</p>
+          <div class="expandable">
+            <p><strong>Role:</strong> Author & Lead Investigator | <strong>Tools:</strong> SolidWorks, ANSYS Fluent, Lakehead University Wind Tunnel</p>
+            <p>Conducted full experimental validation of ANSYS Fluent CFD results against physical wind tunnel testing on a 1:7.5 scale 3D-printed model of the TWR-16 front wing. Achieved only 7.99% error in lift force (well within the 10% tolerance of the university wind tunnel), confirming ANSYS as a reliable and accurate tool for the entire LUFSAE aerodynamic package optimization.</p>
+            <p>Key outcomes: Validated simulation accuracy, reduced future physical testing costs, and supported data-driven design decisions for the 2025 Michigan FSAE competition.</p>
+
+            <div class="gallery">
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/222/fff?text=Lakehead+Wind+Tunnel" alt="Wind Tunnel">
+                <div class="gallery-caption">Lakehead University Wind Tunnel with 1:7.5 scale model installed</div>
+              </div>
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/223/fff?text=3D+Printed+Scale+Model" alt="Scale Model">
+                <div class="gallery-caption">Resin 3D-printed 1:7.5 scale front wing model</div>
+              </div>
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/224/fff?text=ANSYS+Mesh" alt="ANSYS Mesh">
+                <div class="gallery-caption">Successful ANSYS mesh of full-scale front wing and flow domain</div>
+              </div>
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/225/fff?text=Results+Comparison" alt="Results Table">
+                <div class="gallery-caption">Final results table showing 7.99% error between wind tunnel and ANSYS</div>
+              </div>
+            </div>
+
+            <a href="TWR-16 Wind Tunnel Test Report .pdf" download class="btn" style="background:#10b981; margin-top:1.5rem;">
+              📄 Download Full Report (PDF – 12.9 MB)
+            </a>
+          </div>
+        </div>
+      </div>
 
     </div>
 
@@ -297,7 +322,6 @@
 </footer>
 
 <script>
-  // Paste your FULL translations object from index.html here
   const translations = {
     en: {
       name: "Nathan Zondag",
@@ -305,7 +329,6 @@
       nav: { about: "About", education: "Education", projects: "Projects", skills: "Skills", awards: "Awards", resume: "Resume", contact: "Contact", affiliations: "Affiliations" },
       sections: { detailed_projects: "Detailed Projects" },
       footer: "© 2026 Nathan Zondag | Canada"
-      // ... add other keys if needed, but minimal set for this page
     },
     fr: {
       name: "Nathan Zondag",
