@@ -71,16 +71,17 @@
       margin: 0 auto;
       padding: clamp(1rem, 4vw, 2rem);
     }
-    section { margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+    section { margin-bottom: clamp(3rem, 7vw, 5rem); }
     h2 {
       font-size: clamp(1.5rem, 5vw, 2rem);
       margin-bottom: 1.5rem;
       border-bottom: 2px solid #A1A1A1;
       padding-bottom: 0.5rem;
+      text-align: center;
     }
     .projects-grid {
       display: grid;
-      grid-template-columns: 1fr;   /* 1 wide column */
+      grid-template-columns: 1fr;
       gap: 1.8rem;
     }
     .card {
@@ -154,6 +155,57 @@
       color: #64748b;
       font-size: 0.9rem;
     }
+
+    /* ────────────────────────────────────────────── */
+    /* Experience section styles */
+    /* ────────────────────────────────────────────── */
+    .experience-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 4rem;
+      padding: 0 1rem;
+    }
+    .experience-item .job-image {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    }
+    .experience-item h3 {
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
+      margin-bottom: 0.4rem;
+      color: #38bdf8;
+    }
+    .experience-item .role {
+      font-size: clamp(1rem, 3.2vw, 1.18rem);
+      color: #cbd5e1;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .experience-item p {
+      max-width: 780px;
+      color: #94a3b8;
+      font-size: clamp(0.97rem, 2.8vw, 1.05rem);
+    }
+
+    @media (min-width: 768px) {
+      .experience-item {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 2.5rem;
+      }
+      .experience-item .job-image {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        width: 340px;
+      }
+    }
+
     @media (min-width: 1024px) {
       .lang-switcher {
         position: absolute;
@@ -175,7 +227,6 @@
     <button class="lang-btn" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE"> Deutsch</button>
   </div>
 </header>
-
 <nav>
   <a href="index.html#about" data-i18n="nav.about">About</a>
   <a href="index.html#education" data-i18n="nav.education">Education</a>
@@ -191,7 +242,6 @@
   <section>
     <h2 data-i18n="sections.detailed_projects">Detailed Projects</h2>
     <div class="projects-grid">
-
       <!-- Project 1 -->
       <div class="card">
         <div class="card-header"><h3>Project 1 – FSAE Aerodynamic Package: Front Wing, Nose Cone, Side Panelling, Rear Wing</h3></div>
@@ -199,10 +249,10 @@
           <p>Click to expand</p>
           <div class="expandable">
             <p><strong>Role:</strong> Aerodynamics Lead | <strong>Tools:</strong> SolidWorks, ANSYS Fluent</p>
-            <p>Information Under Maintenance </p>
-                  <div class="right">
-        <img src="full aero.jpg" alt="Full Aero">
-      </div>
+            <p>Information Under Maintenance</p>
+            <div class="right">
+              <img src="full aero.jpg" alt="Full Aero">
+            </div>
           </div>
         </div>
       </div>
@@ -243,10 +293,76 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- ────────────────────────────────────────────── -->
+  <!--               EXPERIENCE SECTION               -->
+  <!-- ────────────────────────────────────────────── -->
+  <section>
+    <h2>Experience</h2>
+
+    <!-- Job 1 -->
+    <div class="experience-item">
+      <img src="https://via.placeholder.com/360x240/253549/ffffff?text=Job+1" alt="Job 1" class="job-image">
+      <div>
+        <h3>Job Title #1</h3>
+        <div class="role">Role / Position – Company Name</div>
+        <p>Centralized paragraph describing main responsibilities, achievements, technologies used, duration, and key outcomes of this position. You can write several sentences here. This text is centered on mobile and left-aligned on larger screens next to the image.</p>
+      </div>
     </div>
 
-    <div style="text-align: center; margin: 4rem 0;">
+    <!-- Job 2 -->
+    <div class="experience-item">
+      <img src="https://via.placeholder.com/360x240/253549/ffffff?text=Job+2" alt="Job 2" class="job-image">
+      <div>
+        <h3>Job Title #2</h3>
+        <div class="role">Role / Position – Company Name</div>
+        <p>Description of tasks, responsibilities and accomplishments in this role. Replace this placeholder text with your actual experience summary. Feel free to mention tools, team size, impact, etc.</p>
+      </div>
+    </div>
+
+    <!-- Job 3 -->
+    <div class="experience-item">
+      <img src="https://via.placeholder.com/360x240/253549/ffffff?text=Job+3" alt="Job 3" class="job-image">
+      <div>
+        <h3>Job Title #3</h3>
+        <div class="role">Role / Position – Company Name</div>
+        <p>Your description goes here. Keep the tone professional and focused on results where possible. This is a good place to highlight transferable skills to future engineering roles.</p>
+      </div>
+    </div>
+
+    <!-- Job 4 -->
+    <div class="experience-item">
+      <img src="https://via.placeholder.com/360x240/253549/ffffff?text=Job+4" alt="Job 4" class="job-image">
+      <div>
+        <h3>Job Title #4</h3>
+        <div class="role">Role / Position – Company Name</div>
+        <p>Placeholder text – replace with real content describing what you did, learned, and achieved during this employment period.</p>
+      </div>
+    </div>
+
+    <!-- Job 5 -->
+    <div class="experience-item">
+      <img src="https://via.placeholder.com/360x240/253549/ffffff?text=Job+5" alt="Job 5" class="job-image">
+      <div>
+        <h3>Job Title #5</h3>
+        <div class="role">Role / Position – Company Name</div>
+        <p>Another experience entry. Describe key duties, projects, or contributions. You can mention any leadership, problem-solving, or technical skills demonstrated.</p>
+      </div>
+    </div>
+
+    <!-- Job 6 -->
+    <div class="experience-item">
+      <img src="https://via.placeholder.com/360x240/253549/ffffff?text=Job+6" alt="Job 6" class="job-image">
+      <div>
+        <h3>Job Title #6</h3>
+        <div class="role">Role / Position – Company Name</div>
+        <p>Final placeholder for experience. Replace with your actual job history entry. Consider adding quantifiable achievements when possible (e.g. "reduced downtime by 18%").</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin: 5rem 0 2rem;">
       <a href="index.html" class="btn">← Back to Home</a>
     </div>
   </section>
@@ -280,17 +396,12 @@
   // Exclusive accordion – only one project expands at a time
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.card');
-
     cards.forEach(card => {
       card.addEventListener('click', function() {
         const expandable = this.querySelector('.expandable');
-
-        // Close ALL other cards
         document.querySelectorAll('.expandable').forEach(exp => {
           if (exp !== expandable) exp.classList.remove('open');
         });
-
-        // Toggle the clicked card
         expandable.classList.toggle('open');
       });
     });
