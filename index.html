@@ -95,7 +95,6 @@
       border-radius: 12px;
       overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
     }
     .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
     .card img {
@@ -107,12 +106,6 @@
     .card-header { padding: 1.2rem 1rem 0.5rem; }
     .card-content { padding: 0 1rem 1.2rem; }
     .card-content p { color: #94a3b8; font-size: 0.95rem; }
-    .expandable {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease, padding 0.4s ease;
-    }
-    .expandable.open { max-height: 4000px; padding: 0 1rem 1rem; }
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -250,14 +243,14 @@
     <div class="about-container">
       <div class="left">
         <p data-i18n="about.text">
-          Born and raised in Ontario, Canada with a life long affection for automobiles 
-          I began my career in the automotive industry at a local autobody shop in 2017.
-          Gaining hands on experience and knowledge, it fueled my desire to pursue a career 
-          in mechanical engineering. This lead to me to enrolling at Confederation College 
+          Born and raised in Ontario, Canada with a lifelong affection for automobiles. 
+          I began my career in the automotive industry at a local autobody shop in 2017. 
+          Gaining hands-on experience and knowledge, it fueled my desire to pursue a career 
+          in mechanical engineering. This led me to enroll at Confederation College 
           through the 3 tiers of Mechanical Engineering diplomas offered, where I had the 
-          opportunity to join the college's Men's Varsity Soccer Team, and promoted to team 
-          captain in my final year at the school. Following graduation, I enrolled in the 
-          transfer program at Lakehead University to complete my Bachelor of Mechanical Engineering. 
+          opportunity to join the college's Men's Varsity Soccer Team, and was promoted to 
+          team captain in my final year at the school. Following graduation, I enrolled in 
+          the transfer program at Lakehead University to complete my Bachelor of Mechanical Engineering.
         </p>
       </div>
       <div class="right">
@@ -265,87 +258,85 @@
       </div>
     </div>
   </section>
-<section id="education">
-  <h2 data-i18n="sections.education">Education</h2>
-  <div class="education-grid">
 
-    <div class="card lakehead-full">
-      <img src="lakehead square logo.jpg" alt="Lakehead University">
-      <div class="card-header">
-        <h3 data-i18n="education.lakehead.name">Lakehead University</h3>
-      </div>
-      <div class="card-content">
-        <p data-i18n="education.lakehead.degree">Bachelor of Mechanical Engineering (2026)</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="confed logo.jpg" alt="Confederation College">
-      <div class="card-content">
-        <h3 data-i18n="education.confed.name">Confederation College</h3>
-        <p data-i18n="education.confed.technologist">Mechanical Engineering Technologist (2023)</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="confed logo.jpg" alt="Confederation College">
-      <div class="card-content">
-        <h3 data-i18n="education.confed.name">Confederation College</h3>
-        <p data-i18n="education.confed.technician">Mechanical Engineering Technician (2022)</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="confed logo.jpg" alt="Confederation College">
-      <div class="card-content">
-        <h3 data-i18n="education.confed.name">Confederation College</h3>
-        <p data-i18n="education.confed.techniques">Mechanical Engineering Techniques (2021)</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-  <section id="projects">
-    <h2><a href="projects.html" data-i18n="sections.projects">Projects & Experience</a></h2>
-    <div class="projects-grid">
-      <div class="card" onclick="toggleExpand(this)">
-        <img src="fsae mountain photo.jpg" alt="FSAE">
+  <section id="education">
+    <h2 data-i18n="sections.education">Education</h2>
+    <div class="education-grid">
+      <div class="card">
+        <img src="lakehead square logo.jpg" alt="Lakehead University">
         <div class="card-header">
-          <h3 data-i18n="projects.fsae.title">FSAE Aerodynamics Lead</h3>
+          <h3 data-i18n="education.lakehead.name">Lakehead University</h3>
         </div>
-        <div class="expandable">
-          <div class="card-content">
-            <p data-i18n="projects.fsae.desc">Team Lead of Aerodynamics Sub Team. Full design, optimization, simulation and manufacturing of the front wing, nose cone, side panels and rear wing.</p>
-          </div>
+        <div class="card-content">
+          <p data-i18n="education.lakehead.degree">Bachelor of Mechanical Engineering (2026)</p>
         </div>
       </div>
-      <div class="card" onclick="toggleExpand(this)">
-        <img src="mold 3d iso.jpg" alt="Mold Design">
+      <div class="card">
+        <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-header">
-          <h3 data-i18n="projects.mold.title">Mold Design Engineering</h3>
+          <h3 data-i18n="education.confed.name">Confederation College</h3>
         </div>
-        <div class="expandable">
-          <div class="card-content">
-            <p data-i18n="projects.mold.desc">Developed engineering drawings, repair plans, and applied CMM data analysis for plastic injection molding systems. </p>
-                        </div>
-            <p>Note: Due to protected information security, mold image is pulled from Dudley Associates Public website to represent the molds worked on at Jokey Plastics.</p>
-          </div>
-             </div>
+        <div class="card-content">
+          <p data-i18n="education.confed.technologist">Mechanical Engineering Technologist (2023)</p>
         </div>
       </div>
-      <div class="card" onclick="toggleExpand(this)">
-        <img src="autobody.jpg" alt="Auto Body">
+      <div class="card">
+        <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-header">
-          <h3 data-i18n="projects.auto.title">Automotive Engineering Experience</h3>
+          <h3 data-i18n="education.confed.name">Confederation College</h3>
         </div>
-        <div class="expandable">
-          <div class="card-content">
-            <p data-i18n="projects.auto.desc">Performed factory quality repairs, damage estimations, customer and insurance provider interaction and shop maintenance while managing operations in a fast-paced shop environment.</p>
-          </div>
+        <div class="card-content">
+          <p data-i18n="education.confed.technician">Mechanical Engineering Technician (2022)</p>
         </div>
+      </div>
+      <div class="card">
+        <img src="confed logo.jpg" alt="Confederation College">
+        <div class="card-header">
+          <h3 data-i18n="education.confed.name">Confederation College</h3>
+        </div>
+        <div class="card-content">
+          <p data-i18n="education.confed.techniques">Mechanical Engineering Techniques (2021)</p>
         </div>
       </div>
     </div>
   </section>
+
+  <section id="projects">
+    <h2><a href="projects.html" data-i18n="sections.projects">Projects & Experience</a></h2>
+    <div class="projects-grid">
+      <div class="card">
+        <img src="fsae mountain photo.jpg" alt="FSAE">
+        <div class="card-header">
+          <h3 data-i18n="projects.fsae.title">FSAE Aerodynamics Lead</h3>
+        </div>
+        <div class="card-content">
+          <p data-i18n="projects.fsae.desc">Team Lead of Aerodynamics Sub Team. Full design, optimization, simulation and manufacturing of the front wing, nose cone, side panels and rear wing.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="mold 3d iso.jpg" alt="Mold Design">
+        <div class="card-header">
+          <h3 data-i18n="projects.mold.title">Mold Design Engineering</h3>
+        </div>
+        <div class="card-content">
+          <p data-i18n="projects.mold.desc">Developed engineering drawings, repair plans, and applied CMM data analysis for plastic injection molding systems.</p>
+          <p style="font-size:0.85rem; margin-top:0.8rem; color:#64748b;">Note: Due to protected information security, mold image is pulled from Dudley Associates Public website to represent the molds worked on at Jokey Plastics.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="autobody.jpg" alt="Auto Body">
+        <div class="card-header">
+          <h3 data-i18n="projects.auto.title">Automotive Engineering Experience</h3>
+        </div>
+        <div class="card-content">
+          <p data-i18n="projects.auto.desc">Performed factory quality repairs, damage estimations, customer and insurance provider interaction and shop maintenance while managing operations in a fast-paced shop environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="skills">
     <h2 data-i18n="sections.skills">Skills</h2>
     <div class="skills">
@@ -355,6 +346,7 @@
       <p data-i18n="skills.general"><strong>General:</strong> Project Management, Problem Solving, Team Leadership, Organization, Attention to Detail, Financial Focus</p>
     </div>
   </section>
+
   <section id="awards">
     <h2 data-i18n="sections.awards">Awards</h2>
     <div class="awards-list">
@@ -365,12 +357,14 @@
       <p data-i18n="awards.2021_confed">2020–2021 Confederation College Honour Roll</p>
     </div>
   </section>
+
   <section id="resume">
     <h2 data-i18n="sections.resume">Official Resume</h2>
     <div class="resume">
       <a class="btn" href="Nathan_Zondag_Resume.pdf" download data-i18n="resume.button">Download Resume</a>
     </div>
   </section>
+
   <section id="contact">
     <h2 data-i18n="sections.contact">Contact Information</h2>
     <div class="contact-info">
@@ -378,6 +372,7 @@
       <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nathanzondag/" target="_blank" rel="noopener noreferrer">linkedin.com/in/nathanzondag</a></p>
     </div>
   </section>
+
   <section id="affiliations">
     <h2 data-i18n="sections.affiliations">Affiliations</h2>
     <div class="affiliations">
@@ -400,6 +395,7 @@
     </div>
   </section>
 </div>
+
 <footer>
   <p data-i18n="footer">© 2026 Nathan Zondag | Canada</p>
 </footer>
@@ -408,24 +404,24 @@
   const translations = {
     en: {
       name: "Nathan Zondag",
-      title: "Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Manufacturing & Design",
+      title: "Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Design, Simulation & Manufacturing",
       nav: { about: "About", education: "Education", projects: "Projects", skills: "Skills", awards: "Awards", resume: "Resume", contact: "Contact", affiliations: "Affiliations" },
       sections: { about: "About Me", education: "Education", projects: "Projects & Experience", skills: "Skills", awards: "Awards", resume: "Official Resume", contact: "Contact Information", affiliations: "Affiliations" },
-      about: { text: "Mechanical Engineering student at Lakehead University graduating May 2026 with strong experience in design, simulation, and manufacturing. Experienced in leading engineering teams, developing optimized systems, and working hands-on with machining, welding, and composite materials." },
+      about: { text: "Born and raised in Ontario, Canada with a lifelong affection for automobiles. I began my career in the automotive industry at a local autobody shop in 2017. Gaining hands-on experience and knowledge, it fueled my desire to pursue a career in mechanical engineering. This led me to enroll at Confederation College through the 3 tiers of Mechanical Engineering diplomas offered, where I had the opportunity to join the college's Men's Varsity Soccer Team, and was promoted to team captain in my final year at the school. Following graduation, I enrolled in the transfer program at Lakehead University to complete my Bachelor of Mechanical Engineering." },
       education: {
         lakehead: { name: "Lakehead University", degree: "Bachelor of Mechanical Engineering (2026)" },
         confed: { name: "Confederation College", technologist: "Mechanical Engineering Technologist (2023)", technician: "Mechanical Engineering Technician (2022)", techniques: "Mechanical Engineering Techniques (2021)" }
       },
       projects: {
-        fsae: { title: "FSAE Aerodynamics & Systems Lead", desc: "Led aerodynamic, steering, and shifting system design. Optimized performance using simulation and built carbon fiber and aluminum components." },
-        mold: { title: "Mold Design Engineering", desc: "Developed engineering drawings and repair plans using CMM data analysis for injection molding systems." },
-        auto: { title: "Automotive Engineering Experience", desc: "Performed repair, estimation, and maintenance while managing operations in a fast-paced shop environment." }
+        fsae: { title: "FSAE Aerodynamics Lead", desc: "Team Lead of Aerodynamics Sub Team. Full design, optimization, simulation and manufacturing of the front wing, nose cone, side panels and rear wing." },
+        mold: { title: "Mold Design Engineering", desc: "Developed engineering drawings, repair plans, and applied CMM data analysis for plastic injection molding systems." },
+        auto: { title: "Automotive Engineering Experience", desc: "Performed factory quality repairs, damage estimations, customer and insurance provider interaction and shop maintenance while managing operations in a fast-paced shop environment." }
       },
       skills: {
-        software: "<strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD",
-        manufacturing: "<strong>Manufacturing:</strong> Machining, Lathe, Welding",
-        engineering: "<strong>Engineering:</strong> R&D, GD&T, CMM Analysis, Simulation",
-        general: "<strong>General:</strong> Project Management, Team Leadership, Organization, Attention to Detail, Financial Focus"
+        software: "<strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD, OptimumLap, Microsoft Office",
+        manufacturing: "<strong>Manufacturing:</strong> Machining Practices, Lathing, Welding",
+        engineering: "<strong>Engineering:</strong> R&D, GD&T, CMM Analysis, Data Driven Design, Simulation Driven Optimization",
+        general: "<strong>General:</strong> Project Management, Problem Solving, Team Leadership, Organization, Attention to Detail, Financial Focus"
       },
       awards: {
         "2023_ocaa": "2022–2023 OCAA All Academic Award",
@@ -435,29 +431,29 @@
         "2021_confed": "2020–2021 Confederation College Honour Roll"
       },
       resume: { button: "Download Resume" },
-      contact: { email_label: "Email", phone_label: "Phone" },
+      contact: { email_label: "Email" },
       footer: "© 2026 Nathan Zondag | Canada"
     },
     fr: {
       name: "Nathan Zondag",
-      title: "Baccalauréat en génie mécanique | Responsable aérodynamique FSAE | Fabrication et conception",
+      title: "Baccalauréat en génie mécanique | Responsable de l'aérodynamique FSAE | Conception, simulation et fabrication",
       nav: { about: "À propos", education: "Éducation", projects: "Projets", skills: "Compétences", awards: "Prix", resume: "CV", contact: "Contact", affiliations: "Affiliations" },
       sections: { about: "À propos de moi", education: "Éducation", projects: "Projets et expérience", skills: "Compétences", awards: "Prix", resume: "CV officiel", contact: "Coordonnées", affiliations: "Affiliations" },
-      about: { text: "Étudiant en génie mécanique à l'Université Lakehead, obtention du diplôme prévue en mai 2026. Forte expérience en conception, simulation et fabrication. Expérience dans le leadership d'équipes d'ingénierie, le développement de systèmes optimisés et le travail manuel avec usinage, soudage et matériaux composites." },
+      about: { text: "Né et élevé en Ontario, Canada, avec une affection de toujours pour les automobiles. J'ai commencé ma carrière dans l'industrie automobile dans un atelier de carrosserie local en 2017. Acquérant une expérience et des connaissances pratiques, cela a alimenté mon désir de poursuivre une carrière en génie mécanique. Cela m'a conduit à m'inscrire au Collège Confederation dans les 3 niveaux de diplômes en génie mécanique offerts, où j'ai eu l'occasion de rejoindre l'équipe masculine de soccer varsity du collège et d'être promu capitaine d'équipe lors de ma dernière année. Après l'obtention du diplôme, je me suis inscrit au programme de transfert à l'Université Lakehead pour compléter mon baccalauréat en génie mécanique." },
       education: {
-        lakehead: { name: "Université Lakehead", degree: "Baccalauréat en génie mécanique (Prévu mai 2026)" },
+        lakehead: { name: "Université Lakehead", degree: "Baccalauréat en génie mécanique (2026)" },
         confed: { name: "Collège Confederation", technologist: "Technologue en génie mécanique (2023)", technician: "Technicien en génie mécanique (2022)", techniques: "Techniques en génie mécanique (2021)" }
       },
       projects: {
-        fsae: { title: "Responsable Aérodynamique et Systèmes FSAE", desc: "Direction de la conception des systèmes aérodynamiques, de direction et de changement de vitesse. Optimisation des performances par simulation et fabrication de composants en fibre de carbone et aluminium." },
-        mold: { title: "Ingénierie de conception de moules", desc: "Élaboration de dessins techniques et plans de réparation à partir de l'analyse de données CMM pour systèmes de moulage par injection." },
-        auto: { title: "Expérience en ingénierie automobile", desc: "Réalisation de réparations, estimations et maintenance dans un environnement d'atelier à rythme soutenu." }
+        fsae: { title: "Responsable de l'aérodynamique FSAE", desc: "Chef d'équipe du sous-groupe Aérodynamique. Conception complète, optimisation, simulation et fabrication de l'aile avant, du cône de nez, des panneaux latéraux et de l'aile arrière." },
+        mold: { title: "Ingénierie de conception de moules", desc: "Élaboration de dessins techniques, plans de réparation et application de l'analyse de données CMM pour les systèmes de moulage par injection plastique." },
+        auto: { title: "Expérience en ingénierie automobile", desc: "Réalisation de réparations de qualité usine, estimations de dommages, interactions avec les clients et les assureurs, et entretien de l'atelier tout en gérant les opérations dans un environnement rapide." }
       },
       skills: {
-        software: "<strong>Logiciels :</strong> SolidWorks, ANSYS Fluent, AutoCAD",
-        manufacturing: "<strong>Fabrication :</strong> Usinage, Tour, Soudage",
-        engineering: "<strong>Ingénierie :</strong> R&D, GD&T, Analyse CMM, Simulation",
-        general: "<strong>Général :</strong> Gestion de projet, Leadership d'équipe, Organisation, Attention aux détails, Orientation financière"
+        software: "<strong>Logiciels :</strong> SolidWorks, ANSYS Fluent, AutoCAD, OptimumLap, Microsoft Office",
+        manufacturing: "<strong>Fabrication :</strong> Pratiques d'usinage, tournage, soudage",
+        engineering: "<strong>Ingénierie :</strong> R&D, GD&T, Analyse CMM, Conception basée sur les données, Optimisation pilotée par simulation",
+        general: "<strong>Général :</strong> Gestion de projet, Résolution de problèmes, Leadership d'équipe, Organisation, Attention aux détails, Focus financier"
       },
       awards: {
         "2023_ocaa": "Prix académique OCAA 2022–2023",
@@ -467,29 +463,29 @@
         "2021_confed": "Tableau d'honneur du Collège Confederation 2020–2021"
       },
       resume: { button: "Télécharger le CV" },
-      contact: { email_label: "Courriel", phone_label: "Téléphone" },
+      contact: { email_label: "Courriel" },
       footer: "© 2026 Nathan Zondag | Canada"
     },
     es: {
       name: "Nathan Zondag",
-      title: "Licenciatura en Ingeniería Mecánica | Líder de Aerodinámica FSAE | Fabricación y Diseño",
+      title: "Licenciatura en Ingeniería Mecánica | Líder de Aerodinámica FSAE | Diseño, Simulación y Fabricación",
       nav: { about: "Acerca de", education: "Educación", projects: "Proyectos", skills: "Habilidades", awards: "Premios", resume: "Currículum", contact: "Contacto", affiliations: "Afiliaciones" },
       sections: { about: "Sobre mí", education: "Educación", projects: "Proyectos y Experiencia", skills: "Habilidades", awards: "Premios", resume: "Currículum Oficial", contact: "Información de Contacto", affiliations: "Afiliaciones" },
-      about: { text: "Estudiante de Ingeniería Mecánica en Lakehead University, graduación prevista en mayo de 2026 con amplia experiencia en diseño, simulación y fabricación. Experiencia liderando equipos de ingeniería, desarrollando sistemas optimizados y trabajo práctico con mecanizado, soldadura y materiales compuestos." },
+      about: { text: "Nacido y criado en Ontario, Canadá, con un afecto de toda la vida por los automóviles. Comencé mi carrera en la industria automotriz en un taller de carrocería local en 2017. Adquiriendo experiencia práctica y conocimientos, esto alimentó mi deseo de seguir una carrera en ingeniería mecánica. Esto me llevó a inscribirme en el Confederation College a través de los 3 niveles de diplomas en Ingeniería Mecánica ofrecidos, donde tuve la oportunidad de unirme al equipo masculino de fútbol varsity del colegio y fui promovido a capitán del equipo en mi último año. Tras graduarme, me inscribí en el programa de transferencia en Lakehead University para completar mi Licenciatura en Ingeniería Mecánica." },
       education: {
         lakehead: { name: "Universidad Lakehead", degree: "Licenciatura en Ingeniería Mecánica (2026)" },
         confed: { name: "Colegio Confederation", technologist: "Tecnólogo en Ingeniería Mecánica (2023)", technician: "Técnico en Ingeniería Mecánica (2022)", techniques: "Técnicas en Ingeniería Mecánica (2021)" }
       },
       projects: {
-        fsae: { title: "Líder de Aerodinámica y Sistemas FSAE", desc: "Dirigí el diseño de sistemas aerodinámicos, de dirección y de cambio de marchas. Optimización del rendimiento mediante simulación y fabricación de componentes de fibra de carbono y aluminio." },
-        mold: { title: "Ingeniería de Diseño de Moldes", desc: "Desarrollé planos de ingeniería y planes de reparación utilizando análisis de datos CMM para sistemas de moldeo por inyección." },
-        auto: { title: "Experiencia en Ingeniería Automotriz", desc: "Realicé reparaciones, estimaciones y mantenimiento mientras gestionaba operaciones en un entorno de taller de ritmo rápido." }
+        fsae: { title: "Líder de Aerodinámica FSAE", desc: "Líder del subequipo de Aerodinámica. Diseño completo, optimización, simulación y fabricación del ala delantera, cono de nariz, paneles laterales y ala trasera." },
+        mold: { title: "Ingeniería de Diseño de Moldes", desc: "Desarrollé planos de ingeniería, planes de reparación y apliqué análisis de datos CMM para sistemas de moldeo por inyección de plástico." },
+        auto: { title: "Experiencia en Ingeniería Automotriz", desc: "Realicé reparaciones de calidad de fábrica, estimaciones de daños, interacción con clientes y proveedores de seguros, y mantenimiento del taller mientras gestionaba operaciones en un entorno de ritmo rápido." }
       },
       skills: {
-        software: "<strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD",
-        manufacturing: "<strong>Fabricación:</strong> Mecanizado, Torno, Soldadura",
-        engineering: "<strong>Ingeniería:</strong> I+D, GD&T, Análisis CMM, Simulación",
-        general: "<strong>General:</strong> Gestión de Proyectos, Liderazgo de Equipos, Organización, Atención al Detalle, Enfoque Financiero"
+        software: "<strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD, OptimumLap, Microsoft Office",
+        manufacturing: "<strong>Fabricación:</strong> Prácticas de mecanizado, Torneado, Soldadura",
+        engineering: "<strong>Ingeniería:</strong> I+D, GD&T, Análisis CMM, Diseño basado en datos, Optimización impulsada por simulación",
+        general: "<strong>General:</strong> Gestión de proyectos, Resolución de problemas, Liderazgo de equipo, Organización, Atención al detalle, Enfoque financiero"
       },
       awards: {
         "2023_ocaa": "Premio Académico OCAA 2022–2023",
@@ -499,29 +495,29 @@
         "2021_confed": "Cuadro de Honor del Colegio Confederation 2020–2021"
       },
       resume: { button: "Descargar Currículum" },
-      contact: { email_label: "Correo", phone_label: "Teléfono" },
+      contact: { email_label: "Correo" },
       footer: "© 2026 Nathan Zondag | Canadá"
     },
     de: {
       name: "Nathan Zondag",
-      title: "Bachelor of Mechanical Engineering | FSAE Aerodynamik-Lead | Fertigung & Design",
+      title: "Bachelor of Mechanical Engineering | FSAE Aerodynamik-Lead | Design, Simulation & Fertigung",
       nav: { about: "Über mich", education: "Ausbildung", projects: "Projekte", skills: "Fähigkeiten", awards: "Auszeichnungen", resume: "Lebenslauf", contact: "Kontakt", affiliations: "Zugehörigkeiten" },
       sections: { about: "Über mich", education: "Ausbildung", projects: "Projekte & Erfahrung", skills: "Fähigkeiten", awards: "Auszeichnungen", resume: "Offizieller Lebenslauf", contact: "Kontaktinformationen", affiliations: "Zugehörigkeiten" },
-      about: { text: "Student des Maschinenbaus an der Lakehead University, Abschluss geplant im Mai 2026 mit umfangreicher Erfahrung in Konstruktion, Simulation und Fertigung. Erfahrung in der Leitung von Ingenieurteams, Entwicklung optimierter Systeme sowie praktische Arbeit mit spanender Bearbeitung, Schweißen und Verbundwerkstoffen." },
+      about: { text: "Geboren und aufgewachsen in Ontario, Kanada, mit einer lebenslangen Begeisterung für Automobile. Ich begann meine Karriere in der Automobilindustrie 2017 in einer lokalen Karosseriewerkstatt. Durch praktische Erfahrungen und Wissen entstand der Wunsch, eine Karriere im Maschinenbau zu verfolgen. Dies führte mich zum Confederation College, wo ich die drei Stufen der Mechanical Engineering Diplome absolvierte. Dort hatte ich die Gelegenheit, dem Männer-Varsity-Soccer-Team des Colleges beizutreten und wurde in meinem letzten Jahr zum Mannschaftskapitän ernannt. Nach dem Abschluss schrieb ich mich in das Transferprogramm an der Lakehead University ein, um meinen Bachelor of Mechanical Engineering abzuschließen." },
       education: {
         lakehead: { name: "Lakehead University", degree: "Bachelor of Mechanical Engineering (2026)" },
         confed: { name: "Confederation College", technologist: "Maschinenbau-Technologe (2023)", technician: "Maschinenbau-Techniker (2022)", techniques: "Maschinenbau-Techniken (2021)" }
       },
       projects: {
-        fsae: { title: "FSAE Aerodynamik- und Systemleiter", desc: "Leitung des Designs von aerodynamischen Systemen, Lenkung und Schaltsystem. Leistungsoptimierung durch Simulation sowie Herstellung von Carbonfaser- und Aluminium-Komponenten." },
-        mold: { title: "Formenbau-Engineering", desc: "Erstellung von technischen Zeichnungen und Reparaturplänen auf Basis von CMM-Datenanalyse für Spritzgießsysteme." },
-        auto: { title: "Erfahrung im Automobil-Engineering", desc: "Durchführung von Reparaturen, Kostenvoranschlägen und Wartung sowie Betriebsmanagement in einem schnelllebigen Werkstattumfeld." }
+        fsae: { title: "FSAE Aerodynamik-Lead", desc: "Teamleiter des Aerodynamik-Subteams. Vollständiges Design, Optimierung, Simulation und Fertigung des Frontflügels, Nasenkonus, Seitenpaneele und Heckflügel." },
+        mold: { title: "Formenbau-Engineering", desc: "Erstellung von technischen Zeichnungen, Reparaturplänen und Anwendung von CMM-Datenanalyse für Kunststoffspritzgießsysteme." },
+        auto: { title: "Erfahrung im Automobil-Engineering", desc: "Durchführung von werksqualitätsgerechten Reparaturen, Schadensschätzungen, Interaktion mit Kunden und Versicherern sowie Werkstattwartung bei gleichzeitiger Betriebsführung in einem schnelllebigen Umfeld." }
       },
       skills: {
-        software: "<strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD",
+        software: "<strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD, OptimumLap, Microsoft Office",
         manufacturing: "<strong>Fertigung:</strong> Spanende Bearbeitung, Drehen, Schweißen",
-        engineering: "<strong>Ingenieurwesen:</strong> F&E, GD&T, CMM-Analyse, Simulation",
-        general: "<strong>Allgemein:</strong> Projektmanagement, Teamführung, Organisation, Detailgenauigkeit, Kostenbewusstsein"
+        engineering: "<strong>Ingenieurwesen:</strong> F&E, GD&T, CMM-Analyse, Datengetriebenes Design, Simulationsgetriebene Optimierung",
+        general: "<strong>Allgemein:</strong> Projektmanagement, Problemlösung, Teamführung, Organisation, Detailgenauigkeit, Kostenbewusstsein"
       },
       awards: {
         "2023_ocaa": "OCAA All Academic Award 2022–2023",
@@ -531,7 +527,7 @@
         "2021_confed": "Ehrenliste Confederation College 2020–2021"
       },
       resume: { button: "Lebenslauf herunterladen" },
-      contact: { email_label: "E-Mail", phone_label: "Telefon" },
+      contact: { email_label: "E-Mail" },
       footer: "© 2026 Nathan Zondag | Kanada"
     }
   };
@@ -549,11 +545,6 @@
     document.documentElement.lang = lang;
   }
 
-  function toggleExpand(card) {
-    const expandable = card.querySelector('.expandable');
-    if (expandable) expandable.classList.toggle('open');
-  }
-
   document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'en';
     setLanguage(savedLang);
@@ -564,4 +555,3 @@
 </script>
 </body>
 </html>
-
