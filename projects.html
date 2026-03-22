@@ -6,8 +6,6 @@
   <title>Projects | Nathan Zondag – Mechanical Engineering Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* ──────────────────────────────────────────────────────────────── */
-    /* Identical styles as index.html – copy-paste the entire <style> block above here */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
@@ -16,28 +14,159 @@
       line-height: 1.6;
       font-size: clamp(0.95rem, 3vw, 1.05rem);
     }
-    header { text-align: center; padding: clamp(2.5rem, 8vw, 4rem) 1rem 1.5rem; background: #7D051F; }
+    header {
+      text-align: center;
+      padding: clamp(2.5rem, 8vw, 4rem) 1rem 1.5rem;
+      background: #7D051F;
+    }
     header h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
     header p { color: #FFFFFF; font-size: clamp(1rem, 4vw, 1.2rem); }
-    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(0.9rem, 3vw, 1.8rem); padding: 1rem; background: #020617; position: sticky; top: 0; z-index: 100; }
-    nav a { color: #e2e8f0; text-decoration: none; font-size: clamp(0.95rem, 3.5vw, 1.1rem); padding: 0.5rem 0.9rem; border-radius: 6px; transition: background 0.2s; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(0.9rem, 3vw, 1.8rem);
+      padding: 1rem;
+      background: #020617;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
     nav a:hover { background: rgba(56,189,248,0.15); }
-    .lang-switcher { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; margin: 1.2rem 0; }
-    .lang-btn { background: none; border: none; color: #94a3b8; cursor: pointer; font-size: clamp(0.85rem, 3vw, 0.95rem); display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.9rem; border-radius: 6px; transition: all 0.2s; }
-    .lang-btn:hover, .lang-btn.active { color: #38bdf8; background: rgba(56,189,248,0.12); }
+    .lang-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.7rem;
+      margin: 1.2rem 0;
+    }
+    .lang-btn {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      font-size: clamp(0.85rem, 3vw, 0.95rem);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover, .lang-btn.active {
+      color: #38bdf8;
+      background: rgba(56,189,248,0.12);
+    }
     .lang-btn img { width: 18px; height: auto; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
-    .container { max-width: 1100px; margin: 0 auto; padding: clamp(1rem, 4vw, 2rem); }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1rem, 4vw, 2rem);
+    }
     section { margin-bottom: clamp(2.5rem, 6vw, 4rem); }
-    h2 { font-size: clamp(1.5rem, 5vw, 2rem); margin-bottom: 1rem; border-bottom: 2px solid #A1A1A1; padding-bottom: 0.5rem; }
-    .card { background: #1e293b; border-radius: 12px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+    h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #A1A1A1;
+      padding-bottom: 0.5rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
     .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
-    .card img { width: 100%; height: auto; border-radius: 8px; margin-top: 1rem; }
-    .card-header { padding: 1.2rem 1rem 0.5rem; }
-    .card-content { padding: 0 1rem 1.2rem; }
-    .card-content p { color: #94a3b8; font-size: 0.95rem; }
-    .btn { display: inline-block; margin: 0.8rem 0; padding: 0.8rem 1.4rem; background: #38bdf8; color: #020617; text-decoration: none; border-radius: 6px; font-weight: 600; min-width: 140px; text-align: center; }
-    footer { text-align: center; padding: 2rem 1rem; color: #64748b; font-size: 0.9rem; }
-    @media (min-width: 1024px) { .lang-switcher { position: absolute; top: 2rem; right: 3rem; margin: 0; } }
+    .card-header {
+      padding: 1.2rem 1.4rem;
+      background: #253549;
+    }
+    .card-header h3 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+    .card-content {
+      padding: 0 1.4rem 1.4rem;
+    }
+    .card-content > p {
+      color: #94a3b8;
+      margin: 1rem 0;
+    }
+    .expandable {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease-out, padding 0.4s ease;
+    }
+    .expandable.open {
+      max-height: 5000px; /* large enough for content */
+      padding: 0.5rem 0 1.5rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin: 1.5rem 0;
+    }
+    .gallery-item {
+      background: #111827;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 0.9rem;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      margin: 2rem 0 1rem;
+      padding: 0.9rem 1.8rem;
+      background: #38bdf8;
+      color: #020617;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      min-width: 160px;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    @media (min-width: 768px) {
+      .projects-grid { grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); }
+    }
+    @media (min-width: 1024px) {
+      .lang-switcher {
+        position: absolute;
+        top: 2rem;
+        right: 3rem;
+        margin: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -51,6 +180,7 @@
     <button class="lang-btn" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE"> Deutsch</button>
   </div>
 </header>
+
 <nav>
   <a href="index.html#about" data-i18n="nav.about">About</a>
   <a href="index.html#education" data-i18n="nav.education">Education</a>
@@ -65,78 +195,95 @@
 <div class="container">
   <section>
     <h2 data-i18n="sections.detailed_projects">Detailed Projects</h2>
-    <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem;">
-      <div class="card">
-        <div class="card-header"><h3>Project 1 – FSAE Front Wing & Undertray Development</h3></div>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="card" onclick="this.querySelector('.expandable').classList.toggle('open')">
+        <div class="card-header">
+          <h3>Project 1 – FSAE Front Wing & Undertray Development</h3>
+        </div>
         <div class="card-content">
-          <p>Placeholder: Description of goals, your role, tools used (SolidWorks, ANSYS Fluent, CFD setup), key results, challenges overcome, etc.</p>
-          <img src="https://via.placeholder.com/800x450/333/fff?text=Project+1" alt="Project 1">
+          <p>Click to expand and view detailed description + gallery</p>
+          <div class="expandable">
+            <p><strong>Role:</strong> Aerodynamics Lead | <strong>Tools:</strong> SolidWorks, ANSYS Fluent (CFD), OptimumG</p>
+            <p>Designed, simulated, and manufactured front wing package including mainplane, flaps, endplates, and undertray components. Achieved targeted downforce increase of X% while maintaining acceptable drag penalty through iterative CFD optimization.</p>
+            <p>Key challenges: Balancing on-track performance with manufacturability using carbon fiber and aluminum honeycomb sandwich panels.</p>
+
+            <div class="gallery">
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/333/fff?text=CFD+Pressure+Contour" alt="CFD Pressure">
+                <div class="gallery-caption">CFD pressure distribution – front wing assembly</div>
+              </div>
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/334/fff?text=SolidWorks+Assembly" alt="SolidWorks">
+                <div class="gallery-caption">SolidWorks parametric model of wing + endplates</div>
+              </div>
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/335/fff?text=Manufactured+Wing" alt="Manufactured">
+                <div class="gallery-caption">Final carbon fiber front wing ready for testing</div>
+              </div>
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/336/fff?text=Wind+Tunnel+Validation" alt="Wind Tunnel">
+                <div class="gallery-caption">Wind tunnel correlation results</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-header"><h3>Project 2 – Title</h3></div>
+      <!-- Project 2 -->
+      <div class="card" onclick="this.querySelector('.expandable').classList.toggle('open')">
+        <div class="card-header">
+          <h3>Project 2 – FSAE Rear Wing & Diffuser Optimization</h3>
+        </div>
         <div class="card-content">
-          <p>Placeholder description...</p>
-          <img src="https://via.placeholder.com/800x450/444/fff?text=Project+2" alt="Project 2">
+          <p>Click to expand and view detailed description + gallery</p>
+          <div class="expandable">
+            <p>Detailed description of rear wing design, CFD iterations, manufacturing process, mounting system integration, and performance gains.</p>
+            <div class="gallery">
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/444/fff?text=Rear+Wing+CFD" alt="Rear CFD">
+                <div class="gallery-caption">Rear wing velocity streamlines</div>
+              </div>
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/445/fff?text=Core+Cutting" alt="Core">
+                <div class="gallery-caption">Honeycomb core preparation</div>
+              </div>
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/446/fff?text=Layup+Process" alt="Layup">
+                <div class="gallery-caption">Carbon fiber layup in progress</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-header"><h3>Project 3 – Title</h3></div>
+      <!-- Add more projects following the same pattern -->
+      <!-- Example for Project 3 -->
+      <div class="card" onclick="this.querySelector('.expandable').classList.toggle('open')">
+        <div class="card-header">
+          <h3>Project 3 – Injection Mold Repair & Optimization (Jokey Plastics)</h3>
+        </div>
         <div class="card-content">
-          <p>Placeholder...</p>
-          <img src="https://via.placeholder.com/800x450/555/fff?text=Project+3" alt="Project 3">
+          <p>Click to expand and view detailed description + gallery</p>
+          <div class="expandable">
+            <p>Analyzed CMM data, created repair drawings, and developed maintenance plans for high-volume injection molds.</p>
+            <div class="gallery">
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/555/fff?text=CMM+Inspection" alt="CMM">
+                <div class="gallery-caption">CMM measurement of critical features</div>
+              </div>
+              <div class="gallery-item">
+                <img src="https://via.placeholder.com/800x450/556/fff?text=Repair+Drawing" alt="Drawing">
+                <div class="gallery-caption">Engineering repair drawing</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-header"><h3>Project 4 – Title</h3></div>
-        <div class="card-content">
-          <p>Placeholder...</p>
-          <img src="https://via.placeholder.com/800x450/666/fff?text=Project+4" alt="Project 4">
-        </div>
-      </div>
+      <!-- You can continue adding more cards here... -->
 
-      <div class="card">
-        <div class="card-header"><h3>Project 5 – Title</h3></div>
-        <div class="card-content">
-          <p>Placeholder...</p>
-          <img src="https://via.placeholder.com/800x450/777/fff?text=Project+5" alt="Project 5">
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header"><h3>Project 6 – Title</h3></div>
-        <div class="card-content">
-          <p>Placeholder...</p>
-          <img src="https://via.placeholder.com/800x450/888/fff?text=Project+6" alt="Project 6">
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header"><h3>Project 7 – Title</h3></div>
-        <div class="card-content">
-          <p>Placeholder...</p>
-          <img src="https://via.placeholder.com/800x450/999/fff?text=Project+7" alt="Project 7">
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header"><h3>Project 8 – Title</h3></div>
-        <div class="card-content">
-          <p>Placeholder...</p>
-          <img src="https://via.placeholder.com/800x450/aaa/fff?text=Project+8" alt="Project 8">
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header"><h3>Project 9 – Title</h3></div>
-        <div class="card-content">
-          <p>Placeholder...</p>
-          <img src="https://via.placeholder.com/800x450/bbb/fff?text=Project+9" alt="Project 9">
-        </div>
-      </div>
     </div>
 
     <div style="text-align: center; margin: 4rem 0;">
@@ -150,8 +297,38 @@
 </footer>
 
 <script>
-  const translations = { /* Copy the EXACT same translations object from index.html here */ };
-  // Paste the full translations object from the index.html <script> block above
+  // Paste your FULL translations object from index.html here
+  const translations = {
+    en: {
+      name: "Nathan Zondag",
+      title: "Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Manufacturing & Design",
+      nav: { about: "About", education: "Education", projects: "Projects", skills: "Skills", awards: "Awards", resume: "Resume", contact: "Contact", affiliations: "Affiliations" },
+      sections: { detailed_projects: "Detailed Projects" },
+      footer: "© 2026 Nathan Zondag | Canada"
+      // ... add other keys if needed, but minimal set for this page
+    },
+    fr: {
+      name: "Nathan Zondag",
+      title: "Baccalauréat en génie mécanique | Responsable de l'aérodynamique FSAE | Fabrication et conception",
+      nav: { about: "À propos", education: "Éducation", projects: "Projets", skills: "Compétences", awards: "Prix", resume: "CV", contact: "Contact", affiliations: "Affiliations" },
+      sections: { detailed_projects: "Projets détaillés" },
+      footer: "© 2026 Nathan Zondag | Canada"
+    },
+    es: {
+      name: "Nathan Zondag",
+      title: "Licenciatura en Ingeniería Mecánica | Líder de Aerodinámica FSAE | Fabricación y Diseño",
+      nav: { about: "Acerca de", education: "Educación", projects: "Proyectos", skills: "Habilidades", awards: "Premios", resume: "Currículum", contact: "Contacto", affiliations: "Afiliaciones" },
+      sections: { detailed_projects: "Proyectos Detallados" },
+      footer: "© 2026 Nathan Zondag | Canadá"
+    },
+    de: {
+      name: "Nathan Zondag",
+      title: "Bachelor of Mechanical Engineering | FSAE Aerodynamik-Lead | Fertigung & Design",
+      nav: { about: "Über mich", education: "Ausbildung", projects: "Projekte", skills: "Fähigkeiten", awards: "Auszeichnungen", resume: "Lebenslauf", contact: "Kontakt", affiliations: "Zugehörigkeiten" },
+      sections: { detailed_projects: "Detaillierte Projekte" },
+      footer: "© 2026 Nathan Zondag | Kanada"
+    }
+  };
 
   function setLanguage(lang) {
     if (!translations[lang]) lang = 'en';
