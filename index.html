@@ -4,215 +4,221 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nathan Zondag | Mechanical Engineering Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Inter', sans-serif;
-      background: #B5B3B3;
+      background: #000000;
       color: #FFFFFF;
-      line-height: 1.6;
-      font-size: clamp(0.95rem, 3vw, 1.05rem);
+      line-height: 1.7;
+      font-size: clamp(1rem, 2.2vw, 1.08rem);
     }
     header {
       text-align: center;
-      padding: clamp(2.5rem, 8vw, 4rem) 1rem 1.5rem;
-      background: #A63446;
+      padding: clamp(5rem, 12vw, 8rem) 1.5rem 4rem;
+      background: linear-gradient(135deg, #A63446 0%, #000000 70%);
+      position: relative;
+      overflow: hidden;
     }
-    header h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
-    header p { color: #FFFFFF; font-size: clamp(1rem, 4vw, 1.2rem); }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(245,100,22,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    header h1 {
+      font-size: clamp(2.8rem, 8vw, 4.8rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 0.6rem;
+      color: #FFFFFF;
+    }
+    header p {
+      font-size: clamp(1.15rem, 3.5vw, 1.45rem);
+      color: #F56416;
+      font-weight: 500;
+      opacity: 0.95;
+    }
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: clamp(0.9rem, 3vw, 1.8rem);
-      padding: 1rem;
-      background: #020617;
+      gap: clamp(1.2rem, 3vw, 2.2rem);
+      padding: 1.4rem 1rem;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(165,52,70,0.25);
     }
     nav a {
-      color: #e2e8f0;
+      color: #FFFFFF;
       text-decoration: none;
-      font-size: clamp(0.95rem, 3.5vw, 1.1rem);
-      padding: 0.5rem 0.9rem;
-      border-radius: 6px;
-      transition: background 0.2s;
+      font-size: clamp(1rem, 2.8vw, 1.1rem);
+      font-weight: 500;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
     }
-    nav a:hover { background: rgba(56,189,248,0.15); }
+    nav a:hover, nav a.active {
+      background: rgba(245,100,22,0.18);
+      color: #F56416;
+    }
     .lang-switcher {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.7rem;
-      margin: 1.2rem 0;
+      gap: 0.9rem;
+      margin: 1.6rem 0 0.8rem;
     }
     .lang-btn {
       background: none;
       border: none;
-      color: #94a3b8;
+      color: #B5B3B3;
       cursor: pointer;
-      font-size: clamp(0.85rem, 3vw, 0.95rem);
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 0.9rem;
-      border-radius: 6px;
-      transition: all 0.2s;
+      gap: 0.5rem;
+      padding: 0.6rem 1.1rem;
+      border-radius: 8px;
+      transition: all 0.25s;
     }
     .lang-btn:hover, .lang-btn.active {
-      color: #38bdf8;
-      background: rgba(56,189,248,0.12);
+      color: #F56416;
+      background: rgba(245,100,22,0.12);
     }
-    .lang-btn img { width: 18px; height: auto; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+    .lang-btn img {
+      width: 20px;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
     .container {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: clamp(1rem, 4vw, 2rem);
+      padding: clamp(1.5rem, 5vw, 3rem) 1.5rem;
     }
-    section { margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+    section {
+      margin-bottom: clamp(4rem, 8vw, 7rem);
+    }
     h2 {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #A1A1A1;
-      padding-bottom: 0.5rem;
-    }
-    h2 a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-    h2 a:hover {
-      text-decoration: underline;
-    }
-    .education-grid, .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 3px solid #F56416;
+      display: inline-block;
+      color: #FFFFFF;
     }
     .card {
-      background: #1e293b;
-      border-radius: 12px;
+      background: rgba(181,179,179,0.08);
+      border: 1px solid rgba(181,179,179,0.15);
+      border-radius: 16px;
       overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: all 0.35s ease;
+      backdrop-filter: blur(6px);
     }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(245,100,22,0.18);
+      border-color: #F56416;
+    }
     .card img {
       width: 100%;
       height: auto;
       aspect-ratio: 4 / 3;
       object-fit: cover;
+      transition: transform 0.4s ease;
     }
-    .card-header { padding: 1.2rem 1rem 0.5rem; }
-    .card-content { padding: 0 1rem 1.2rem; }
-    .card-content p { color: #94a3b8; font-size: 0.95rem; }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 0.8rem;
-      margin: 1.2rem 0;
+    .card:hover img {
+      transform: scale(1.06);
     }
-    .gallery img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    .card-header {
+      padding: 1.4rem 1.6rem 0.8rem;
+      background: linear-gradient(to bottom, rgba(12,98,145,0.15), transparent);
+    }
+    .card-header h3 {
+      font-size: 1.38rem;
+      margin: 0;
+      color: #F56416;
+    }
+    .card-content {
+      padding: 0 1.6rem 1.8rem;
+    }
+    .card-content p {
+      color: #B5B3B3;
+      font-size: 1.02rem;
     }
     .btn {
       display: inline-block;
-      margin: 0.8rem 0;
-      padding: 0.8rem 1.4rem;
-      background: #38bdf8;
-      color: #020617;
+      margin: 1.2rem 0;
+      padding: 1rem 2rem;
+      background: #F56416;
+      color: #000000;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 10px;
       font-weight: 600;
-      min-width: 140px;
-      text-align: center;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(245,100,22,0.35);
     }
-    .skills, .awards-list, .contact-info, .resume, .affiliations {
-      background: #1e293b;
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-top: 1rem;
+    .btn:hover {
+      background: #FFFFFF;
+      color: #A63446;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(165,52,70,0.4);
     }
-    .skills p, .awards-list p, .contact-info p {
-      margin: 0.8rem 0;
-      font-size: clamp(0.95rem, 3.2vw, 1.05rem);
-    }
-    .contact-info a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .contact-info a:hover { text-decoration: underline; }
     .about-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
+      gap: 2.5rem;
       text-align: center;
     }
-    .about-container .left { max-width: 90%; }
+    .about-container .left {
+      max-width: 90%;
+    }
     .about-container .right img {
-      width: 220px;
-      height: 220px;
+      width: 260px;
+      height: 260px;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 50%;
+      border: 5px solid #F56416;
+      box-shadow: 0 12px 40px rgba(245,100,22,0.3);
     }
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      color: #64748b;
-      font-size: 0.9rem;
+      padding: 3.5rem 1rem 2rem;
+      color: #B5B3B3;
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(181,179,179,0.15);
     }
-    .marquee {
-      overflow: hidden;
-      white-space: nowrap;
-      width: 100%;
-    }
-    .marquee-content {
-      display: inline-block;
-      animation: scroll-left 25s linear infinite;
-    }
-    .marquee-content img {
-      height: 100px;
-      margin: 0 1.5rem;
-      vertical-align: middle;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      background: #111827;
-    }
-    @keyframes scroll-left {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    @media (min-width: 480px) {
-      .about-container { flex-direction: row; text-align: left; }
-      .about-container .left { flex: 3; }
-      .about-container .right img { width: 250px; height: 250px; }
-      nav { gap: 1.8rem; }
-    }
+
     @media (min-width: 768px) {
       .education-grid, .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       }
-      .lang-switcher { gap: 1.2rem; }
-      .gallery { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
-      .gallery img { height: 120px; }
+      .about-container {
+        flex-direction: row;
+        text-align: left;
+        gap: 4rem;
+      }
+      .about-container .left { flex: 3; }
+      .about-container .right img { width: 300px; height: 300px; }
     }
+
     @media (min-width: 1024px) {
-      header { padding-top: 5rem; }
-      .container { padding: 2.5rem; }
-      nav { gap: 2.5rem; }
-      .lang-switcher {
-        position: absolute;
-        top: 2rem;
-        right: 3rem;
-        margin: 0;
-      }
-      .about-container .right img { width: 280px; height: 280px; }
+      header { padding-top: 10rem; padding-bottom: 6rem; }
+      .container { padding: 0 3rem; }
+      .lang-switcher { position: absolute; top: 2.5rem; right: 4rem; }
     }
   </style>
 </head>
@@ -227,6 +233,7 @@
     <button class="lang-btn" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE"> Deutsch</button>
   </div>
 </header>
+
 <nav>
   <a href="#about" data-i18n="nav.about">About</a>
   <a href="#education" data-i18n="nav.education">Education</a>
@@ -237,19 +244,20 @@
   <a href="#contact" data-i18n="nav.contact">Contact</a>
   <a href="#affiliations" data-i18n="nav.affiliations">Affiliations</a>
 </nav>
+
 <div class="container">
   <section id="about">
     <h2 data-i18n="sections.about">About Me</h2>
     <div class="about-container">
       <div class="left">
         <p data-i18n="about.text">
-          Born and raised in Ontario, Canada with a lifelong affection for automobiles. 
-          I began my career in the automotive industry at a local autobody shop in 2017. 
-          Gaining hands-on experience and knowledge, it fueled my desire to pursue a career 
-          in mechanical engineering. This led me to enroll at Confederation College 
-          through the 3 tiers of Mechanical Engineering diplomas offered, where I had the 
-          opportunity to join the college's Men's Varsity Soccer Team, and was promoted to 
-          team captain in my final year at the school. Following graduation, I enrolled in 
+          Born and raised in Ontario, Canada with a lifelong affection for automobiles.
+          I began my career in the automotive industry at a local autobody shop in 2017.
+          Gaining hands-on experience and knowledge, it fueled my desire to pursue a career
+          in mechanical engineering. This led me to enroll at Confederation College
+          through the 3 tiers of Mechanical Engineering diplomas offered, where I had the
+          opportunity to join the college's Men's Varsity Soccer Team, and was promoted to
+          team captain in my final year at the school. Following graduation, I enrolled in
           the transfer program at Lakehead University to complete my Bachelor of Mechanical Engineering.
         </p>
       </div>
@@ -259,9 +267,11 @@
     </div>
   </section>
 
+  <!-- The rest of your sections remain the same – only styling is enhanced -->
   <section id="education">
     <h2 data-i18n="sections.education">Education</h2>
     <div class="education-grid">
+      <!-- Your existing education cards here – they now benefit from new card styling -->
       <div class="card">
         <img src="lakehead square logo.jpg" alt="Lakehead University">
         <div class="card-header">
@@ -271,7 +281,7 @@
           <p data-i18n="education.lakehead.degree">Bachelor of Mechanical Engineering (2026)</p>
         </div>
       </div>
-      <div class="card">
+    <div class="card">
         <img src="confed logo.jpg" alt="Confederation College">
         <div class="card-header">
           <h3 data-i18n="education.confed.name">Confederation College</h3>
@@ -304,7 +314,7 @@
   <section id="projects">
     <h2><a href="projects.html" data-i18n="sections.projects">Projects & Experience</a></h2>
     <div class="projects-grid">
-      <div class="card">
+ <div class="card">
         <img src="fsae mountain photo.jpg" alt="FSAE">
         <div class="card-header">
           <h3 data-i18n="projects.fsae.title">FSAE Aerodynamics Lead</h3>
@@ -334,20 +344,21 @@
           <p data-i18n="projects.auto.desc">Performed factory quality repairs, damage estimations, customer and insurance provider interaction and shop maintenance while managing operations in a fast-paced shop environment.</p>
         </div>
       </div>
+
     </div>
   </section>
 
   <section id="skills">
     <h2 data-i18n="sections.skills">Skills</h2>
-    <div class="skills">
-      <p data-i18n="skills.software"><strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD, OptimumLap, Microsoft Office</p>
+    <div class="skills" style="background: rgba(12,98,145,0.12); border: 1px solid rgba(12,98,145,0.3);">
+     <p data-i18n="skills.software"><strong>Software:</strong> SolidWorks, ANSYS Fluent, AutoCAD, OptimumLap, Microsoft Office</p>
       <p data-i18n="skills.manufacturing"><strong>Manufacturing:</strong> Machining Practices, Lathing, Welding</p>
       <p data-i18n="skills.engineering"><strong>Engineering:</strong> R&D, GD&T, CMM Analysis, Data Driven Design, Simulation Driven Optimization</p>
       <p data-i18n="skills.general"><strong>General:</strong> Project Management, Problem Solving, Team Leadership, Organization, Attention to Detail, Financial Focus</p>
-    </div>
+      </div>
   </section>
 
-  <section id="awards">
+<section id="awards">
     <h2 data-i18n="sections.awards">Awards</h2>
     <div class="awards-list">
       <p data-i18n="awards.2023_ocaa">2022–2023 OCAA All Academic Award</p>
@@ -392,6 +403,8 @@
       </div>
     </div>
   </section>
+
+
 </div>
 
 <footer>
