@@ -6,18 +6,22 @@
   <title>Projects & Experience | Nathan Zondag – Mechanical Engineering Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
       background: #FBFEF9;
-      color: #222222;
+      color: #000000;
       line-height: 1.68;
-      font-size: clamp(1rem, 2.1vw, 1.08rem);
+      font-size: clamp(1rem, 2.1vw, 1.07rem);
       min-height: 100vh;
       opacity: 0;
       transform: translateY(20px);
-      animation: pageEnter 0.9s ease-out forwards 0.1s;
+      animation: pageEnter 0.9s ease-out forwards 0.2s;
     }
 
     @keyframes pageEnter {
@@ -32,7 +36,6 @@
       color: white;
       text-align: center;
       padding: clamp(4rem, 12vw, 6.5rem) 1.5rem 3.5rem;
-      position: relative;
     }
 
     header h1 {
@@ -43,43 +46,42 @@
 
     header p {
       font-size: clamp(1.1rem, 3.8vw, 1.35rem);
-      font-weight: 400;
       opacity: 0.94;
-      max-width: 780px;
-      margin: 0.6rem auto 0;
+      margin-top: 0.5rem;
     }
 
     nav {
-      background: #A41623;
+      background: #000000;
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 1.1rem 0;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      padding: 1.2rem 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.22);
     }
 
     nav .container {
-      max-width: 1200px;
+      max-width: 1180px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: clamp(1.2rem, 3vw, 2.4rem);
+      gap: 1.6rem;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 500;
-      font-size: clamp(1rem, 2.4vw, 1.12rem);
-      padding: 0.65rem 1.4rem;
+      font-size: clamp(1rem, 2.4vw, 1.08rem);
+      padding: 0.6rem 1.4rem;
       border-radius: 8px;
       transition: all 0.28s ease;
     }
 
     nav a:hover {
       background: #F85E00;
-      transform: translateY(-2px);
+      color: white;
+      transform: translateY(-1px);
     }
 
     .lang-switcher {
@@ -91,25 +93,26 @@
     }
 
     .lang-btn {
-      background: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.15);
       border: none;
       color: white;
       cursor: pointer;
       font-size: 0.96rem;
       padding: 0.55rem 1.1rem;
-      border-radius: 8px;
+      border-radius: 6px;
       display: flex;
       align-items: center;
-      gap: 0.55rem;
-      transition: all 0.28s;
+      gap: 0.5rem;
+      transition: all 0.25s;
     }
 
     .lang-btn:hover, .lang-btn.active {
       background: #F18701;
+      color: white;
     }
 
     .lang-btn img {
-      width: 22px;
+      width: 20px;
       border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.35);
     }
@@ -121,13 +124,13 @@
     }
 
     section {
-      padding: 5.5rem 0 4rem;
+      padding: 6rem 0 4rem;
     }
 
     h2 {
       font-size: clamp(1.9rem, 4.8vw, 2.8rem);
       font-weight: 700;
-      color: #0879B6;
+      color: #000000;
       text-align: center;
       margin-bottom: 2.8rem;
       position: relative;
@@ -155,19 +158,19 @@
       background: #FFFFFF;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
-      transition: all 0.35s ease;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.11);
+      transition: all 0.32s ease;
     }
 
     .card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 22px 48px rgba(0,0,0,0.14);
+      transform: translateY(-10px);
+      box-shadow: 0 22px 48px rgba(0,0,0,0.16);
     }
 
     .card-header {
-      padding: 1.5rem 1.8rem;
       background: #0879B6;
       color: white;
+      padding: 1.5rem 1.8rem;
     }
 
     .card-header h3 {
@@ -178,19 +181,18 @@
 
     .card-content {
       padding: 1.6rem 1.8rem 2rem;
-      color: #333;
     }
 
-    .card-content > p:first-child {
-      color: #666;
-      font-style: italic;
-      margin-bottom: 1.2rem;
+    .card-content > p {
+      color: #555;
+      margin: 1.1rem 0;
+      font-size: 1.02rem;
     }
 
     .expandable {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.7s ease-out, padding 0.4s ease;
+      transition: max-height 0.7s ease-out, padding 0.45s ease;
     }
 
     .expandable.open {
@@ -203,19 +205,22 @@
       background: #F18701;
       color: white;
       padding: 0.95rem 2.1rem;
-      border-radius: 10px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
       box-shadow: 0 5px 14px rgba(241,135,1,0.28);
     }
 
     .btn:hover {
       background: #F85E00;
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: 0 10px 24px rgba(248,94,0,0.35);
     }
 
+    /* ────────────────────────────────────────────── */
+    /* Experience styling */
+    /* ────────────────────────────────────────────── */
     .experience-item {
       display: flex;
       flex-direction: column;
@@ -223,26 +228,17 @@
       text-align: center;
       margin-bottom: 5rem;
       padding: 0 1rem;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 0.9s ease-out forwards;
-      animation-delay: calc(var(--order) * 0.12s);
+      background: #FFFFFF;
+      border-radius: 14px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.09);
+      transition: all 0.35s ease;
     }
 
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .experience-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
     }
-
-    .experience-item:nth-child(1) { --order: 1; }
-    .experience-item:nth-child(2) { --order: 2; }
-    .experience-item:nth-child(3) { --order: 3; }
-    .experience-item:nth-child(4) { --order: 4; }
-    .experience-item:nth-child(5) { --order: 5; }
-    .experience-item:nth-child(6) { --order: 6; }
-    .experience-item:nth-child(7) { --order: 7; }
 
     .experience-item .job-image {
       width: 100%;
@@ -250,20 +246,19 @@
       height: auto;
       border-radius: 12px;
       margin-bottom: 1.8rem;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-      border: 1px solid #CCCCCC;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
 
     .experience-item h3 {
-      font-size: clamp(1.45rem, 4vw, 1.9rem);
-      color: #0879B6;
+      font-size: clamp(1.45rem, 4.2vw, 1.9rem);
       margin-bottom: 0.5rem;
+      color: #0879B6;
       font-weight: 700;
     }
 
     .experience-item .role {
       font-size: clamp(1.05rem, 3vw, 1.22rem);
-      color: #444;
+      color: #555;
       margin-bottom: 1.4rem;
       font-weight: 500;
     }
@@ -272,15 +267,6 @@
       max-width: 820px;
       color: #333;
       font-size: clamp(1rem, 2.6vw, 1.08rem);
-    }
-
-    footer {
-      background: #A41623;
-      color: white;
-      text-align: center;
-      padding: 3.5rem 1rem 2.5rem;
-      font-size: 0.98rem;
-      margin-top: 4rem;
     }
 
     @media (min-width: 768px) {
@@ -295,6 +281,15 @@
         flex-shrink: 0;
         width: 360px;
       }
+    }
+
+    footer {
+      background: #000000;
+      color: #aaa;
+      text-align: center;
+      padding: 3.5rem 1rem 2.5rem;
+      font-size: 0.96rem;
+      margin-top: 4rem;
     }
 
     @media (min-width: 1024px) {
@@ -323,7 +318,7 @@
   <div class="container">
     <a href="index.html#about" data-i18n="nav.about">About</a>
     <a href="index.html#education" data-i18n="nav.education">Education</a>
-    <a href="projects.html" data-i18n="nav.projects">Projects</a>
+    <a href="projects.html" data-i18n="nav.projects">Projects & Experience</a>
     <a href="index.html#skills" data-i18n="nav.skills">Skills</a>
     <a href="index.html#awards" data-i18n="nav.awards">Awards</a>
     <a href="index.html#resume" data-i18n="nav.resume">Resume</a>
@@ -337,7 +332,6 @@
   <section>
     <h2 data-i18n="sections.detailed_projects">Detailed Projects</h2>
     <div class="projects-grid">
-
       <div class="card">
         <div class="card-header"><h3>Project 1 – FSAE Aerodynamic Package: Front Wing, Nose Cone, Side Panelling, Rear Wing</h3></div>
         <div class="card-content">
@@ -345,7 +339,9 @@
           <div class="expandable">
             <p><strong>Role:</strong> Aerodynamics Lead | <strong>Tools:</strong> SolidWorks, ANSYS Fluent</p>
             <p>Information Under Maintenance</p>
-            <img src="full aero.jpg" alt="Full Aero Package" style="width:100%; border-radius:10px; margin-top:1.2rem;">
+            <div class="right">
+              <img src="full aero.jpg" alt="Full Aero">
+            </div>
           </div>
         </div>
       </div>
@@ -383,7 +379,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -400,7 +395,7 @@
     </div>
 
     <div class="experience-item">
-      <img src="jokey logo.png" alt="Jokey North America Inc." class="job-image">
+      <img src="jokey logo.png" alt="Jokey North America" class="job-image">
       <div>
         <h3>Jokey North America Inc. - Mold Designer</h3>
         <div class="role">2025</div>
@@ -427,7 +422,7 @@
     </div>
 
     <div class="experience-item">
-      <img src="bluewater logo.jpg" alt="Bluewater Auto Body & Fender" class="job-image">
+      <img src="bluewater logo.jpg" alt="Bluewater Auto Body" class="job-image">
       <div>
         <h3>Bluewater Auto Body & Fender - Autobody Repair, Damage Estimation, Detailer</h3>
         <div class="role">2017–2024</div>
@@ -445,7 +440,7 @@
     </div>
 
     <div class="experience-item">
-      <img src="northern cross logo.jpg" alt="Northern Cross Energy Limited" class="job-image">
+      <img src="northern cross logo.jpg" alt="Northern Cross Energy" class="job-image">
       <div>
         <h3>Northern Cross Energy Limited - Seasonal Employee, Compressor Region Maintenance</h3>
         <div class="role">2014–2016</div>
@@ -453,7 +448,7 @@
       </div>
     </div>
 
-    <div style="text-align: center; margin: 6rem 0 3rem;">
+    <div style="text-align: center; margin: 6rem 0 4rem;">
       <a href="index.html" class="btn">← Back to Home</a>
     </div>
   </section>
@@ -485,16 +480,10 @@
     document.documentElement.lang = lang;
   }
 
+  // Accordion - only one open at a time
   document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
-    setLanguage(savedLang);
-
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
-    });
-
-    // Card accordion (only one open at a time)
-    document.querySelectorAll('.card').forEach(card => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
       card.addEventListener('click', function() {
         const expandable = this.querySelector('.expandable');
         document.querySelectorAll('.expandable').forEach(exp => {
@@ -503,8 +492,13 @@
         expandable.classList.toggle('open');
       });
     });
+
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    setLanguage(savedLang);
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
   });
 </script>
-
 </body>
 </html>
