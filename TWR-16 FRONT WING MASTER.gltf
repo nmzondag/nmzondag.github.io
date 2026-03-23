@@ -1,0 +1,207 @@
+{
+    "asset": {
+        "generator": "SOLIDWORKSGLTF",
+        "version": "2.0"
+    },
+    "scene": 0,
+    "scenes": [
+        {
+            "name": "Default",
+            "nodes": [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "matrix": [
+                0.6601310524658285,
+                -0.00015140179106638366,
+                -0.7511504314369096,
+                0.0,
+                -0.10021950081132579,
+                0.9910416329725301,
+                -0.08827532708673304,
+                0.0,
+                0.7444347152218833,
+                0.1335532058493494,
+                0.654202182799687,
+                0.0,
+                2.567583399455817,
+                0.5445789573682651,
+                2.2702967884221428,
+                1.0
+            ],
+            "camera": 0,
+            "name": "current camera"
+        },
+        {
+            "mesh": 0,
+            "name": "TWR-16 FRONT WING MASTER"
+        }
+    ],
+    "cameras": [
+        {
+            "type": "orthographic",
+            "orthographic": {
+                "xmag": 0.5467846196542481,
+                "ymag": 0.4225153879146462,
+                "zfar": 5.057853939571334,
+                "znear": 2.6446295831697855
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "POSITION": 1,
+                        "NORMAL": 2,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 0,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 14412,
+            "type": "SCALAR",
+            "min": [
+                0
+            ],
+            "max": [
+                6933
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 6934,
+            "type": "VEC3",
+            "min": [
+                -0.7607424259185791,
+                -0.014999999664723873,
+                -0.22328634560108185
+            ],
+            "max": [
+                0.7607424259185791,
+                0.1937607377767563,
+                0.25
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 6934,
+            "type": "VEC3",
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 6934,
+            "type": "VEC2",
+            "min": [
+                -4.837709426879883,
+                -3.777618646621704
+            ],
+            "max": [
+                16.17811393737793,
+                18.122045516967773
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "carbonfiberepoxy",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "baseColorFactor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 0.1899999998509884
+            }
+        }
+    ],
+    "textures": [
+        {
+            "sampler": 0,
+            "source": 0
+        }
+    ],
+    "images": [
+        {
+            "uri": "carbon fiber eproxy.jpg"
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9729,
+            "wrapS": 10497,
+            "wrapT": 10497
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 57648,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 57648,
+            "byteLength": 83208,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 140856,
+            "byteLength": 83208,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 224064,
+            "byteLength": 55472,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "uri": "TWR-16 FRONT WING MASTER.bin",
+            "byteLength": 279536
+        }
+    ]
+}
