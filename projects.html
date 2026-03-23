@@ -3,189 +3,284 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Nathan Zondag – Mechanical Engineering Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Projects & Experience | Nathan Zondag – Mechanical Engineering Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: #B8B8B8;
-      color: #000000;
-      line-height: 1.6;
-      font-size: clamp(0.95rem, 3vw, 1.05rem);
+      background: #FBFEF9;
+      color: #222222;
+      line-height: 1.68;
+      font-size: clamp(1rem, 2.1vw, 1.08rem);
+      min-height: 100vh;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: pageEnter 0.9s ease-out forwards 0.1s;
     }
+
+    @keyframes pageEnter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     header {
+      background: #0879B6;
+      color: white;
       text-align: center;
-      padding: clamp(2.5rem, 8vw, 4rem) 1rem 1.5rem;
-      background: #0C6291;
+      padding: clamp(4rem, 12vw, 6.5rem) 1.5rem 3.5rem;
+      position: relative;
     }
-    header h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
-    header p { color: #FFFFFF; font-size: clamp(1rem, 4vw, 1.2rem); }
+
+    header h1 {
+      font-size: clamp(2.4rem, 8vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      font-size: clamp(1.1rem, 3.8vw, 1.35rem);
+      font-weight: 400;
+      opacity: 0.94;
+      max-width: 780px;
+      margin: 0.6rem auto 0;
+    }
+
     nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: clamp(0.9rem, 3vw, 1.8rem);
-      padding: 1rem;
-      background: #020617;
+      background: #A41623;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      padding: 1.1rem 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
     }
-    nav a {
-      color: #e2e8f0;
-      text-decoration: none;
-      font-size: clamp(0.95rem, 3.5vw, 1.1rem);
-      padding: 0.5rem 0.9rem;
-      border-radius: 6px;
-      transition: background 0.2s;
-    }
-    nav a:hover { background: rgba(56,189,248,0.15); }
-    .lang-switcher {
+
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 0.7rem;
-      margin: 1.2rem 0;
+      flex-wrap: wrap;
+      gap: clamp(1.2rem, 3vw, 2.4rem);
     }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: clamp(1rem, 2.4vw, 1.12rem);
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      transition: all 0.28s ease;
+    }
+
+    nav a:hover {
+      background: #F85E00;
+      transform: translateY(-2px);
+    }
+
+    .lang-switcher {
+      position: absolute;
+      top: 1.8rem;
+      right: 2rem;
+      display: flex;
+      gap: 0.9rem;
+    }
+
     .lang-btn {
-      background: none;
+      background: rgba(255,255,255,0.18);
       border: none;
-      color: #000000;
+      color: white;
       cursor: pointer;
-      font-size: clamp(0.85rem, 3vw, 0.95rem);
+      font-size: 0.96rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 8px;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 0.9rem;
-      border-radius: 6px;
-      transition: all 0.2s;
+      gap: 0.55rem;
+      transition: all 0.28s;
     }
+
     .lang-btn:hover, .lang-btn.active {
-      color: #38bdf8;
-      background: rgba(56,189,248,0.12);
+      background: #F18701;
     }
-    .lang-btn img { width: 18px; height: auto; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+
+    .lang-btn img {
+      width: 22px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+    }
+
     .container {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: clamp(1rem, 4vw, 2rem);
+      padding: 0 1.6rem;
     }
-    section { margin-bottom: clamp(3rem, 7vw, 5rem); }
+
+    section {
+      padding: 5.5rem 0 4rem;
+    }
+
     h2 {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #A1A1A1;
-      padding-bottom: 0.5rem;
+      font-size: clamp(1.9rem, 4.8vw, 2.8rem);
+      font-weight: 700;
+      color: #0879B6;
       text-align: center;
+      margin-bottom: 2.8rem;
+      position: relative;
     }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 4px;
+      background: #F18701;
+      border-radius: 2px;
+    }
+
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1.8rem;
+      gap: 2rem;
     }
+
     .card {
       background: #FFFFFF;
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      transition: all 0.35s ease;
     }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 22px 48px rgba(0,0,0,0.14);
+    }
+
     .card-header {
-      padding: 1.3rem 1.4rem;
-      background: #D1D1D1;
+      padding: 1.5rem 1.8rem;
+      background: #0879B6;
+      color: white;
     }
+
     .card-header h3 {
       margin: 0;
-      font-size: 1.32rem;
+      font-size: 1.38rem;
+      font-weight: 600;
     }
+
     .card-content {
-      padding: 0 1.4rem 1.4rem;
+      padding: 1.6rem 1.8rem 2rem;
+      color: #333;
     }
-    .card-content > p {
-      color: #94a3b8;
-      margin: 1rem 0;
+
+    .card-content > p:first-child {
+      color: #666;
+      font-style: italic;
+      margin-bottom: 1.2rem;
     }
+
     .expandable {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.65s ease-out, padding 0.4s ease;
+      transition: max-height 0.7s ease-out, padding 0.4s ease;
     }
+
     .expandable.open {
-      max-height: 4800px;
-      padding: 0.5rem 0 1.5rem;
+      max-height: 5200px;
+      padding: 0.8rem 0 1.8rem;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
-      margin: 1.5rem 0;
-    }
-    .gallery-item {
-      background: #000000;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .gallery-caption {
-      padding: 0.9rem;
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      text-align: center;
-    }
+
     .btn {
       display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.95rem 1.9rem;
-      background: #38bdf8;
-      color: #FFFFFF;
+      background: #F18701;
+      color: white;
+      padding: 0.95rem 2.1rem;
+      border-radius: 10px;
       text-decoration: none;
-      border-radius: 6px;
       font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 14px rgba(241,135,1,0.28);
     }
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem;
-      color: #64748b;
-      font-size: 0.9rem;
+
+    .btn:hover {
+      background: #F85E00;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(248,94,0,0.35);
     }
+
     .experience-item {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
       padding: 0 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.9s ease-out forwards;
+      animation-delay: calc(var(--order) * 0.12s);
     }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .experience-item:nth-child(1) { --order: 1; }
+    .experience-item:nth-child(2) { --order: 2; }
+    .experience-item:nth-child(3) { --order: 3; }
+    .experience-item:nth-child(4) { --order: 4; }
+    .experience-item:nth-child(5) { --order: 5; }
+    .experience-item:nth-child(6) { --order: 6; }
+    .experience-item:nth-child(7) { --order: 7; }
+
     .experience-item .job-image {
       width: 100%;
-      max-width: 360px;
+      max-width: 380px;
       height: auto;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+      border-radius: 12px;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+      border: 1px solid #CCCCCC;
     }
+
     .experience-item h3 {
-      font-size: clamp(1.4rem, 4vw, 1.8rem);
-      margin-bottom: 0.4rem;
-      color: #38bdf8;
+      font-size: clamp(1.45rem, 4vw, 1.9rem);
+      color: #0879B6;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
     }
+
     .experience-item .role {
-      font-size: clamp(1rem, 3.2vw, 1.18rem);
-      color: #000000;
-      margin-bottom: 1.2rem;
+      font-size: clamp(1.05rem, 3vw, 1.22rem);
+      color: #444;
+      margin-bottom: 1.4rem;
       font-weight: 500;
     }
+
     .experience-item p {
-      max-width: 780px;
-      color: #000000;
-      font-size: clamp(0.97rem, 2.8vw, 1.05rem);
+      max-width: 820px;
+      color: #333;
+      font-size: clamp(1rem, 2.6vw, 1.08rem);
+    }
+
+    footer {
+      background: #A41623;
+      color: white;
+      text-align: center;
+      padding: 3.5rem 1rem 2.5rem;
+      font-size: 0.98rem;
+      margin-top: 4rem;
     }
 
     @media (min-width: 768px) {
@@ -193,29 +288,29 @@
         flex-direction: row;
         align-items: flex-start;
         text-align: left;
-        gap: 2.5rem;
+        gap: 3rem;
       }
       .experience-item .job-image {
         margin-bottom: 0;
         flex-shrink: 0;
-        width: 340px;
+        width: 360px;
       }
     }
 
     @media (min-width: 1024px) {
       .lang-switcher {
-        position: absolute;
-        top: 2rem;
-        right: 3rem;
-        margin: 0;
+        top: 2.4rem;
+        right: 3.5rem;
       }
     }
   </style>
 </head>
 <body>
+
 <header>
   <h1 data-i18n="name">Nathan Zondag</h1>
   <p data-i18n="title">Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Manufacturing & Design</p>
+
   <div class="lang-switcher">
     <button class="lang-btn active" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="EN"> English</button>
     <button class="lang-btn" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> Français</button>
@@ -223,18 +318,22 @@
     <button class="lang-btn" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE"> Deutsch</button>
   </div>
 </header>
+
 <nav>
-  <a href="index.html#about" data-i18n="nav.about">About</a>
-  <a href="index.html#education" data-i18n="nav.education">Education</a>
-  <a href="projects.html" data-i18n="nav.projects">Projects</a>
-  <a href="index.html#skills" data-i18n="nav.skills">Skills</a>
-  <a href="index.html#awards" data-i18n="nav.awards">Awards</a>
-  <a href="index.html#resume" data-i18n="nav.resume">Resume</a>
-  <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
-  <a href="index.html#affiliations" data-i18n="nav.affiliations">Affiliations</a>
+  <div class="container">
+    <a href="index.html#about" data-i18n="nav.about">About</a>
+    <a href="index.html#education" data-i18n="nav.education">Education</a>
+    <a href="projects.html" data-i18n="nav.projects">Projects</a>
+    <a href="index.html#skills" data-i18n="nav.skills">Skills</a>
+    <a href="index.html#awards" data-i18n="nav.awards">Awards</a>
+    <a href="index.html#resume" data-i18n="nav.resume">Resume</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+    <a href="index.html#affiliations" data-i18n="nav.affiliations">Affiliations</a>
+  </div>
 </nav>
 
 <div class="container">
+
   <section>
     <h2 data-i18n="sections.detailed_projects">Detailed Projects</h2>
     <div class="projects-grid">
@@ -246,14 +345,11 @@
           <div class="expandable">
             <p><strong>Role:</strong> Aerodynamics Lead | <strong>Tools:</strong> SolidWorks, ANSYS Fluent</p>
             <p>Information Under Maintenance</p>
-            <div class="right">
-              <img src="full aero.jpg" alt="Full Aero">
-            </div>
+            <img src="full aero.jpg" alt="Full Aero Package" style="width:100%; border-radius:10px; margin-top:1.2rem;">
           </div>
         </div>
       </div>
 
-  
       <div class="card">
         <div class="card-header"><h3>Project 2 – FSAE Rear Wing & Diffuser Optimization</h3></div>
         <div class="card-content">
@@ -264,7 +360,6 @@
         </div>
       </div>
 
-     
       <div class="card">
         <div class="card-header"><h3>Project 3 – Injection Mold Repair & Optimization (Jokey Plastics)</h3></div>
         <div class="card-content">
@@ -275,7 +370,6 @@
         </div>
       </div>
 
-     
       <div class="card">
         <div class="card-header"><h3>Project 4 – TWR-16 Front Wing: Wind Tunnel Verification of ANSYS Simulation</h3></div>
         <div class="card-content">
@@ -283,106 +377,87 @@
           <div class="expandable">
             <p><strong>Role:</strong> Author & Lead Investigator</p>
             <p>Experimental validation of ANSYS Fluent against physical wind tunnel testing (1:7.5 scale model). Achieved only 7.99% error in lift force.</p>
-            <a href="TWR-16 Wind Tunnel Test Report .pdf" download class="btn" style="background:#10b981;">
+            <a href="TWR-16 Wind Tunnel Test Report .pdf" download class="btn">
               📄 Download Full Report (PDF – 12.9 MB)
             </a>
           </div>
         </div>
       </div>
+
     </div>
   </section>
-
 
   <section>
     <h2>Full Experience</h2>
 
-
     <div class="experience-item">
-      <img src="lufsae logo.png" alt="Job 1" class="job-image">
+      <img src="lufsae logo.png" alt="Lakehead University Formula Student" class="job-image">
       <div>
         <h3>Lakehead University Formula Student - Steering & Shifting Lead</h3>
-        <div class="role">2025-2026</div>
-        <p>Solely responsible for full development of steering and shifting system in Formula Student car. Performed full research and design, manufacturing and testing processes. Simulated design through Adam's Car software
-        and through FEM solving in ANSYS. Developed clever and integrated mounting throughout entire system. Sourced electronic controlled pneumatic shifting system using effective financial and performance justification. </p>
+        <div class="role">2025–2026</div>
+        <p>Solely responsible for full development of steering and shifting system in Formula Student car. Performed full research and design, manufacturing and testing processes. Simulated design through Adam's Car software and through FEM solving in ANSYS. Developed clever and integrated mounting throughout entire system. Sourced electronic controlled pneumatic shifting system using effective financial and performance justification.</p>
       </div>
     </div>
 
-
     <div class="experience-item">
-      <img src="jokey logo.png" alt="Job 2" class="job-image">
+      <img src="jokey logo.png" alt="Jokey North America Inc." class="job-image">
       <div>
         <h3>Jokey North America Inc. - Mold Designer</h3>
         <div class="role">2025</div>
-        <p>Performed injection mold damage investigations, design repairs and preventative maintenance on mold designs. Applied knowledge of the manufacturing and active working process to guide designs. 
-        Developed full engineering drawings with applied GD&T. Performed CMM analysis on parts to ensure tolerances and uphold accuracy to client demands. Performed assistance throughout tool room. 
-        Performed tool sourcing and ordering timely and with financial efficiency. Developed mold designs for high profile contracts. Applied knowledge of thermodynamics, FEM, material science and 
-        dynamics into repair and replacement decisions.</p>
+        <p>Performed injection mold damage investigations, design repairs and preventative maintenance on mold designs. Applied knowledge of the manufacturing and active working process to guide designs. Developed full engineering drawings with applied GD&T. Performed CMM analysis on parts to ensure tolerances and uphold accuracy to client demands. Performed assistance throughout tool room. Performed tool sourcing and ordering timely and with financial efficiency. Developed mold designs for high profile contracts. Applied knowledge of thermodynamics, FEM, material science and dynamics into repair and replacement decisions.</p>
       </div>
     </div>
 
-   
     <div class="experience-item">
-      <img src="lufsae logo.png" alt="Job 3" class="job-image">
+      <img src="lufsae logo.png" alt="Lakehead University Formula Student" class="job-image">
       <div>
         <h3>Lakehead University Formula Student - Aerodynamics Lead</h3>
-        <div class="role">2024-2025</div>
-        <p>Solely responsible for the full research, design, justification, simulation, optimization, manufacturing and testing of Formula Student Aerodynamic Package. Full package included: front wing, nose cone,
-        side panel and rear wing. Applied composite manufacturing, developing the front wing, nose cone and rear wing using carbon fiber. Developed the side panels using aviation materials (ceconite). Developed the 
-        initial and final designs using Solidworks, and recorded data by simulated the effectiveness using ANSYS Fluent. Performed pre-manufacutring testing by developing simulation models in OptimumLap and Assetto Corsa.
-        Applied ability to work in a high stress, fast paced environment and employed quick problem solving skills and ability to envision full processes to integrate the package into a full automobile system. 
-        </p>
+        <div class="role">2024–2025</div>
+        <p>Solely responsible for the full research, design, justification, simulation, optimization, manufacturing and testing of Formula Student Aerodynamic Package. Full package included: front wing, nose cone, side panel and rear wing. Applied composite manufacturing, developing the front wing, nose cone and rear wing using carbon fiber. Developed the side panels using aviation materials (ceconite). Developed the initial and final designs using Solidworks, and recorded data by simulated the effectiveness using ANSYS Fluent. Performed pre-manufacturing testing by developing simulation models in OptimumLap and Assetto Corsa. Applied ability to work in a high stress, fast paced environment and employed quick problem solving skills and ability to envision full processes to integrate the package into a full automobile system.</p>
       </div>
     </div>
 
-    
     <div class="experience-item">
-      <img src="greatland logo.jpg" alt="Job 4" class="job-image">
+      <img src="greatland logo.jpg" alt="Greatland Landscaping" class="job-image">
       <div>
         <h3>Greatland Landscaping - Lockstone Installation, General Landscaping</h3>
         <div class="role">2023</div>
-        <p>Landscape manipulation, leveling of area, preperation for lockstone and full lockstone installation. Completed high profile contracts such as the Thunder Bay Regional Hospital, Best Western hotels,
-        multiple retirement homes around the city of Thunder Bay. Operated strong abilities in planning, persistance and execution of contracts. Demonstrated ability to adjust to client demands quickly and 
-        effectively while in the middle of a project. Upheld attention to detail in completing projects accurately while preserving the environment (noise control, dust control, effective material use).</p>
+        <p>Landscape manipulation, leveling of area, preparation for lockstone and full lockstone installation. Completed high profile contracts such as the Thunder Bay Regional Hospital, Best Western hotels, multiple retirement homes around the city of Thunder Bay. Operated strong abilities in planning, persistence and execution of contracts. Demonstrated ability to adjust to client demands quickly and effectively while in the middle of a project. Upheld attention to detail in completing projects accurately while preserving the environment (noise control, dust control, effective material use).</p>
       </div>
     </div>
 
-   
     <div class="experience-item">
-      <img src="bluewater logo.jpg" alt="Job 5" class="job-image">
+      <img src="bluewater logo.jpg" alt="Bluewater Auto Body & Fender" class="job-image">
       <div>
         <h3>Bluewater Auto Body & Fender - Autobody Repair, Damage Estimation, Detailer</h3>
-        <div class="role">2017-2024</div>
-        <p>Performed timely, high quality automotive body repair through material manipulation and R&I techniques. Performed all tasks through the repair process of damage investigation
-        and estimation, insurance company negotiation, sourcing and ordering of parts, preperation of body panel, repair of damage, installation of parts, prime/prep/paint process,
-        paint and clearcoat correction, final detailing, and final processing of client. Upheld strong attention to detail and ability to complete high quality work in a fast paced 
-        environment. </p>
+        <div class="role">2017–2024</div>
+        <p>Performed timely, high quality automotive body repair through material manipulation and R&I techniques. Performed all tasks through the repair process of damage investigation and estimation, insurance company negotiation, sourcing and ordering of parts, preparation of body panel, repair of damage, installation of parts, prime/prep/paint process, paint and clearcoat correction, final detailing, and final processing of client. Upheld strong attention to detail and ability to complete high quality work in a fast paced environment.</p>
       </div>
     </div>
 
-  
     <div class="experience-item">
-      <img src="zehrs logo.jpg" alt="Job 6" class="job-image">
+      <img src="zehrs logo.jpg" alt="Zehrs Goderich" class="job-image">
       <div>
         <h3>Zehrs Goderich - Seasonal Natural Value Clerk, Front End Associate</h3>
-        <div class="role">2016-2017</div>
+        <div class="role">2016–2017</div>
         <p>Performed inventory organization and analysis and product preservation. Performed customer assistance effectively through face-to-face and phone call inquiries.</p>
       </div>
     </div>
 
-     
     <div class="experience-item">
-      <img src="northern cross logo.jpg" alt="Job 7" class="job-image">
+      <img src="northern cross logo.jpg" alt="Northern Cross Energy Limited" class="job-image">
       <div>
         <h3>Northern Cross Energy Limited - Seasonal Employee, Compressor Region Maintenance</h3>
-        <div class="role">2014-2016</div>
+        <div class="role">2014–2016</div>
         <p>Performed maintenance on natural gas compressor stations. Performed data recordings and reported values.</p>
       </div>
     </div>
-    
-    <div style="text-align: center; margin: 5rem 0 2rem;">
+
+    <div style="text-align: center; margin: 6rem 0 3rem;">
       <a href="index.html" class="btn">← Back to Home</a>
     </div>
   </section>
+
 </div>
 
 <footer>
@@ -410,10 +485,16 @@
     document.documentElement.lang = lang;
   }
 
-  // Exclusive accordion – only one project expands at a time
   document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    setLanguage(savedLang);
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    // Card accordion (only one open at a time)
+    document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('click', function() {
         const expandable = this.querySelector('.expandable');
         document.querySelectorAll('.expandable').forEach(exp => {
@@ -422,14 +503,8 @@
         expandable.classList.toggle('open');
       });
     });
-
-    // Language setup
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
-    setLanguage(savedLang);
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
-    });
   });
 </script>
+
 </body>
 </html>
