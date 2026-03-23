@@ -14,28 +14,25 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #FBFEF9;
+      background: #B5B3B3;
       color: #000000;
-      line-height: 1.68;
-      font-size: clamp(1rem, 2.1vw, 1.07rem);
-      min-height: 100vh;
+      line-height: 1.65;
+      font-size: clamp(1rem, 2.2vw, 1.08rem);
       opacity: 0;
       transform: translateY(20px);
-      animation: pageEnter 0.9s ease-out forwards 0.2s;
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
-    @keyframes pageEnter {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    body.loaded {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     header {
-      background: #0879B6;
-      color: white;
+      background: #0C6291;
+      color: #FFFFFF;
       text-align: center;
-      padding: clamp(4rem, 12vw, 6.5rem) 1.5rem 3.5rem;
+      padding: clamp(4rem, 12vw, 6.5rem) 1.5rem 3rem;
     }
 
     header h1 {
@@ -46,8 +43,9 @@
 
     header p {
       font-size: clamp(1.1rem, 3.8vw, 1.35rem);
-      opacity: 0.94;
-      margin-top: 0.5rem;
+      font-weight: 400;
+      opacity: 0.92;
+      margin-top: 0.4rem;
     }
 
     nav {
@@ -55,45 +53,44 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 1.2rem 0;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+      padding: 1.1rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.35);
     }
 
     nav .container {
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1.6rem;
+      gap: clamp(1.1rem, 3vw, 2.4rem);
     }
 
     nav a {
-      color: white;
+      color: #FFFFFF;
       text-decoration: none;
       font-weight: 500;
-      font-size: clamp(1rem, 2.4vw, 1.08rem);
-      padding: 0.6rem 1.4rem;
+      font-size: clamp(1rem, 2.4vw, 1.12rem);
+      padding: 0.65rem 1.4rem;
       border-radius: 8px;
-      transition: all 0.28s ease;
+      transition: all 0.25s ease;
     }
 
     nav a:hover {
-      background: #F85E00;
-      color: white;
+      background: #F56416;
       transform: translateY(-1px);
     }
 
     .lang-switcher {
       position: absolute;
       top: 1.8rem;
-      right: 2rem;
+      right: 2.2rem;
       display: flex;
       gap: 0.9rem;
     }
 
     .lang-btn {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.14);
       border: none;
       color: white;
       cursor: pointer;
@@ -107,14 +104,13 @@
     }
 
     .lang-btn:hover, .lang-btn.active {
-      background: #F18701;
-      color: white;
+      background: #F56416;
     }
 
     .lang-btn img {
       width: 20px;
       border-radius: 4px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
 
     .container {
@@ -124,15 +120,15 @@
     }
 
     section {
-      padding: 6rem 0 4rem;
+      padding: 5.5rem 0 4rem;
     }
 
     h2 {
       font-size: clamp(1.9rem, 4.8vw, 2.8rem);
       font-weight: 700;
       color: #000000;
+      margin-bottom: 2.2rem;
       text-align: center;
-      margin-bottom: 2.8rem;
       position: relative;
     }
 
@@ -144,7 +140,7 @@
       transform: translateX(-50%);
       width: 90px;
       height: 4px;
-      background: #F18701;
+      background: #F56416;
       border-radius: 2px;
     }
 
@@ -158,19 +154,19 @@
       background: #FFFFFF;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.11);
-      transition: all 0.32s ease;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+      transition: all 0.35s ease;
     }
 
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 22px 48px rgba(0,0,0,0.16);
+      box-shadow: 0 20px 44px rgba(0,0,0,0.18);
     }
 
     .card-header {
-      background: #0879B6;
-      color: white;
       padding: 1.5rem 1.8rem;
+      background: #0C6291;
+      color: white;
     }
 
     .card-header h3 {
@@ -181,6 +177,7 @@
 
     .card-content {
       padding: 1.6rem 1.8rem 2rem;
+      color: #222;
     }
 
     .card-content > p {
@@ -192,7 +189,7 @@
     .expandable {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.7s ease-out, padding 0.45s ease;
+      transition: max-height 0.7s ease-out, padding 0.4s ease;
     }
 
     .expandable.open {
@@ -202,25 +199,23 @@
 
     .btn {
       display: inline-block;
-      background: #F18701;
+      background: #F56416;
       color: white;
-      padding: 0.95rem 2.1rem;
+      padding: 1rem 2.2rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s;
-      box-shadow: 0 5px 14px rgba(241,135,1,0.28);
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(245,100,22,0.3);
     }
 
     .btn:hover {
-      background: #F85E00;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(248,94,0,0.35);
+      background: #d95412;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(245,100,22,0.4);
     }
 
-    /* ────────────────────────────────────────────── */
-    /* Experience styling */
-    /* ────────────────────────────────────────────── */
+    /* Experience section */
     .experience-item {
       display: flex;
       flex-direction: column;
@@ -228,37 +223,31 @@
       text-align: center;
       margin-bottom: 5rem;
       padding: 0 1rem;
-      background: #FFFFFF;
+      background: white;
       border-radius: 14px;
       padding: 2.5rem 2rem;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.09);
-      transition: all 0.35s ease;
-    }
-
-    .experience-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     }
 
     .experience-item .job-image {
       width: 100%;
       max-width: 380px;
       height: auto;
-      border-radius: 12px;
+      border-radius: 10px;
       margin-bottom: 1.8rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
     }
 
     .experience-item h3 {
       font-size: clamp(1.45rem, 4.2vw, 1.9rem);
       margin-bottom: 0.5rem;
-      color: #0879B6;
+      color: #0C6291;
       font-weight: 700;
     }
 
     .experience-item .role {
-      font-size: clamp(1.05rem, 3vw, 1.22rem);
-      color: #555;
+      font-size: clamp(1.05rem, 3.3vw, 1.22rem);
+      color: #444;
       margin-bottom: 1.4rem;
       font-weight: 500;
     }
@@ -266,7 +255,7 @@
     .experience-item p {
       max-width: 820px;
       color: #333;
-      font-size: clamp(1rem, 2.6vw, 1.08rem);
+      font-size: clamp(1rem, 2.9vw, 1.08rem);
     }
 
     @media (min-width: 768px) {
@@ -278,8 +267,15 @@
       }
       .experience-item .job-image {
         margin-bottom: 0;
-        flex-shrink: 0;
         width: 360px;
+        flex-shrink: 0;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lang-switcher {
+        top: 2.5rem;
+        right: 3.5rem;
       }
     }
 
@@ -289,14 +285,6 @@
       text-align: center;
       padding: 3.5rem 1rem 2.5rem;
       font-size: 0.96rem;
-      margin-top: 4rem;
-    }
-
-    @media (min-width: 1024px) {
-      .lang-switcher {
-        top: 2.4rem;
-        right: 3.5rem;
-      }
     }
   </style>
 </head>
@@ -318,7 +306,7 @@
   <div class="container">
     <a href="index.html#about" data-i18n="nav.about">About</a>
     <a href="index.html#education" data-i18n="nav.education">Education</a>
-    <a href="projects.html" data-i18n="nav.projects">Projects & Experience</a>
+    <a href="projects.html" data-i18n="nav.projects">Projects</a>
     <a href="index.html#skills" data-i18n="nav.skills">Skills</a>
     <a href="index.html#awards" data-i18n="nav.awards">Awards</a>
     <a href="index.html#resume" data-i18n="nav.resume">Resume</a>
@@ -332,6 +320,7 @@
   <section>
     <h2 data-i18n="sections.detailed_projects">Detailed Projects</h2>
     <div class="projects-grid">
+
       <div class="card">
         <div class="card-header"><h3>Project 1 – FSAE Aerodynamic Package: Front Wing, Nose Cone, Side Panelling, Rear Wing</h3></div>
         <div class="card-content">
@@ -339,9 +328,7 @@
           <div class="expandable">
             <p><strong>Role:</strong> Aerodynamics Lead | <strong>Tools:</strong> SolidWorks, ANSYS Fluent</p>
             <p>Information Under Maintenance</p>
-            <div class="right">
-              <img src="full aero.jpg" alt="Full Aero">
-            </div>
+            <img src="full aero.jpg" alt="Full Aero Package" style="width:100%; border-radius:10px; margin-top:1.2rem;">
           </div>
         </div>
       </div>
@@ -373,12 +360,13 @@
           <div class="expandable">
             <p><strong>Role:</strong> Author & Lead Investigator</p>
             <p>Experimental validation of ANSYS Fluent against physical wind tunnel testing (1:7.5 scale model). Achieved only 7.99% error in lift force.</p>
-            <a href="TWR-16 Wind Tunnel Test Report .pdf" download class="btn">
+            <a href="TWR-16 Wind Tunnel Test Report .pdf" download class="btn" style="margin-top:1.5rem;">
               📄 Download Full Report (PDF – 12.9 MB)
             </a>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -395,7 +383,7 @@
     </div>
 
     <div class="experience-item">
-      <img src="jokey logo.png" alt="Jokey North America" class="job-image">
+      <img src="jokey logo.png" alt="Jokey North America Inc." class="job-image">
       <div>
         <h3>Jokey North America Inc. - Mold Designer</h3>
         <div class="role">2025</div>
@@ -422,7 +410,7 @@
     </div>
 
     <div class="experience-item">
-      <img src="bluewater logo.jpg" alt="Bluewater Auto Body" class="job-image">
+      <img src="bluewater logo.jpg" alt="Bluewater Auto Body & Fender" class="job-image">
       <div>
         <h3>Bluewater Auto Body & Fender - Autobody Repair, Damage Estimation, Detailer</h3>
         <div class="role">2017–2024</div>
@@ -440,7 +428,7 @@
     </div>
 
     <div class="experience-item">
-      <img src="northern cross logo.jpg" alt="Northern Cross Energy" class="job-image">
+      <img src="northern cross logo.jpg" alt="Northern Cross Energy Limited" class="job-image">
       <div>
         <h3>Northern Cross Energy Limited - Seasonal Employee, Compressor Region Maintenance</h3>
         <div class="role">2014–2016</div>
@@ -449,7 +437,7 @@
     </div>
 
     <div style="text-align: center; margin: 6rem 0 4rem;">
-      <a href="index.html" class="btn">← Back to Home</a>
+      <a href="index.html" class="btn" id="back-home">← Back to Home</a>
     </div>
   </section>
 
@@ -480,8 +468,27 @@
     document.documentElement.lang = lang;
   }
 
-  // Accordion - only one open at a time
+  // Accordion (exclusive - only one open)
   document.addEventListener('DOMContentLoaded', () => {
+    // Page entrance animation
+    setTimeout(() => {
+      document.body.classList.add('loaded');
+    }, 100);
+
+    // Back button smooth exit
+    const backBtn = document.getElementById('back-home');
+    if (backBtn) {
+      backBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.body.style.opacity = '0';
+        document.body.style.transform = 'translateY(30px)';
+        setTimeout(() => {
+          window.location.href = this.getAttribute('href');
+        }, 600);
+      });
+    }
+
+    // Accordion behavior
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
       card.addEventListener('click', function() {
@@ -493,6 +500,7 @@
       });
     });
 
+    // Language
     const savedLang = localStorage.getItem('preferredLang') || 'en';
     setLanguage(savedLang);
     document.querySelectorAll('.lang-btn').forEach(btn => {
