@@ -5,92 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects & Experience | Nathan Zondag – Mechanical Engineering Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Google Model Viewer (for interactive 3D Parasolid model) -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Inter', sans-serif;
-      background: #B5B3B3;
+      background: #FBFEF9;
       color: #000000;
-      line-height: 1.65;
-      font-size: clamp(1rem, 2.2vw, 1.08rem);
+      line-height: 1.68;
+      font-size: clamp(1rem, 2.1vw, 1.07rem);
+      min-height: 100vh;
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      animation: pageEnter 0.9s ease-out forwards 0.2s;
     }
-
-    body.loaded {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes pageEnter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-
     header {
-      background: #0C6291;
-      color: #FFFFFF;
+      background: #0879B6;
+      color: white;
       text-align: center;
-      padding: clamp(4rem, 12vw, 6.5rem) 1.5rem 3rem;
+      padding: clamp(4rem, 12vw, 6.5rem) 1.5rem 3.5rem;
     }
-
     header h1 {
       font-size: clamp(2.4rem, 8vw, 3.8rem);
       font-weight: 700;
       letter-spacing: -0.02em;
     }
-
     header p {
       font-size: clamp(1.1rem, 3.8vw, 1.35rem);
-      font-weight: 400;
-      opacity: 0.92;
-      margin-top: 0.4rem;
+      opacity: 0.94;
+      margin-top: 0.5rem;
     }
-
     nav {
       background: #000000;
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 1.1rem;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+      padding: 1.2rem 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.22);
     }
-
     nav .container {
-      max-width: 1200px;
+      max-width: 1180px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: clamp(1.1rem, 3vw, 2.4rem);
+      gap: 1.6rem;
     }
-
     nav a {
-      color: #FFFFFF;
+      color: white;
       text-decoration: none;
       font-weight: 500;
-      font-size: clamp(1rem, 2.4vw, 1.12rem);
-      padding: 0.65rem 1.4rem;
+      font-size: clamp(1rem, 2.4vw, 1.08rem);
+      padding: 0.6rem 1.4rem;
       border-radius: 8px;
-      transition: all 0.25s ease;
+      transition: all 0.28s ease;
     }
-
     nav a:hover {
-      background: #F56416;
+      background: #F85E00;
+      color: white;
       transform: translateY(-1px);
     }
-
     .lang-switcher {
       position: absolute;
       top: 1.8rem;
-      right: 2.2rem;
+      right: 2rem;
       display: flex;
       gap: 0.9rem;
     }
-
     .lang-btn {
-      background: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.15);
       border: none;
       color: white;
       cursor: pointer;
@@ -102,36 +98,31 @@
       gap: 0.5rem;
       transition: all 0.25s;
     }
-
     .lang-btn:hover, .lang-btn.active {
-      background: #F56416;
+      background: #F18701;
+      color: white;
     }
-
     .lang-btn img {
       width: 20px;
       border-radius: 4px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.35);
     }
-
     .container {
       max-width: 1180px;
       margin: 0 auto;
       padding: 0 1.6rem;
     }
-
     section {
-      padding: 5.5rem 0 4rem;
+      padding: 6rem 0 4rem;
     }
-
     h2 {
       font-size: clamp(1.9rem, 4.8vw, 2.8rem);
       font-weight: 700;
       color: #000000;
-      margin-bottom: 2.2rem;
       text-align: center;
+      margin-bottom: 2.8rem;
       position: relative;
     }
-
     h2:after {
       content: '';
       position: absolute;
@@ -140,82 +131,92 @@
       transform: translateX(-50%);
       width: 90px;
       height: 4px;
-      background: #F56416;
+      background: #F18701;
       border-radius: 2px;
     }
-
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
     }
-
     .card {
       background: #FFFFFF;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
-      transition: all 0.35s ease;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.11);
+      transition: all 0.32s ease;
     }
-
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 44px rgba(0,0,0,0.18);
+      box-shadow: 0 22px 48px rgba(0,0,0,0.16);
     }
-
     .card-header {
-      padding: 1.5rem 1.8rem;
-      background: #0C6291;
+      background: #0879B6;
       color: white;
+      padding: 1.5rem 1.8rem;
     }
-
     .card-header h3 {
       margin: 0;
       font-size: 1.38rem;
       font-weight: 600;
     }
-
     .card-content {
       padding: 1.6rem 1.8rem 2rem;
-      color: #222;
     }
-
     .card-content > p {
       color: #555;
       margin: 1.1rem 0;
       font-size: 1.02rem;
     }
-
     .expandable {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.7s ease-out, padding 0.4s ease;
+      transition: max-height 0.7s ease-out, padding 0.45s ease;
     }
-
     .expandable.open {
-      max-height: 5200px;
+      max-height: 6200px; /* increased to accommodate 3D viewer */
       padding: 0.8rem 0 1.8rem;
     }
-
     .btn {
       display: inline-block;
-      background: #F56416;
+      background: #F18701;
       color: white;
-      padding: 1rem 2.2rem;
+      padding: 0.95rem 2.1rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(245,100,22,0.3);
+      transition: all 0.3s;
+      box-shadow: 0 5px 14px rgba(241,135,1,0.28);
     }
-
     .btn:hover {
-      background: #d95412;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(245,100,22,0.4);
+      background: #F85E00;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(248,94,0,0.35);
     }
 
-    /* Experience section */
+    /* ────────────────────────────────────────────── */
+    /* 3D MODEL VIEWER STYLING (NEW) */
+    /* ────────────────────────────────────────────── */
+    .model-viewer-container {
+      margin: 1.8rem 0 1.2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(8, 121, 182, 0.25);
+      background: linear-gradient(#f8fafd, #eef3f9);
+    }
+    .model-viewer-container model-viewer {
+      width: 100% !important;
+      height: 520px !important;
+      background-color: #f0f4f9;
+    }
+    .viewer-caption {
+      text-align: center;
+      font-size: 0.92rem;
+      color: #555;
+      margin: 0.8rem 0 1.5rem;
+      font-style: italic;
+    }
+
     .experience-item {
       display: flex;
       flex-direction: column;
@@ -223,41 +224,41 @@
       text-align: center;
       margin-bottom: 5rem;
       padding: 0 1rem;
-      background: white;
+      background: #FFFFFF;
       border-radius: 14px;
       padding: 2.5rem 2rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.09);
+      transition: all 0.35s ease;
     }
-
+    .experience-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+    }
     .experience-item .job-image {
       width: 100%;
       max-width: 380px;
       height: auto;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-bottom: 1.8rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
-
     .experience-item h3 {
       font-size: clamp(1.45rem, 4.2vw, 1.9rem);
       margin-bottom: 0.5rem;
-      color: #0C6291;
+      color: #0879B6;
       font-weight: 700;
     }
-
     .experience-item .role {
-      font-size: clamp(1.05rem, 3.3vw, 1.22rem);
-      color: #444;
+      font-size: clamp(1.05rem, 3vw, 1.22rem);
+      color: #555;
       margin-bottom: 1.4rem;
       font-weight: 500;
     }
-
     .experience-item p {
       max-width: 820px;
       color: #333;
-      font-size: clamp(1rem, 2.9vw, 1.08rem);
+      font-size: clamp(1rem, 2.6vw, 1.08rem);
     }
-
     @media (min-width: 768px) {
       .experience-item {
         flex-direction: row;
@@ -267,33 +268,30 @@
       }
       .experience-item .job-image {
         margin-bottom: 0;
-        width: 360px;
         flex-shrink: 0;
+        width: 360px;
       }
     }
-
-    @media (min-width: 1024px) {
-      .lang-switcher {
-        top: 2.5rem;
-        right: 3.5rem;
-      }
-    }
-
     footer {
       background: #000000;
       color: #aaa;
       text-align: center;
       padding: 3.5rem 1rem 2.5rem;
       font-size: 0.96rem;
+      margin-top: 4rem;
+    }
+    @media (min-width: 1024px) {
+      .lang-switcher {
+        top: 2.4rem;
+        right: 3.5rem;
+      }
     }
   </style>
 </head>
 <body>
-
 <header>
   <h1 data-i18n="name">Nathan Zondag</h1>
   <p data-i18n="title">Bachelor of Mechanical Engineering | FSAE Aerodynamics Lead | Manufacturing & Design</p>
-
   <div class="lang-switcher">
     <button class="lang-btn active" data-lang="en"><img src="https://flagcdn.com/w20/gb.png" alt="EN"> English</button>
     <button class="lang-btn" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> Français</button>
@@ -301,12 +299,11 @@
     <button class="lang-btn" data-lang="de"><img src="https://flagcdn.com/w20/de.png" alt="DE"> Deutsch</button>
   </div>
 </header>
-
 <nav>
   <div class="container">
     <a href="index.html#about" data-i18n="nav.about">About</a>
     <a href="index.html#education" data-i18n="nav.education">Education</a>
-    <a href="projects.html" data-i18n="nav.projects">Projects</a>
+    <a href="projects.html" data-i18n="nav.projects">Projects & Experience</a>
     <a href="index.html#skills" data-i18n="nav.skills">Skills</a>
     <a href="index.html#awards" data-i18n="nav.awards">Awards</a>
     <a href="index.html#resume" data-i18n="nav.resume">Resume</a>
@@ -314,25 +311,51 @@
     <a href="index.html#affiliations" data-i18n="nav.affiliations">Affiliations</a>
   </div>
 </nav>
-
 <div class="container">
-
   <section>
     <h2 data-i18n="sections.detailed_projects">Detailed Projects</h2>
     <div class="projects-grid">
-
+      <!-- ==================== PROJECT 1 ==================== -->
       <div class="card">
         <div class="card-header"><h3>Project 1 – FSAE Aerodynamic Package: Front Wing, Nose Cone, Side Panelling, Rear Wing</h3></div>
         <div class="card-content">
           <p>Click to expand</p>
           <div class="expandable">
             <p><strong>Role:</strong> Aerodynamics Lead | <strong>Tools:</strong> SolidWorks, ANSYS Fluent</p>
-            <p>Information Under Maintenance</p>
-            <img src="full aero.jpg" alt="Full Aero Package" style="width:100%; border-radius:10px; margin-top:1.2rem;">
+            
+            <!-- INTERACTIVE PARASOLID VIEWER (NEW) -->
+            <p><strong>Interactive 3D Model Viewer:</strong> TWR-16 Front Wing Master (Parasolid .x_t)</p>
+            
+            <div class="model-viewer-container">
+              <model-viewer 
+                src="TWR-16 FRONT WING MASTER.glb" 
+                alt="TWR-16 Front Wing – Parasolid Model"
+                camera-controls="true"
+                auto-rotate="true"
+                auto-rotate-delay="1200"
+                rotation-per-second="20deg"
+                shadow-intensity="1"
+                exposure="0.85"
+                environment-image="neutral"
+                ar="true"
+                ar-modes="webxr scene-viewer quick-look">
+              </model-viewer>
+            </div>
+            
+            <p class="viewer-caption">
+              <strong>Controls:</strong> Left-click + drag to rotate • Scroll / pinch to zoom • Right-click + drag to pan
+            </p>
+
+            <p><em>Note: Export your SolidWorks file "TWR-16 FRONT WING MASTER.x_t" as .glb (File → Export → glTF 2.0) and place it in the same folder as this HTML file (named exactly "TWR-16 FRONT WING MASTER.glb"). This gives full interactive rotation, zoom, and pan.</em></p>
+
+            <div class="right">
+              <img src="full aero.jpg" alt="Full Aero">
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Other projects unchanged -->
       <div class="card">
         <div class="card-header"><h3>Project 2 – FSAE Rear Wing & Diffuser Optimization</h3></div>
         <div class="card-content">
@@ -342,7 +365,6 @@
           </div>
         </div>
       </div>
-
       <div class="card">
         <div class="card-header"><h3>Project 3 – Injection Mold Repair & Optimization (Jokey Plastics)</h3></div>
         <div class="card-content">
@@ -352,7 +374,6 @@
           </div>
         </div>
       </div>
-
       <div class="card">
         <div class="card-header"><h3>Project 4 – TWR-16 Front Wing: Wind Tunnel Verification of ANSYS Simulation</h3></div>
         <div class="card-content">
@@ -360,19 +381,18 @@
           <div class="expandable">
             <p><strong>Role:</strong> Author & Lead Investigator</p>
             <p>Experimental validation of ANSYS Fluent against physical wind tunnel testing (1:7.5 scale model). Achieved only 7.99% error in lift force.</p>
-            <a href="TWR-16 Wind Tunnel Test Report .pdf" download class="btn" style="margin-top:1.5rem;">
+            <a href="TWR-16 Wind Tunnel Test Report .pdf" download class="btn">
               📄 Download Full Report (PDF – 12.9 MB)
             </a>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
+  <!-- Full Experience section unchanged -->
   <section>
     <h2>Full Experience</h2>
-
     <div class="experience-item">
       <img src="lufsae logo.png" alt="Lakehead University Formula Student" class="job-image">
       <div>
@@ -381,16 +401,14 @@
         <p>Solely responsible for full development of steering and shifting system in Formula Student car. Performed full research and design, manufacturing and testing processes. Simulated design through Adam's Car software and through FEM solving in ANSYS. Developed clever and integrated mounting throughout entire system. Sourced electronic controlled pneumatic shifting system using effective financial and performance justification.</p>
       </div>
     </div>
-
     <div class="experience-item">
-      <img src="jokey logo.png" alt="Jokey North America Inc." class="job-image">
+      <img src="jokey logo.png" alt="Jokey North America" class="job-image">
       <div>
         <h3>Jokey North America Inc. - Mold Designer</h3>
         <div class="role">2025</div>
         <p>Performed injection mold damage investigations, design repairs and preventative maintenance on mold designs. Applied knowledge of the manufacturing and active working process to guide designs. Developed full engineering drawings with applied GD&T. Performed CMM analysis on parts to ensure tolerances and uphold accuracy to client demands. Performed assistance throughout tool room. Performed tool sourcing and ordering timely and with financial efficiency. Developed mold designs for high profile contracts. Applied knowledge of thermodynamics, FEM, material science and dynamics into repair and replacement decisions.</p>
       </div>
     </div>
-
     <div class="experience-item">
       <img src="lufsae logo.png" alt="Lakehead University Formula Student" class="job-image">
       <div>
@@ -399,7 +417,6 @@
         <p>Solely responsible for the full research, design, justification, simulation, optimization, manufacturing and testing of Formula Student Aerodynamic Package. Full package included: front wing, nose cone, side panel and rear wing. Applied composite manufacturing, developing the front wing, nose cone and rear wing using carbon fiber. Developed the side panels using aviation materials (ceconite). Developed the initial and final designs using Solidworks, and recorded data by simulated the effectiveness using ANSYS Fluent. Performed pre-manufacturing testing by developing simulation models in OptimumLap and Assetto Corsa. Applied ability to work in a high stress, fast paced environment and employed quick problem solving skills and ability to envision full processes to integrate the package into a full automobile system.</p>
       </div>
     </div>
-
     <div class="experience-item">
       <img src="greatland logo.jpg" alt="Greatland Landscaping" class="job-image">
       <div>
@@ -408,16 +425,14 @@
         <p>Landscape manipulation, leveling of area, preparation for lockstone and full lockstone installation. Completed high profile contracts such as the Thunder Bay Regional Hospital, Best Western hotels, multiple retirement homes around the city of Thunder Bay. Operated strong abilities in planning, persistence and execution of contracts. Demonstrated ability to adjust to client demands quickly and effectively while in the middle of a project. Upheld attention to detail in completing projects accurately while preserving the environment (noise control, dust control, effective material use).</p>
       </div>
     </div>
-
     <div class="experience-item">
-      <img src="bluewater logo.jpg" alt="Bluewater Auto Body & Fender" class="job-image">
+      <img src="bluewater logo.jpg" alt="Bluewater Auto Body" class="job-image">
       <div>
         <h3>Bluewater Auto Body & Fender - Autobody Repair, Damage Estimation, Detailer</h3>
         <div class="role">2017–2024</div>
         <p>Performed timely, high quality automotive body repair through material manipulation and R&I techniques. Performed all tasks through the repair process of damage investigation and estimation, insurance company negotiation, sourcing and ordering of parts, preparation of body panel, repair of damage, installation of parts, prime/prep/paint process, paint and clearcoat correction, final detailing, and final processing of client. Upheld strong attention to detail and ability to complete high quality work in a fast paced environment.</p>
       </div>
     </div>
-
     <div class="experience-item">
       <img src="zehrs logo.jpg" alt="Zehrs Goderich" class="job-image">
       <div>
@@ -426,23 +441,19 @@
         <p>Performed inventory organization and analysis and product preservation. Performed customer assistance effectively through face-to-face and phone call inquiries.</p>
       </div>
     </div>
-
     <div class="experience-item">
-      <img src="northern cross logo.jpg" alt="Northern Cross Energy Limited" class="job-image">
+      <img src="northern cross logo.jpg" alt="Northern Cross Energy" class="job-image">
       <div>
         <h3>Northern Cross Energy Limited - Seasonal Employee, Compressor Region Maintenance</h3>
         <div class="role">2014–2016</div>
         <p>Performed maintenance on natural gas compressor stations. Performed data recordings and reported values.</p>
       </div>
     </div>
-
     <div style="text-align: center; margin: 6rem 0 4rem;">
-      <a href="index.html" class="btn" id="back-home">← Back to Home</a>
+      <a href="index.html" class="btn">← Back to Home</a>
     </div>
   </section>
-
 </div>
-
 <footer>
   <p data-i18n="footer">© 2026 Nathan Zondag | Canada</p>
 </footer>
@@ -454,7 +465,6 @@
     es: { name: "Nathan Zondag", title: "Licenciatura en Ingeniería Mecánica | Líder de Aerodinámica FSAE | Fabricación y Diseño", nav: { about: "Acerca de", education: "Educación", projects: "Proyectos", skills: "Habilidades", awards: "Premios", resume: "Currículum", contact: "Contacto", affiliations: "Afiliaciones" }, sections: { detailed_projects: "Proyectos Detallados" }, footer: "© 2026 Nathan Zondag | Canadá" },
     de: { name: "Nathan Zondag", title: "Bachelor of Mechanical Engineering | FSAE Aerodynamik-Lead | Fertigung & Design", nav: { about: "Über mich", education: "Ausbildung", projects: "Projekte", skills: "Fähigkeiten", awards: "Auszeichnungen", resume: "Lebenslauf", contact: "Kontakt", affiliations: "Zugehörigkeiten" }, sections: { detailed_projects: "Detaillierte Projekte" }, footer: "© 2026 Nathan Zondag | Kanada" }
   };
-
   function setLanguage(lang) {
     if (!translations[lang]) lang = 'en';
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -467,28 +477,8 @@
     localStorage.setItem('preferredLang', lang);
     document.documentElement.lang = lang;
   }
-
-  // Accordion (exclusive - only one open)
+  // Accordion - only one open at a time
   document.addEventListener('DOMContentLoaded', () => {
-    // Page entrance animation
-    setTimeout(() => {
-      document.body.classList.add('loaded');
-    }, 100);
-
-    // Back button smooth exit
-    const backBtn = document.getElementById('back-home');
-    if (backBtn) {
-      backBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.body.style.opacity = '0';
-        document.body.style.transform = 'translateY(30px)';
-        setTimeout(() => {
-          window.location.href = this.getAttribute('href');
-        }, 600);
-      });
-    }
-
-    // Accordion behavior
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
       card.addEventListener('click', function() {
@@ -499,8 +489,6 @@
         expandable.classList.toggle('open');
       });
     });
-
-    // Language
     const savedLang = localStorage.getItem('preferredLang') || 'en';
     setLanguage(savedLang);
     document.querySelectorAll('.lang-btn').forEach(btn => {
